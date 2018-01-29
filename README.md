@@ -1,1 +1,107 @@
-# bloggy
+# Bloggy - react && react-redux && express && mongodb 
+
+This repository contains all the files for an application built to showcase material learned from the combination of the following full stack javascript courses on Udemy:
+
+	- [Node with React: Fullstack Web Development] (https://www.udemy.com/node-with-react-fullstack-web-development)
+	- [The Complete Developers Guide to MongoDB] (https://www.udemy.com/the-complete-developers-guide-to-mongodb)
+	- [Server Side Rendering with React and Redux] (https://www.udemy.com/server-side-rendering-with-react-and-redux)
+
+## Project Criteria
+
+The main purpose of this application is to provide the following features:
+	
+	- A blog social network, including:
+		+ User to user profiles and a basic chat system.
+		+ User dashboard, with metrics.
+			* Admin / premium content dashboard features.
+			* Currency system, and payment gateway
+		+ User email system to invite users to join the blog (fremium - first 5 free)
+
+This application will be built to showcase the following technologies and practices:
+	
+	- Consistent data retention with MongoDB / Mongoose
+	- API to manage server / client requests with Express / Node
+	- Render the client side with React / Redux
+	- Testing of server, data, and client applications with Mocha / Enzyme / Jest
+	- Manage user Authentication with oAuth / Passport 
+	- Handle payments with Stripe
+	- Offline caching with Service Workers / IndexDB / LocalStorage
+	- Progressive web application using responsive practices
+	- Material design with the Bootstrap / MaterialUI
+
+Possible future technologies include:
+
+	- GraphQL / Apollo for better offline - first utilization
+	- Server Side Rendering for optimized performance
+	- React Native application for native devices
+
+(Expand upon criteria in a later version)
+
+## Demo
+
+(to be expanded in a future version with the structure below)
+
+![desktop image](https://onlinedevelopers.ca/udacity/weather-app/src/img/read-me/proj5-collage.jpg)
+
+[To view the application live click here] (http://onlinedevelopers.ca/udacity/weather-app/)
+
+To download and install, please follow the instructions below.
+
+## Installation
+
+(expand on yarn installation, and node.js installation instructions, as well as expo instructions before repository instructions in the future)
+
+Clone the repository from: 
+```
+$ git clone https://github.com/escobard/bloggy.git
+```
+
+Install NPM dependencies:
+```
+$ npm install (or yarn install)
+```
+
+(expand on server installation, etc)
+
+## Usage
+
+To run this application locally for development, use the following commands:
+
+```
+$ npm start (or yarn start)
+```
+
+(expand on production installation, etc)
+
+## Most Recent Update - v0.6
+
+(expand on updates)
+
+## Known Bugs
+
+(expand on bugs)
+
+## Libraries, Frameworks, APIs
+
+[React](https://facebook.github.io/react/)
+
+[Redux] (http://redux.js.org/docs/introduction/)
+
+[Node] (https://nodejs.org/en/)
+
+[Express] (https://expressjs.com/)
+
+[MongoDB] (https://www.mongodb.com/)
+
+(add other maj libraries here)
+
+
+## Contribution
+
+All files in this repository are protected under the MIT license, but feel free to contribute, fork, star, or share this application as you see fit.
+
+For commercial or educational use, please paste a link to this repository to give proper credit.
+
+## License
+
+As of January 29th, 2018, these files are open for all to use and contribute to. This repository is protected under the [MIT License](http://choosealicense.com/licenses/mit/).
