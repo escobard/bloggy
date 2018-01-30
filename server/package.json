@@ -1,0 +1,22 @@
+{
+  "name": "bloggy",
+  "version": "0.0.5",
+  "description": "blog application using react, redux, express, mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/escobard/bloggy.git"
+  },
+  "author": "Daniel Escobar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/escobard/bloggy/issues"
+  },
+  "homepage": "https://github.com/escobard/bloggy#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
