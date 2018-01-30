@@ -1,3 +1,17 @@
+const express = require('express');
+const router = require('./router')
+const app = express();
+
+router(app);
+
+const server = app.listen(5000, () => {
+	const port = server.address().port;
+	console.log('server listening at port %s', port )
+});
+
+module.exports = server;
+
+/* 
 
 // for detailed notes on express / passport authentication 
 // mongodb user retention / token creation go to 
@@ -15,8 +29,6 @@ const app = express();
 // watches for incoming 'get' HTTP request method within the '/' route
 // this is called a route handler - more here: https://expressjs.com/en/starter/basic-routing.html
 
-/* 
-
 other HTTP requests supported include:
 
 app.get - GET HTTP request - used to retreive or fetch info - most common type of request
@@ -29,7 +41,7 @@ app.delete - DELETE HTTP request - used to delete data
 
 app.patch - update one or two properties of something 
 
-*/
+
 
 app.get('/',
 
@@ -51,11 +63,12 @@ app.get('/',
 // adding a function for testing 
 
 const server = app.listen(5000, () => {
-
 	const port = server.address().port;
 	console.log('server listening at port %s', port )
-	
 });
 
 // this is the same as export default in ES6
 module.exports = server;
+
+
+*/

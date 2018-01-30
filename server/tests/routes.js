@@ -1,4 +1,4 @@
-const routeTests = (server, request) => {
+module.exports = function(server, request){
   describe('Testing routes', function () {
 
     // requires main server before each test
@@ -18,5 +18,3 @@ const routeTests = (server, request) => {
     });
   });
 }
-
-module.exports = routes;
