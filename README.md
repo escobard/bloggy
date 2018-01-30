@@ -73,9 +73,24 @@ $ npm start (or yarn start)
 
 (expand on production installation, etc)
 
-## Most Recent Update - v0.6
+To run this application on production:
 
-(expand on updates)
+- Download the Heroku CLI: [https://devcenter.heroku.com/articles/heroku-cli](https://devcenter.heroku.com/articles/heroku-cli)
+
+- Proper production instructions coming later
+
+## Most Recent Update - v0.05
+
+## v0.05
+	COMPLETED:
+		- Add Express basic server
+		- Hook up base application to Heroku for production
+		- Create base tests for Express
+
+## Todo's - v0.1
+	TODO:
+		- Add Google OAuth API.
+		- Begin considering how to implement manual user creation.
 
 ## Known Bugs
 
