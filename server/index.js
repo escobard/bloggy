@@ -39,9 +39,7 @@ app.get('/',
 // res is the object representing the outgoing response
 (req, res) => {
 
-	// displays important request data
 	console.log('headers: ', req.headers)
-	console.log('raw headers: ', req.rawHeaders)
 
 	// sends the json object below to the route specified
 	res.send({ hi: 'there' });
@@ -49,4 +47,15 @@ app.get('/',
 })
 
 // listens for requests on the port specified
-app.listen(5000);
+
+// adding a function for testing 
+
+const server = app.listen(5000, () => {
+
+	const port = server.address().port;
+	console.log('server listening at port %s', port )
+	
+});
+
+// this is the same as export default in ES6
+module.exports = server;

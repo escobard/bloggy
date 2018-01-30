@@ -4,7 +4,7 @@
   "description": "blog application using react, redux, express, mongodb",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha -R spec ./tests/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/escobard/bloggy#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mocha": "^5.0.0",
+    "supertest": "^3.0.0"
   }
 }
