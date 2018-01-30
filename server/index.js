@@ -1,11 +1,13 @@
 const express = require('express');
 const router = require('./router')
+const constants = require('./constants')
 const app = express();
 
 router(app);
 
-const server = app.listen(5000, () => {
-	const port = server.address().port;
+const port = constants.port;
+
+const server = app.listen(port, () => {
 	console.log('server listening at port %s', port )
 });
 
