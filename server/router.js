@@ -24,8 +24,20 @@ passport.use(
 		clientID: constants.googleClientID,
 		clientSecret: constants.googleClientSecret,
 		callbackURL: '/auth/google/callback'
-	}, (acessToken) => {
-		console.log(accessToken)
+	}, 
+
+	// this RETURNS a function after the strategy is in place, triggered during the second 
+	// strategy callback for google, more explanation below
+	(accessToken, refreshToken, profile, done) => {
+
+		// this allows us to modify the users account on their behalf
+		console.log('access token', accessToken);
+
+		// refreshes the access token 
+		console.log('refresh token', refreshToken);
+
+		// returns the user profile information, to store in MongoDB
+		console.log('profile', profile);
 	})
 );
 
@@ -39,6 +51,7 @@ module.exports = function(app){
 	})
 
 	// this should be refactored into its own file module or improved syntax structure
+	// this re-directs the user to the google signin application
 	app.get(
 		// route
 		'/auth/google', 
@@ -46,11 +59,22 @@ module.exports = function(app){
 		// middleware used between the request and the response
 		// passport callback asking the request to be authenticated with the google strategy
 		// this strategy was created above with the passport.use callback
+		// the entire purpose of this method is to send the authentication request to google
+		// then when the user signs in send them back to the callbackURL with the access code
+		// which contains the user profile and email data identifiers
 		passport.authenticate('google', {
 			
 			// requesting the profile, and email information from the users account
 			scope: ['profile', 'email']
-		}), (req, res) => {
+		})
+	)
 
-	})
+	// this will handle the route for when the user gets to the 'auth/google/callback' URL
+	app.get('/auth/google/callback', 
+
+		// uses our strategy created before, since it's already been utilized 
+		// this returns the SECOND callback of the strategy which at the moment 
+		// consol logs a token
+		passport.authenticate('google')
+	)
 };
