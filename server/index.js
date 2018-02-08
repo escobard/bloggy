@@ -1,11 +1,17 @@
 const express = require('express');
-const router = require('./router')
-const constants = require('./constants')
+
+const routes = require('./routes');
+const portRoute = require('./constants/routes').port;
+const authRoutes = require('./routes/authRoutes');
+// this wont be used here, we just need the passport services to run with the server
+// so we include it like so
+require('./services/passport');
+
 const app = express();
 
-router(app);
+routes(app);
 
-const port = constants.port;
+const port = portRoute;
 
 const server = app.listen(port, () => {
 	console.log('server listening at port %s', port )

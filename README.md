@@ -1,24 +1,7 @@
 # EngBook - react && react-redux && express && mongodb 
 
-This repository contains all the files for an application built to showcase material learned from the combination of the following full stack javascript courses on Udemy:
+This repository contains all the files for an application built to showcase an application intended to showcase my expertise with the following technologies:
 
-- [Node with React: Fullstack Web Development] (https://www.udemy.com/node-with-react-fullstack-web-development)
-- [The Complete Developers Guide to MongoDB] (https://www.udemy.com/the-complete-developers-guide-to-mongodb)
-- [Server Side Rendering with React and Redux] (https://www.udemy.com/server-side-rendering-with-react-and-redux)
-
-## Project Criteria
-
-The main purpose of this application is to provide the following features:
-	
-	- A blog social network, including:
-		+ User to user profiles and a basic chat system.
-		+ User dashboard, with metrics.
-			* Admin / premium content dashboard features.
-			* Currency system, and payment gateway
-		+ User email system to invite users to join the blog (fremium - first 5 free)
-
-This application will be built to showcase the following technologies and practices:
-	
 	- Consistent data retention with MongoDB / Mongoose
 	- REST API to manage HTTP requests with Express / Node
 	- Render the client interface with React / Redux
@@ -35,7 +18,85 @@ Possible future technologies include:
 	- Server Side Rendering for optimized performance
 	- React Native application for native devices
 
+## Project Criteria
+
+The main purpose of this application is to provide the following features:
+	
+	- A blog social network, including:
+		+ User to user profiles and a basic chat system.
+		+ User dashboard, with metrics.
+			* Admin / premium content dashboard features.
+				= leaderboards and activity trackers for:
+					- github activity
+					- linkedin
+					- crypto currencies
+					- stocks 
+			* Currency system, and payment gateway
+		+ User email system to invite users to join the blog (fremium - first 5 free)
+
 (Expand upon criteria in a later version)
+
+### Delivery
+
+Phase 1 - v0.05-v1.0
+
+- Base features:
+	+ user login / creation with:
+		- google+
+		- manual user creation
+	+ user profile
+		- personal stats
+			+ to be expanded with premium addons
+		- blog posts (forum may be added on phase 1 if not on phase 2)
+	+ user activity board
+	+ home page with widgets:
+		+ trending topics
+			= based on industry
+				* at least 3 industries on phase 1, more on phase 2
+				* users can comment on trending topics
+		+ most popular posts
+		+ user with mosts posts
+		+ user with most contributions
+	+ user premium service - paid for:
+		- mass email to email list
+		- github / portfolio area creation ( may move to phase 2)
+
+- Prod & Dev:
+	- Dev features:
+		- cont. development with nodemon on server
+		- cont. development with browsersync on client
+	- Prod features:
+		- deployment to heroku
+			- continous dev with heroku (may move to phase 2)
+		- gulp pipeline:
+			- minimization of code
+			- sass compression
+
+- Testing:
+	- client:
+		- jest for react components
+		- enzyme for react reducers / actions
+	- sever:
+		- enzyme / superset for express	
+	- data:
+		- (not sure how to test mongo yet)
+
+
+Phase 2 - v1.0-v2.0
+
+- Each version will add an additional feature to the application, including:
+	- twitter authentication, twitter feed, twitter widgets
+	- linkedin authentication, feed, and widget
+	- facebook authentication, feed, and widget
+	- other authentications, feeds and widgets
+	- trade charts, calculators, trackers
+	- user to user chat
+	- blog updated to forum if not in phase 1:
+		- limited base user features
+		- premium user features + services
+
+- Each version will expand on prod, dev, and testing pipelines.
+- And much more...
 
 ## Demo
 
@@ -162,6 +223,13 @@ To run this application on production:
 
 (add other maj libraries here)
 
+## Inspired by the material from
+
+[Node with React: Fullstack Web Development] (https://www.udemy.com/node-with-react-fullstack-web-development)
+
+[The Complete Developers Guide to MongoDB] (https://www.udemy.com/the-complete-developers-guide-to-mongodb)
+
+[Server Side Rendering with React and Redux] (https://www.udemy.com/server-side-rendering-with-react-and-redux)
 
 ## Contribution
 
