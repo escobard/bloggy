@@ -1,10 +1,10 @@
-# Bloggy - react && react-redux && express && mongodb 
+# EngBook - react && react-redux && express && mongodb 
 
 This repository contains all the files for an application built to showcase material learned from the combination of the following full stack javascript courses on Udemy:
 
-	- [Node with React: Fullstack Web Development] (https://www.udemy.com/node-with-react-fullstack-web-development)
-	- [The Complete Developers Guide to MongoDB] (https://www.udemy.com/the-complete-developers-guide-to-mongodb)
-	- [Server Side Rendering with React and Redux] (https://www.udemy.com/server-side-rendering-with-react-and-redux)
+- [Node with React: Fullstack Web Development] (https://www.udemy.com/node-with-react-fullstack-web-development)
+- [The Complete Developers Guide to MongoDB] (https://www.udemy.com/the-complete-developers-guide-to-mongodb)
+- [Server Side Rendering with React and Redux] (https://www.udemy.com/server-side-rendering-with-react-and-redux)
 
 ## Project Criteria
 
@@ -20,8 +20,8 @@ The main purpose of this application is to provide the following features:
 This application will be built to showcase the following technologies and practices:
 	
 	- Consistent data retention with MongoDB / Mongoose
-	- API to manage server / client requests with Express / Node
-	- Render the client side with React / Redux
+	- REST API to manage HTTP requests with Express / Node
+	- Render the client interface with React / Redux
 	- Testing of server, data, and client applications with Mocha / Enzyme / Jest
 	- Manage user Authentication with oAuth / Passport 
 	- Handle payments with Stripe
@@ -53,7 +53,7 @@ To download and install, please follow the instructions below.
 
 Clone the repository from: 
 ```
-$ git clone https://github.com/escobard/bloggy.git
+$ git clone https://github.com/escobard/engbook.git
 ```
 
 Install NPM dependencies:
@@ -62,6 +62,16 @@ $ npm install (or yarn install)
 ```
 
 (expand on server installation, etc)
+
+## API Keys
+
+For the google oauth API, create your API key from the API console here: https://console.developers.google
+```
+	- search for the google+ 
+	- create oauth credentials
+	- add cookie restrictions to the API key
+	- place within constants/index.js
+```
 
 ## Usage
 

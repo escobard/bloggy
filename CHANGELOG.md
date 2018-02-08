@@ -1,4 +1,4 @@
-# CHANGELOG - Bloggy - react && react-redux && express && mongodb 
+# CHANGELOG - EngBook - react && react-redux && express && mongodb 
 
 ## v0.1
 	TODO:
