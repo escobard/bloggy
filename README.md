@@ -65,6 +65,7 @@ $ npm install (or yarn install)
 
 ## API Keys
 
+( to split documentation into a wiki later, adding API key docs)
 For the google oauth API, create your API key from the API console here: https://console.developers.google
 ```
 	- search for the google+ 
@@ -75,10 +76,18 @@ For the google oauth API, create your API key from the API console here: https:/
 
 ## Usage
 
-To run this application locally for development, use the following commands:
+### Server Side
+
+Within the parent directory, type the following command to initiate the node server:
 
 ```
-$ npm start (or yarn start)
+$ node server
+```
+
+To test the server components, type the following command within the parent directory:
+
+```
+$ cd server && npm test
 ```
 
 (expand on production installation, etc)
