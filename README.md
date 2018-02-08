@@ -78,16 +78,32 @@ For the google oauth API, create your API key from the API console here: https:/
 
 ### Server Side
 
-Within the parent directory, type the following command to initiate the node server:
+All these commands are assuming you are within the server directory. To access the server directory from the parent directory use the following command:
+
+```
+$ cd server
+```
+
+#### Development
+
+To initiate normal server runtime:
 
 ```
 $ node server
 ```
 
-To test the server components, type the following command within the parent directory:
+To initiate nodemon for continous server development:
 
 ```
-$ cd server && npm test
+$ npm run dev
+```
+
+#### Testing
+
+To test the server components, type the following command :
+
+```
+$ npm test
 ```
 
 (expand on production installation, etc)
