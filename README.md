@@ -116,16 +116,33 @@ To run this application on production:
 
 ## Most Recent Update - v0.05
 
+## v0.15
+	TODO:
+		- Add MongoDB schemas for users.
+		- Add cookie authentication and authentication handlers.
+		- Begin considering how to implement manual user creation.
+		FOR NEXT VERSION:
+			- Refactor, tests, and NPM package command cleanup to run from parent directory.
+
+## v0.1
+	COMPLETED:
+		- Add Google OAuth API.
+		- Begin considering how to implement manual user creation.
+
 ## v0.05
 	COMPLETED:
 		- Add Express basic server
 		- Hook up base application to Heroku for production
 		- Create base tests for Express
 
-## Todo's - v0.1
+## To Do's - v0.15
 	TODO:
-		- Add Google OAuth API.
+		- Add MongoDB schemas for users.
+		- Add cookie authentication and authentication handlers.
 		- Begin considering how to implement manual user creation.
+		FOR NEXT VERSION:
+			- Refactor, tests, and NPM package command cleanup to run from parent directory.
+
 
 ## Known Bugs
 
