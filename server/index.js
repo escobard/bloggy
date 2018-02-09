@@ -1,20 +1,24 @@
 const express = require('express');
+const mongoose = require('mongoose');
 
 const routes = require('./routes');
+const mongoURI = require('./constants/config').mongoURI;
 const portRoute = require('./constants/routes').port;
-const authRoutes = require('./routes/authRoutes');
+
 // this wont be used here, we just need the passport services to run with the server
 // so we include it like so
 require('./services/passport');
+
+// may need to refactor this later into the models/index.js file for consistency
+// more on connecting to the mongodb API here: http://docs.mlab.com/connecting/#connect-string
+mongoose.connect(mongoURI)
 
 const app = express();
 
 routes(app);
 
-const port = portRoute;
-
-const server = app.listen(port, () => {
-	console.log('server listening at port %s', port )
+const server = app.listen(portRoute, () => {
+	console.log('server listening at port %s', portRoute)
 });
 
 module.exports = server;

@@ -1,15 +1,15 @@
 # CHANGELOG - EngBook - react && react-redux && express && mongodb 
 
-## v0.2-chores
+## v0.2-chores-manual-user
 	TODO:
 		- Refactor, tests, and NPM package command cleanup to run from parent directory.
+		- add manual user server side code, potentially include JWT tokens
 		- Create wiki for the repository, and start fragmenting README.md
 
 ## v0.15-user-schemas
 	TODO:
 		- Add MongoDB schemas for users.
 		- Add cookie authentication and authentication handlers.
-		- Begin considering how to implement manual user creation.
 
 
 ## v0.1-google-auth

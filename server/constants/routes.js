@@ -3,4 +3,4 @@ module.exports={
 	root: '/',
 	googleAuth: '/auth/google',
 	googleAuthCallback: '/auth/google/callback',
-}
+}	

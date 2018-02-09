@@ -159,6 +159,13 @@ To initiate nodemon for continous server development:
 $ npm run dev
 ```
 
+
+To initiate the database:
+
+```
+The user must either host the database locally, (to expand on local later) or host the DB through [https://mlab.com/]
+```
+
 #### Testing
 
 To test the server components, type the following command :

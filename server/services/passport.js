@@ -3,8 +3,8 @@ const passport = require('passport');
 // this loads our strategy, in this case Google
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
-const config = require('../constants/config');
-
+const keys = require('../constants/config');
+const googleAuthCallback = require('../constants/routes').googleAuthCallback
 
 // tells passport to use a NEW GoogleStrategy method every time
 /*
@@ -22,9 +22,9 @@ passport.use(
 	// this is the identifier called upon with the passport.authenticate callback within the
 	// route handler module
 	new GoogleStrategy({
-		clientID: config.googleClientID,
-		clientSecret: config.googleClientSecret,
-		callbackURL: '/auth/google/callback'
+		clientID: keys.googleClientID,
+		clientSecret: keys.googleClientSecret,
+		callbackURL: googleAuthCallback
 	}, 
 
 	// this RETURNS a function after the strategy is in place, triggered during the second 
