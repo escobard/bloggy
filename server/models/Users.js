@@ -11,7 +11,10 @@ const userSchema = new Schema({
 	// as this is an object, we want a key and a value
 	// the key can be anything, should be consistent
 	// the value's data type MUST be declared
-	googleId: String
+	googleId: String,
+
+	// adding an email field in preparation for multiple auths
+	email: String
 })
 
 // this creates the new collection (mongoDB term) by using the model (mongoose term) callback of

@@ -1,25 +1,25 @@
-const express = require('express');
+const express = require("express")
 
-const routes = require('./routes');
-const portRoute = require('./constants/routes').port;
+const routes = require("./routes")
+const portRoute = require("./constants/routes").port
+
+// requires mongoose init file from to connect to mongodb at runtime
+require("./models")
 
 // this wont be used here, we just need the passport services to run with the server
 // so we include it like so
 // requires passport to start passport service at runtime
-require('./services/passport');
+require("./services/passport")
 
-// requires mongoose init file from to connect to mongodb at runtime
-require('./models')
+const app = express()
 
-const app = express();
-
-routes(app);
+routes(app)
 
 const server = app.listen(portRoute, () => {
-	console.log('server listening at port %s', portRoute)
-});
+	console.log("server listening at port %s", portRoute)
+})
 
-module.exports = server;
+module.exports = server
 
 /* 
 
