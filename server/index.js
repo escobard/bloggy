@@ -1,17 +1,15 @@
 const express = require('express');
-const mongoose = require('mongoose');
 
 const routes = require('./routes');
-const mongoURI = require('./constants/config').mongoURI;
 const portRoute = require('./constants/routes').port;
 
 // this wont be used here, we just need the passport services to run with the server
 // so we include it like so
+// requires passport to start passport service at runtime
 require('./services/passport');
 
-// may need to refactor this later into the models/index.js file for consistency
-// more on connecting to the mongodb API here: http://docs.mlab.com/connecting/#connect-string
-mongoose.connect(mongoURI)
+// requires mongoose init file from to connect to mongodb at runtime
+require('./models')
 
 const app = express();
 

@@ -220,23 +220,23 @@ To run this application on production:
 
 [React](https://facebook.github.io/react/)
 
-[Redux] (http://redux.js.org/docs/introduction/)
+[Redux](http://redux.js.org/docs/introduction/)
 
-[Node] (https://nodejs.org/en/)
+[Node](https://nodejs.org/en/)
 
-[Express] (https://expressjs.com/)
+[Express](https://expressjs.com/)
 
-[MongoDB] (https://www.mongodb.com/)
+[MongoDB](https://www.mongodb.com/)
 
 (add other maj libraries here)
 
 ## Inspired by the material from
 
-[Node with React: Fullstack Web Development] (https://www.udemy.com/node-with-react-fullstack-web-development)
+[Node with React: Fullstack Web Development](https://www.udemy.com/node-with-react-fullstack-web-development)
 
-[The Complete Developers Guide to MongoDB] (https://www.udemy.com/the-complete-developers-guide-to-mongodb)
+[The Complete Developers Guide to MongoDB](https://www.udemy.com/the-complete-developers-guide-to-mongodb)
 
-[Server Side Rendering with React and Redux] (https://www.udemy.com/server-side-rendering-with-react-and-redux)
+[Server Side Rendering with React and Redux](https://www.udemy.com/server-side-rendering-with-react-and-redux)
 
 ## Contribution
 
