@@ -17,13 +17,65 @@ passport.use(
 			callbackURL: googleAuthCallback
 		},
 		(accessToken, refreshToken, profile, done) => {
-			new User({
-				googleId: profile.id,
+			User.findOne({
 				email: profile.emails[0].value
-			}).save()
+			})
+				.then(existingUser => {
+					if (existingUser) {
+						// checks again to ensure the account's googleId doesn't already exist
+						// for cases when the user changes their email within their google account
+						// I should test this scenario on production
+						User.findOne({
+							googleId: profile.id
+						})
+							.then(googleUser => {
+								if (googleUser) {
+									// if the account already has a googleId, end the loop
+
+									// done here closes the loop, expects two arguments:
+									// first is an error, in this case null since its a succesful promise
+									// second is the response object, which in this case is our found user
+									// here either googleUser or existingUser return the same object
+									done(null, existingUser)
+								} else {
+									// if the account does not, we have to add the googleId to the user
+									// then handle conditional routing logic for these cases here - I envision this area
+									// containing a message to the user, encouraging them to log in again with
+									// google auth, then route then to a screen to add a password to their account
+								}
+							})
+							.catch(err => console.log(error))
+					} else {
+						// if no user exists, create a new User instance
+						new User({
+							googleId: profile.id,
+							email: profile.emails[0].value
+						})
+							.save()
+							// after the record is saved, end the strategy, returning the user record
+							.then(user => done(null, user))
+							.catch(err => console.log(error))
+					}
+				})
+				.catch(err => console.log(error))
 		}
 	)
 )
+
+// this function will create our cookie, from the user data
+// the first argument can be called anything, but is the returned response from the .use() method below
+// in this case, once the .done() method is called, it passes the response into passport,
+// and here is where we fetch it
+passport.serializeUser((user, done) => {
+	// first argument here is the error handler
+	// second argument is the IDENTIFYING piece of information within the user instance
+	// we will be using the user.id value created automatically by MongoDB for each instance, for consistency
+	done(null, user.id)
+})
+
+// this function decodes the cookie, and returns the user instance
+// first argument is the response object from .serializeUser(), in this case our user.id
+passport.deserializeUser((id, done) => {})
 
 /*
 const passport = require("passport")
@@ -69,7 +121,7 @@ passport.use(
 		// this RETURNS a function after the strategy is in place, triggered during the second
 		// strategy callback for google, more explanation below
 		(accessToken, refreshToken, profile, done) => {
-			// this allows us to modify the users account on their behalf
+			/* this allows us to modify the users account on their behalf
 			console.log("access token", accessToken)
 
 			// refreshes the access token
@@ -89,6 +141,52 @@ passport.use(
 
 			// we then SAVE the model class to our database's collection, we need to use the .save command
 			new User({googleId: profile.id, email: profile.emails[0].value}).save() 
+
+			
+			//the .findOne method queries the data for the specified collection, in this case User
+			User.findOne({
+				// in the lesson we use the googlId as the query point for the user account
+				// since I'll be utilizing multiple auth methods, we will use the email value
+				email: profile.emails[0].value
+			})
+				// most of the server logic is handled with promises via async requests, remember that
+				// most of these functions expect a .then() to handle the promise response
+				// for the course, we will first use promises but then utilize 2017 handlers to improve
+				// the syntax
+				.then(existingUser => {
+					if (existingUser) {
+						// checks again to ensure the account's googleId doesn't already exist
+						// for cases when the user changes their email within their google account
+						// I should test this scenario on production
+						User.findOne({
+							googleId: profile.id
+						}).then(googleUser => {
+							if (googleUser) {
+								// if the account already has a googleId, end the loop
+
+								// done here closes the loop, expects two arguments:
+								// first is an error, in this case null since its a succesful promise
+								// second is the response object, which in this case is our found user
+								// here either googleUser or existingUser return the same object
+								done(null, existingUser)
+							} else {
+								// if the account does not, we have to add the googleId to the user
+								// then handle conditional routing logic for these cases here - I envision this area
+								// containing a message to the user, encouraging them to log in again with
+								// google auth, then route then to a screen to add a password to their account
+							}
+						})
+					} else {
+						// if no user exists, create a new User instance
+						new User({
+							googleId: profile.id,
+							email: profile.emails[0].value
+						})
+							.save()
+							// after the record is saved, end the strategy, returning the user record
+							.then(user => done(null, user))
+					}
+				})
 		}
 	)
 )
