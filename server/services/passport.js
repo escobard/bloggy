@@ -75,7 +75,13 @@ passport.serializeUser((user, done) => {
 
 // this function decodes the cookie, and returns the user instance
 // first argument is the response object from .serializeUser(), in this case our user.id
-passport.deserializeUser((id, done) => {})
+passport.deserializeUser((id, done) => {
+	// this searches through the User collection, and finds users by id
+	User.findById().then(user => {
+		// then returns the user as the response with .done()
+		done(null, user)
+	})
+})
 
 /*
 const passport = require("passport")
