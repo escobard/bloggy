@@ -77,7 +77,7 @@ passport.serializeUser((user, done) => {
 // first argument is the response object from .serializeUser(), in this case our user.id
 passport.deserializeUser((id, done) => {
 	// this searches through the User collection, and finds users by id
-	User.findById().then(user => {
+	User.findById(id).then(user => {
 		// then returns the user as the response with .done()
 		done(null, user)
 	})

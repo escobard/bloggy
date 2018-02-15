@@ -1,3 +1,26 @@
+const passport = require("passport")
+
+const googleAuth = require("../constants/routes").googleAuth
+const googleAuthCallback = require("../constants/routes").googleAuthCallback
+
+module.exports = function(app) {
+	app.get(
+		googleAuth,
+		passport.authenticate("google", {
+			scope: ["profile", "email"]
+		})
+	)
+
+	app.get(googleAuthCallback, passport.authenticate("google"))
+
+	// returns our user after cookie has been deserialized
+	app.get("/api/current_user", (req, res) => {
+		console.log("USERDATA", req.user)
+		res.send(req.user)
+	})
+}
+
+/* 
 const passport = require('passport');
 
 const googleAuth = require('../constants/routes').googleAuth
@@ -33,3 +56,6 @@ module.exports = function(app) {
 	)
 };
 
+
+
+*/
