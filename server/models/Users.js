@@ -14,7 +14,9 @@ const userSchema = new Schema({
 	googleId: String,
 
 	// adding an email field in preparation for multiple auths
-	email: String
+	email: String,
+
+	name: String
 })
 
 // this creates the new collection (mongoDB term) by using the model (mongoose term) callback of
