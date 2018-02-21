@@ -9,20 +9,21 @@ mongoose.Promise = global.Promise
 before(done => {
 	// connects to our testing DB - set variable here to testing URL
 	mongoose.connect(testDB)
-	done()
-})
-
-beforeEach(done => {
 	// this grabs our users collection within the DB
 	mongoose.connection.collections.users
 		// this drops the collection every time
-		.drop(() => {
-			done()
-		})
+		.drop(() => {})
+	done()
 })
 
 // refactor this to another file in the future
 describe("Tests database connection and collections", () => {
+	const joe = new User({
+		name: "Joe",
+		email: "test@test.com",
+		googleId: "random-chars"
+	})
+
 	it("Connection is open", done => {
 		mongoose.connection.on("open", () => {})
 		done()
@@ -32,11 +33,18 @@ describe("Tests database connection and collections", () => {
 		done()
 	})
 	it("saves a user ", done => {
-		const joe = new User({ name: "Joe" })
 		joe
 			.save()
 			.then(() => {
 				assert(!joe.isNew)
+				done()
+			})
+			.catch(error => console.log("Error creating user: ", error))
+	})
+	it("user id matches", done => {
+		User.findOne({ _id: joe.id })
+			.then(user => {
+				assert(user.name === "Joe")
 				done()
 			})
 			.catch(error => console.log("Error creating user: ", error))
