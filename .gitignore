@@ -1,5 +1,6 @@
 server/node_modules
 server/constants/config.js
 client/node_modules
+tests/config.js
 bundle.js
 npm-debug.log
