@@ -182,34 +182,30 @@ To run this application on production:
 
 - Proper production instructions coming later
 
-## Most Recent Update - v0.05
+## Most Recent Update - v0.15
 
-## v0.15
+## v0.15-user-schemas
 	TODO:
 		- Add MongoDB schemas for users.
 		- Add cookie authentication and authentication handlers.
-		- Begin considering how to implement manual user creation.
-		FOR NEXT VERSION:
-			- Refactor, tests, and NPM package command cleanup to run from parent directory.
 
-## v0.1
+
+## v0.1-google-auth
 	COMPLETED:
 		- Add Google OAuth API.
 		- Begin considering how to implement manual user creation.
 
-## v0.05
+## v0.05-server
 	COMPLETED:
 		- Add Express basic server
 		- Hook up base application to Heroku for production
 		- Create base tests for Express
 
-## To Do's - v0.15
+## To Do's - v0.2-chores
 	TODO:
-		- Add MongoDB schemas for users.
-		- Add cookie authentication and authentication handlers.
-		- Begin considering how to implement manual user creation.
-		FOR NEXT VERSION:
-			- Refactor, tests, and NPM package command cleanup to run from parent directory.
+		- Refactor, tests, and NPM package command cleanup to run from parent directory.
+		- add manual user server side code, potentially include JWT tokens
+		- Create wiki for the repository, and start fragmenting README.md
 
 
 ## Known Bugs
