@@ -1,20 +1,19 @@
-module.exports = function(server, request){
-  describe('Testing routes', function () {
-
+module.exports = function(server, request) {
+  describe("Testing routes", function() {
     // requires main server before each test
-    beforeEach(function () {
-      server;
-    });
+    beforeEach(function() {
+      server
+    })
 
     // restarts after each test
-    afterEach(function () {
-      server.close();
-    });
+    afterEach(function() {
+      server.close()
+    })
 
-    it('responds to /', function (done) {
-    request(server)
-      .get('/')
-      .expect({hi: 'there'}, done);
-    });
-  });
+    it("responds to /", function(done) {
+      request(server)
+        .get("/")
+        .expect({ hi: "there" }, done)
+    })
+  })
 }

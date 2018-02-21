@@ -57,141 +57,16 @@ Phase 2 - v1.0-v2.0
 
 To download and install, please follow the instructions below.
 
-## Installation
+## Expanded Documentation
 
-(expand on yarn installation, and node.js installation instructions, as well as expo instructions before repository instructions in the future)
+Since this application utilizes several different technologies, the documentation has been split up into different wiki articles to avoid cluttering the main README.md file.
 
-Clone the repository from:
-
-```
-$ git clone https://github.com/escobard/engbook.git
-```
-
-Install NPM dependencies:
-
-```
-$ npm install (or yarn install)
-```
-
-(expand on server installation, etc)
-
-## API Keys
-
-( to split documentation into a wiki later, adding API key docs)
-For the google oauth API, create your API key from the API console here: https://console.developers.google
-
-```
-	- search for the google+
-	- create oauth credentials
-	- add cookie restrictions to the API key
-	- place within constants/index.js
-```
-
-## Usage
-
-### Server Side
-
-All these commands are assuming you are within the server directory. To access the server directory from the parent directory use the following command:
-
-```
-$ cd server
-```
-
-#### Development
-
-To initiate normal server runtime:
-
-```
-$ node server
-```
-
-To initiate nodemon for continous server development:
-
-```
-$ npm run dev
-```
-
-To initiate the database:
-
-```
-The user must either host the database locally, (to expand on local later) or host the DB through [https://mlab.com/]
-```
-
-#### Testing
-
-To test the server components (with continous development as of v0.2), type the following command :
-
-```
-$ npm test
-```
-
-Note that the server components will NOT test unless the database URL has been configured within:
-
-```
-$ tests/config.js
-```
-
-(expand on production installation, etc)
-
-To run this application on production:
-
-* Download the Heroku CLI: [https://devcenter.heroku.com/articles/heroku-cli](https://devcenter.heroku.com/articles/heroku-cli)
-
-* Proper production instructions coming later
-
-## Most Recent Update - v0.15
-
-## v0.15-user-schemas
-
-    TODO:
-    	- Add MongoDB schemas for users.
-    	- Add cookie authentication and authentication handlers.
-
-## v0.1-google-auth
-
-    COMPLETED:
-    	- Add Google OAuth API.
-    	- Begin considering how to implement manual user creation.
-
-## v0.05-server
-
-    COMPLETED:
-    	- Add Express basic server
-    	- Hook up base application to Heroku for production
-    	- Create base tests for Express
-
-## To Do's - v0.2-chores
-
-    TODO:
-    	- Refactor, tests, and NPM package command cleanup to run from parent directory.
-    	- add manual user server side code, potentially include JWT tokens
-    	- Create wiki for the repository, and start fragmenting README.md
-
-## Known Bugs
-
-(expand on bugs)
-
-## Libraries, Frameworks, APIs
-
-[React](https://facebook.github.io/react/)
-
-[Redux](http://redux.js.org/docs/introduction/)
-
-[Node](https://nodejs.org/en/)
-
-[Express](https://expressjs.com/)
-
-[MongoDB](https://www.mongodb.com/)
-
-(add other maj libraries here)
-
-## Inspired by the material from
-
-[Node with React: Fullstack Web Development](https://www.udemy.com/node-with-react-fullstack-web-development)
-
-[The Complete Developers Guide to MongoDB](https://www.udemy.com/the-complete-developers-guide-to-mongodb)
-
-[Server Side Rendering with React and Redux](https://www.udemy.com/server-side-rendering-with-react-and-redux)
+* [Directory](https://github.com/escobard/engbook/wiki)
+* [Installation](https://github.com/escobard/engbook/wiki/Installation)
+* [Usage](https://github.com/escobard/engbook/wiki/Usage)
+* [Changelog](https://github.com/escobard/engbook/wiki/Changelog)
+* [Known bugs](https://github.com/escobard/engbook/wiki/Known-Bugs)
+* [Libraries, Frameworks, APIs](https://github.com/escobard/engbook/wiki/Libraries,-Frameworks,-APIs)
 
 ## Contribution
 
