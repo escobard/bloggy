@@ -1,5 +1,4 @@
 server/node_modules
-server/constants/config.js
 server/constants/config-dev.js
 client/node_modules
 tests/config.js
