@@ -14,7 +14,16 @@ passport.use(
 		{
 			clientID: keys.googleClientID,
 			clientSecret: keys.googleClientSecret,
-			callbackURL: googleAuthCallback
+
+			// a relative path here causes issues on production servers, since it doesn't specify
+			// the need to utilize HTTPS requests - relative paths are better for development versions
+
+			// we could just specify the heroku URL, but instead we could use a more scalable solution
+			callbackURL: googleAuthCallback,
+
+			// this tells google TRUST the heroku servers, and send over HTTPS requests instead of HTTP
+			//
+			proxy: true
 		},
 		(accessToken, refreshToken, profile, done) => {
 			User.findOne({
