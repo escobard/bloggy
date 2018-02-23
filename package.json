@@ -4,11 +4,11 @@
   "description": "blog application using react, redux, express, mongodb",
   "main": "index.js",
   "scripts": {
-    "start": "cd server && node index.js",
-    "start:server": "cd server && node index.js",
-    "test:server": "cd server nodemon --exec mocha -R spec ./tests",
-    "test:dev:server": "cd server nodemon --exec \"mocha -R min ./tests\"",
-    "dev:server": "cd server nodemon index.js",
+    "start": "cd server && npm start",
+    "start:server": "cd server && npm start",
+    "start:dev:server": "cd server && npm run dev",
+    "test": "cd server && npm test",
+    "test:dev:server": "cd server && npm run test dev",
     "start:client": "cd client && yarn start",
     "test:client": "cd client && npm test"
   },
