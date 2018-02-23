@@ -5,11 +5,13 @@
         - add manual user server side code, potentially include JWT tokens
         - set up different environments for prod vs dev
         - clean up file structure
-        - Tests for authenticated routes to be implemented at a later date
+        - tests for authenticated routes to be implemented at a later date
+        - cross browser origin for cookies - if necessary revert back to the single hosting setup
+            + may revert back to original server setup, but will need to address cross domain auth before prod / v1.0
 
 ## v0.3-client-side
 
-    TODO:
+    COMPLETED:
         - set up client side application:
             + webpack server
             + running both front and back servers

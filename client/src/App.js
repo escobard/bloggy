@@ -14,7 +14,8 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
           {
             // we can use the links below since we set up the proxy for the server request
-            // within the package.json file, re-directing the link every time to the server route
+            // within the package.json file, re-directing the link every time to the specified route,
+            // adding the original URL (or the href URL) as an extension to the specified route
           }
           <a href="/auth/google">Sign in with Google</a>
         </p>
