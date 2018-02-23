@@ -2,6 +2,12 @@ const express = require("express")
 const cookieSession = require("cookie-session")
 const passport = require("passport")
 
+// USE THIS FOR CROSS BROWSER ORIGIN RULES - SET UP COOKIE AUTH FOR CROSS DOMAINS
+// const cors = require('cors');
+// utilizes the CORS middleware to allow requests to the server from other domains
+// this allows the CORS principle to be bypassed - you can also set rules for each domain you want to allow bypassing for
+// app.use(cors());
+
 // this may cause some issues, but it's installed for basic HTTP request security
 // protecting most vulnerabilities with express / node.js server runtimes
 const helmet = require("helmet")
