@@ -9,6 +9,28 @@
         - cross browser origin for cookies - if necessary revert back to the single hosting setup
             + may revert back to original server setup, but will need to address cross domain auth before prod / v1.0
 
+## v0.45-frontend-setup-3
+
+    TODO:
+        - Set up router and component animations
+        - Possible set up manual auth with the backend
+        - CSS cleanup for responsive
+        - Refactor of components to use best scalable practices
+
+## v0.4-frontend-setup-2
+
+    TODO:
+        - Finalize front end class setup
+        - Choose CSS library, (material-ui seems best for now, explore options)
+        - Update repo wiki with front end updates
+
+## v0.35-frontend-setup-1
+
+    TODO:
+        - Set up base front end components
+        - Properly sync with server
+        - Add build operations for FE
+
 ## v0.3-client-side
 
     COMPLETED:
