@@ -7,7 +7,21 @@
         - clean up file structure
         - Tests for authenticated routes to be implemented at a later date
 
+## v0.3-client-side
+
+    TODO:
+        - set up client side application:
+            + webpack server
+            + running both front and back servers
+            + routing updates
+            + create app proxy
+            + software architecture improvements
+
 ## v0.25-production-vs-dev
+
+    COMPLETED:
+        - Set up env. variables for prod
+        - Set up conditional handlers to handle prod / dev routes
 
 ## v0.2-chores
 
