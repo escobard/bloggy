@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import { FlatButton, AppBar, Drawer, MenuItem, RaisedButton } from "material-ui"
-import { Link } from "react-router-dom"
+import { FlatButton, AppBar, Drawer, RaisedButton } from "material-ui"
 
 import styles from "./styles.scss"
+import NavItems from "./NavItems"
 
 export default class Header extends Component {
 	constructor(props) {
@@ -13,35 +13,22 @@ export default class Header extends Component {
 		}
 	}
 
-	renderNavItems(items, auth) {
-		return items.map((item, index) => {
-			let link = item === "home" ? "/" : "/" + item
-
-			return (
-				<Link to={link} key={index} className="links">
-					<MenuItem>{item}</MenuItem>
-				</Link>
-			)
-		})
-	}
-
-	// for functions that must utilize the 'this' statement to handle state
-	// use the fat bracket declaration as seen below
 	handleToggle = () => {
 		this.setState({ open: !this.state.open })
 	}
 
 	render() {
+		let {navItems, open} = this.state
 		return (
 			<nav className="navbar navbar-light">
-				<AppBar title="Redux Assesment" onClick={this.handleToggle} />
+				<AppBar title="EngBook" onClick={this.handleToggle} />
 				<Drawer
-					open={this.state.open}
+					open={open}
 					docked={false}
 					onRequestChange={open => this.setState({ open })}
 					className="drawer"
 				>
-					{this.renderNavItems(this.state.navItems)}
+					{NavItems(navItems)}
 				</Drawer>
 			</nav>
 		)

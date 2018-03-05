@@ -8,6 +8,16 @@
         - tests for authenticated routes to be implemented at a later date
         - cross browser origin for cookies - if necessary revert back to the single hosting setup
             + may revert back to original server setup, but will need to address cross domain auth before prod / v1.0
+        - consider adding the following to each user's profile:
+            - A 'service' area, where the eng's most recent work is displayed.
+                + This includes a brief description.
+                + Expanded description if the project is public
+                + Ratings from the client
+                + Link to project (if applicable)
+                + Testimonial / feedback for the service provided
+                    + Option to hide feedback
+                    + Premium options for additional services
+
 
 ## v0.45-frontend-setup-3
 
@@ -26,10 +36,21 @@
 
 ## v0.35-frontend-setup-1
 
+    COMPLETED:
+        - Migrated base structure from redux assesment project, includes the following tech:
+            - SASS bundling with webpack, and base mixins / variables.
+            - Base testing component set up for redux and async request testing
+            - Material UI components for base structure including:
+                - Header
+                - Footer
+                - Routes, and children routes
+                - TODO: Remove legacy action / containers from application before v0.45 is completed
+            - React / Redux working action / reducer structure.
     TODO:
         - Set up base front end components
-        - Properly sync with server
-        - Add build operations for FE
+        - Refactor EVERYTHING to improve scalability including:
+            + Proper use of SASS mixins / variables
+            + Fracture component architecture for improved reusability
 
 ## v0.3-client-side
 

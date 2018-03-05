@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 
-import Header from "./header";
-import Footer from "./footer";
+import Header from "./Header";
+import Footer from "./Footer";
 
 import Leaderboard from "../containers/leaderboard";
-import Home from "../containers/home";
+import Home from "../containers/Home";
 import AddQuestion from "../containers/addQuestion";
 import Question from "../containers/question"
 
