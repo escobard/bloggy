@@ -48,9 +48,12 @@
             - React / Redux working action / reducer structure.
     TODO:
         - Set up base front end components
-        - Refactor EVERYTHING to improve scalability including:
+        - Refactor relevant components to improve scalability including:
             + Proper use of SASS mixins / variables
             + Fracture component architecture for improved reusability
+        - (optional - if not this branch then next):
+            - add jest snapshot testing for base components.
+            - add testing for action creators
 
 ## v0.3-client-side
 
