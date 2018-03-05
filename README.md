@@ -2,13 +2,13 @@
 
 This repository contains all the files for an application built to showcase an application intended to showcase my expertise with the following technologies:
 
-    - Consistent data retention with MongoDB / Mongoose
+    - Consistent data with MongoDB / Mongoose
     - REST API to manage HTTP requests with Express / Node
-    - Render the client interface with React / Redux
+    - Currency transactions handled with the Stripe API
     - Testing of server, data, and client applications with Mocha / Enzyme / Jest
     - Manage user Authentication with oAuth / Passport
-    - Handle payments with Stripe
     - Offline caching with Service Workers / IndexDB / LocalStorage
+    - Client interface built with React / Redux
     - Progressive web application using responsive practices
     - Material design with the Bootstrap / MaterialUI
 

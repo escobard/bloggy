@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "cd server && npm start",
-    "dev": "concurrently \"npm run client \" \"npm run server dev\"",
-    "server": "cd server && npm start",
+    "dev": "concurrently \"npm run client \" \"npm run server\"",
+    "server": "cd server && npm run dev",
     "server:dev": "cd server && npm run dev",
     "test": "cd server && npm test",
     "test:dev:server": "cd server && npm run test dev",

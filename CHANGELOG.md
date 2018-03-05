@@ -22,7 +22,7 @@
     TODO:
         - Finalize front end class setup
         - Choose CSS library, (material-ui seems best for now, explore options)
-        - Update repo wiki with front end updates
+        - Update repo wiki with front end usage commands
 
 ## v0.35-frontend-setup-1
 
