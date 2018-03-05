@@ -2,6 +2,14 @@
 
 // sample mixins - remove the outline-button mixin later, use as sample
 
+@mixin nav-links(){
+    div {
+      &:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+}
+
 @mixin outline-button($width: 100%, $pricing-highlighted-cta: false, $inverted-cta: false) {
   @if $width != 'no-width' {
     width: $width;

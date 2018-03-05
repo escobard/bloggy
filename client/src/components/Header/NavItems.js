@@ -1,5 +1,5 @@
 import React from "react"
-import {MenuItem } from "material-ui"
+import { MenuItem } from "material-ui"
 import { Link } from "react-router-dom"
 
 // this should be refactored into a separate component

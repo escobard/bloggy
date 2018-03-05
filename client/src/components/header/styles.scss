@@ -1,6 +1,9 @@
-nav.navbar.navbar-light {
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+nav.navbar {
 	padding: 0;
-	margin-bottom: 2rem;
+	margin-bottom: $space-xlrg;
 	h1 {
 		text-align: center;
 	}
@@ -16,10 +19,6 @@ nav.navbar.navbar-light {
 	}
 	a.links {
 		text-transform: capitalize;
-		div {
-			&:nth-child(2) {
-				margin-top: 0;
-			}
-		}
+		@include nav-links()
 	}
 }
