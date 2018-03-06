@@ -1,28 +1,20 @@
 import React, { Component } from 'react'
 import App from '../../src/components/app';
 import renderer from 'react-test-renderer';
+import configureStore from 'redux-mock-store'
 
-describe('App', () => {
-  describe('snapshots', () => {
-    it('renders one variant', () => {
-      const tree = renderer.create(
-        <App />
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
+describe('App - with mock state', () => {
+	const initialState = {output:100}
+	const mockStore = configureStore()
+	let store,container
+
+    beforeEach(()=>{
+        store = mockStore(initialState)
+        container = shallow(<App store={store} /> )  
+    })
+
+    it('+++ render the App component', () => {
+       expect(container.length).toEqual(1)
     });
 
-    it('renders another variant', () => {
-      const tree = renderer.create(
-        <App />
-      ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
-  });
-});
-
-test('render a label', () => {
-    const wrapper = shallow(
-        <App />
-    ).toJSON();
-    expect(wrapper).toMatchSnapshot();
 });
