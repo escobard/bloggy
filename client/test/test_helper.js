@@ -5,6 +5,7 @@
 
 // for component level rendering, we will be using jest to save time - more on that later
 
+/*
 import _$ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -41,3 +42,4 @@ $.fn.simulate = function(eventName, value) {
 };
 
 export {renderComponent, expect};
+*/

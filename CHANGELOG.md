@@ -17,6 +17,11 @@
                 + Testimonial / feedback for the service provided
                     + Option to hide feedback
                     + Premium options for additional services
+        - Jest snapshot testing:
+            - currently broken with the material-ui library - awaiting for future versions.
+            - component level testing will not be completed until a solution is found by the community
+            - add jest snapshot testing for base components.
+            - add testing for action creators
 
 
 ## v0.45-frontend-setup-3
@@ -51,9 +56,7 @@
         - Refactor relevant components to improve scalability including:
             + Proper use of SASS mixins / variables
             + Fracture component architecture for improved reusability
-        - (optional - if not this branch then next):
-            - add jest snapshot testing for base components.
-            - add testing for action creators
+
 
 ## v0.3-client-side
 
