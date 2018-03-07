@@ -1,6 +1,10 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 
+/* 
+- Route to handle survey feature.
+*/
+
 class Survey extends Component {
 
   render() {

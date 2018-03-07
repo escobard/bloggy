@@ -3,22 +3,21 @@ import { connect } from "react-redux"
 
 import { addUser } from "../actions"
 import ListItem from "../components/leaderboardItem"
+import { dashboardRoutes } from "../constants"
 
 class Dashboard extends Component {
 	componentWillMount() {
 		let { questions, addUser } = this.props
 		addUser(questions)
 	}
-	renderListItem(list) {
-		return list.map((item, index) => {
-			return <ListItem key={index} users={item} />
+	renderListItem(routes) {
+		return routes.map((route, index) => {
+			return <ListItem key={index} route={route} />
 		})
 	}
 
 	render() {
-		let list = Object.values(this.props.users)
-		console.log(this.props.users)
-		return <div>{this.renderListItem(list)}</div>
+		return <div>{this.renderListItem(dashboardRoutes)}</div>
 	}
 }
 

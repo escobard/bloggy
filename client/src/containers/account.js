@@ -1,6 +1,11 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 
+/* 
+  - User account:
+    - This will contain user information, and allow users to edit their profile info.
+*/
+
 class Account extends Component {
 
   render() {

@@ -1,30 +1,17 @@
 import React, { Component } from "react"
 import {
-	Card,
-	CardActions,
-	CardHeader,
-	CardText,
-	FlatButton
+	RaisedButton
 } from "material-ui"
 
 import styles from "./styles.scss"
 
 import { aNumber } from "./utils"
 
-export default function(user) {
-	let { avatarURL, answers, questions, name } = user.users
-	console.log(user)
-
-	let qNumber = questions.length
-
+export default function(routeObject) {
+	let {img, route} = routeObject.route
 	return (
-		<Card className="leaderboard-item">
-			<CardHeader title={name} avatar={avatarURL} />
-			<CardText>
-				Questions: {qNumber}
-				<br />
-				Answers: {aNumber(answers)}
-			</CardText>
-		</Card>
+    	<RaisedButton className="dashboard-cta col-md-12">
+    		{route}
+    	</RaisedButton>
 	)
 }

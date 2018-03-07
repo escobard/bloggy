@@ -121,3 +121,22 @@ export let questions = {
     }
   }
 }
+
+export const dashboardRoutes =[
+  {
+    route: 'account', 
+    img: '',
+  },
+  {
+    route: 'profile', 
+    img: '',
+  },
+  {
+    route: 'survey', 
+    img: '',
+  },
+  {
+    route: 'blog', 
+    img: '',
+  }
+]

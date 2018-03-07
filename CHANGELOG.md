@@ -48,6 +48,7 @@
             - Dashboard - leave these as barebones:
                 - User account:
                     - This will contain user information, and allow users to edit their profile info.
+                - User Profile:    
                     - Option to go to the user page in the future, displaying user account with several widgets.
                         + Add a widget to display survey data as testimonials.
                             = add option to disable displaying testimonials.

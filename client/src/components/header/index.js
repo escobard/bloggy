@@ -22,7 +22,7 @@ export default class Header extends Component {
 		let {navItems, open} = this.state
 		return (
 			<nav className="navbar navbar-light">
-				<AppBar className="appbar" title={<img className="logo" src="./src/static/logo.jpg" alt="EngBook Logo"/>} onClick={this.handleToggle} />
+				<AppBar className="appbar" title={<img className="logo" src="/src/static/logo.jpg" alt="EngBook Logo"/>} onClick={this.handleToggle} />
 				<Drawer
 					open={open}
 					docked={false}
