@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import { addUser } from "../actions"
 import ListItem from "../components/leaderboardItem"
 
-class Leaderboard extends Component {
+class Dashboard extends Component {
 	componentWillMount() {
 		let { questions, addUser } = this.props
 		addUser(questions)
@@ -26,4 +26,4 @@ function mapStateToProps({ questions, users }) {
 	return { questions, users }
 }
 
-export default connect(mapStateToProps, { addUser })(Leaderboard)
+export default connect(mapStateToProps, { addUser })(Dashboard)

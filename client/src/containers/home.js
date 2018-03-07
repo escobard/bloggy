@@ -1,9 +1,6 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 
-import { Tabs, Tab } from "material-ui/Tabs"
-import SwipeableViews from "react-swipeable-views"
-
 import { selectQuestion } from "../actions"
 import filterQuestions from "../components/filterQuestions"
 
@@ -35,16 +32,6 @@ class Home extends Component {
       <div>
       <h1 className="title">A social media for Software Engineers</h1>
         <a href="/auth/google">Sign in with Google</a>
-        <Tabs onChange={handleChange} value={slideIndex}>
-          <Tab label="Unanswered" value={0} />
-          <Tab label="Answered" value={1} />
-        </Tabs>
-        <SwipeableViews index={slideIndex} onChangeIndex={handleChange}>
-          <div id="slide-1">{filterQuestions(qArray, selectQuestion)}</div>
-          <div id="slide-2">
-            {filterQuestions(qArray, selectQuestion, true)}
-          </div>
-        </SwipeableViews>
       </div>
     )
   }

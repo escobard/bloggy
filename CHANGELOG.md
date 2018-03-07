@@ -36,12 +36,34 @@
             - Commands - make a new wiki.
 
 ## v0.4-frontend-setup-2
-
+    
+    COMPLETED:
+        - Choose CSS library, (material-ui seems best for now, explore options)
+            + utilizing material-ui, with sass to overwrite styles
     TODO:
         - Finalize front end class setup
-        - Choose CSS library, (material-ui seems best for now, explore options)
         - Update repo wiki with front end usage commands
         - Explore expandable / retractable menu options
+        - Create base routes for:
+            - Dashboard - leave these as barebones:
+                - User account:
+                    - This will contain user information, and allow users to edit their profile info.
+                    - Option to go to the user page in the future, displaying user account with several widgets.
+                        + Add a widget to display survey data as testimonials.
+                            = add option to disable displaying testimonials.
+                -  Feedback Survey:
+                    - Route to handle survey feature.
+                - Blog:
+                    - Allow the user to create a basic post:
+                        - Final version will have full forum.
+                        - Base version will have a base page displaying all user posts (with pagination)
+                        - Animated sidebar with widgets:
+                            - User post stats (total posts, total likes, total comments on posts, etc)
+                            - 5 most recent posts.
+                            - Most posts by user.
+                            - Most surveys by user.
+                            - Highest rated user.
+                            - Etc
 
 ## v0.35-frontend-setup-1
 
