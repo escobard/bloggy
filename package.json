@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cd server && npm start",
+    "install": "cocurrently \"cd server && yarn install\" \"cd client && yarn install\"",
     "dev": "concurrently \"npm run client \" \"npm run server\"",
     "server": "cd server && npm run dev",
     "server:dev": "cd server && npm run dev",

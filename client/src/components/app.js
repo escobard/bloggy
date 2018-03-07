@@ -9,6 +9,8 @@ import Home from "../containers/Home";
 import AddQuestion from "../containers/addQuestion";
 import Question from "../containers/question"
 
+import styles from "../styles/global.scss"
+
 export default class App extends Component {
     render() {
         return (

@@ -31,6 +31,9 @@
         - Possible set up manual auth with the backend
         - CSS cleanup for responsive
         - Refactor of components to use best scalable practices
+        - Update documentation including:
+            - Front end Testing.
+            - Commands - make a new wiki.
 
 ## v0.4-frontend-setup-2
 
@@ -38,10 +41,15 @@
         - Finalize front end class setup
         - Choose CSS library, (material-ui seems best for now, explore options)
         - Update repo wiki with front end usage commands
+        - Explore expandable / retractable menu options
 
 ## v0.35-frontend-setup-1
 
     COMPLETED:
+        - Set up base front end components
+        - Refactor relevant components to improve scalability including:
+            + Proper use of SASS mixins / variables
+            + Fracture component architecture for improved reusability
         - Migrated base structure from redux assesment project, includes the following tech:
             - SASS bundling with webpack, and base mixins / variables.
             - Base testing component set up for redux and async request testing
@@ -51,12 +59,6 @@
                 - Routes, and children routes
                 - TODO: Remove legacy action / containers from application before v0.45 is completed
             - React / Redux working action / reducer structure.
-    TODO:
-        - Set up base front end components
-        - Refactor relevant components to improve scalability including:
-            + Proper use of SASS mixins / variables
-            + Fracture component architecture for improved reusability
-
 
 ## v0.3-client-side
 
