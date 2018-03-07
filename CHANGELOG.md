@@ -8,6 +8,57 @@
         - tests for authenticated routes to be implemented at a later date
         - cross browser origin for cookies - if necessary revert back to the single hosting setup
             + may revert back to original server setup, but will need to address cross domain auth before prod / v1.0
+        - consider adding the following to each user's profile:
+            - A 'service' area, where the eng's most recent work is displayed.
+                + This includes a brief description.
+                + Expanded description if the project is public
+                + Ratings from the client
+                + Link to project (if applicable)
+                + Testimonial / feedback for the service provided
+                    + Option to hide feedback
+                    + Premium options for additional services
+        - Jest snapshot testing:
+            - currently broken with the material-ui library - awaiting for future versions.
+            - component level testing will not be completed until a solution is found by the community
+            - add jest snapshot testing for base components.
+            - add testing for action creators
+
+
+## v0.45-frontend-setup-3
+
+    TODO:
+        - Set up router and component animations
+        - Possible set up manual auth with the backend
+        - CSS cleanup for responsive
+        - Refactor of components to use best scalable practices
+        - Update documentation including:
+            - Front end Testing.
+            - Commands - make a new wiki.
+
+## v0.4-frontend-setup-2
+
+    TODO:
+        - Finalize front end class setup
+        - Choose CSS library, (material-ui seems best for now, explore options)
+        - Update repo wiki with front end usage commands
+        - Explore expandable / retractable menu options
+
+## v0.35-frontend-setup-1
+
+    COMPLETED:
+        - Set up base front end components
+        - Refactor relevant components to improve scalability including:
+            + Proper use of SASS mixins / variables
+            + Fracture component architecture for improved reusability
+        - Migrated base structure from redux assesment project, includes the following tech:
+            - SASS bundling with webpack, and base mixins / variables.
+            - Base testing component set up for redux and async request testing
+            - Material UI components for base structure including:
+                - Header
+                - Footer
+                - Routes, and children routes
+                - TODO: Remove legacy action / containers from application before v0.45 is completed
+            - React / Redux working action / reducer structure.
 
 ## v0.3-client-side
 

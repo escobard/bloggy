@@ -41,10 +41,13 @@ describe("Tests database connection and collections", () => {
 			})
 			.catch(error => console.log("Error creating user: ", error))
 	})
-	it("user id matches", done => {
+	it("user id matches, and all key / values exist", done => {
 		User.findOne({ _id: joe.id })
 			.then(user => {
-				assert(user.name === "Joe")
+				assert(user.name === "Joe" 
+					&& user.email === "test@test.com" 
+					&& user.googleId ==="random-chars"
+				)
 				done()
 			})
 			.catch(error => console.log("Error creating user: ", error))

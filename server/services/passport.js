@@ -25,48 +25,66 @@ passport.use(
 			//
 			proxy: true
 		},
-		(accessToken, refreshToken, profile, done) => {
-			User.findOne({
+
+		async (accessToken, refreshToken, profile, done) => {
+			/* 
+			TURN THESE NOTES INTO THE PROMISE BELOW - USE THE NOTE WRITTEN
+			const fetchAlbums = async () =>{
+			 	// for ES2017, we use async / await instead of traditional promises.
+
+			 	// this establishes the object as a PROMISE, when called will not return the response until the
+			 	// request is finished
+			 	// the expected returned object here is the RESPONSE from the promise, therefore the response
+			 	// from the promise is assigned to the res variable
+			 	const res = await fetch('url')
+
+			 		// with ES2017, then() statements are unecessary if you use await
+			 		// as always, each promise returns a res / req object - it's no longer necessary
+			 		// to declare this object with ES201
+
+			 		//just as above, the callback will WAIT for the request to finish before returning the response
+			 		const promiseComplete = await res.json()
+			 		
+			 		// you can then just call the responses with the given identifiers
+			 		console.log(json)
+			 } 
+
+			 fetchAlbums()asdf
+
+			*/
+			let existingUser = await User.findOne({
 				email: profile.emails[0].value
 			})
-				.then(existingUser => {
-					if (existingUser) {
-						// checks again to ensure the account's googleId doesn't already exist
-						// for cases when the user changes their email within their google account
-						// I should test this scenario on production
-						User.findOne({
-							googleId: profile.id
-						})
-							.then(googleUser => {
-								if (googleUser) {
-									// if the account already has a googleId, end the loop
-
-									// done here closes the loop, expects two arguments:
-									// first is an error, in this case null since its a succesful promise
-									// second is the response object, which in this case is our found user
-									// here either googleUser or existingUser return the same object
-									done(null, existingUser)
-								} else {
-									// if the account does not, we have to add the googleId to the user
-									// then handle conditional routing logic for these cases here - I envision this area
-									// containing a message to the user, encouraging them to log in again with
-									// google auth, then route then to a screen to add a password to their account
-								}
-							})
-							.catch(err => console.log(error))
-					} else {
-						// if no user exists, create a new User instance
-						new User({
-							googleId: profile.id,
-							email: profile.emails[0].value
-						})
-							.save()
-							// after the record is saved, end the strategy, returning the user record
-							.then(user => done(null, user))
-							.catch(err => console.log(error))
-					}
+			
+			if (existingUser) {
+				// checks again to ensure the account's googleId doesn't already exist
+				// for cases when the user changes their email within their google account
+				// I should test this scenario on production
+				let googleUser = await User.findOne({
+					googleId: profile.id
 				})
-				.catch(err => console.log(error))
+				if (googleUser) {
+					// if the account already has a googleId, end the loop
+					// done here closes the loop, expects two arguments:
+					// first is an error, in this case null since its a succesful promise
+					// second is the response object, which in this case is our found user
+					// here either googleUser or existingUser return the same object
+					done(null, existingUser)
+					return
+				}
+				// if the account does not, we have to add the googleId to the user
+				// then handle conditional routing logic for these cases here - I envision this area
+				// containing a message to the user, encouraging them to log in again with
+				// google auth, then route then to a screen to add a password to their account
+			} 
+				
+			// if no user exists, create a new User instance
+			let foundUser = await new User({
+				googleId: profile.id,
+				email: profile.emails[0].value
+			})
+			.save()
+			.done(null, foundUser)
 		}
 	)
 )
@@ -84,12 +102,10 @@ passport.serializeUser((user, done) => {
 
 // this function decodes the cookie, and returns the user instance
 // first argument is the response object from .serializeUser(), in this case our user.id
-passport.deserializeUser((id, done) => {
-	// this searches through the User collection, and finds users by id
-	User.findById(id).then(user => {
-		// then returns the user as the response with .done()
-		done(null, user)
-	})
+passport.deserializeUser(async (id, done) => {
+	
+	let user = await User.findById(id)
+	done(null, user)
 })
 
 /*
