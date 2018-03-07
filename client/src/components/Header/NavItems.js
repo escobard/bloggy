@@ -1,8 +1,16 @@
 import React from "react"
-import { MenuItem } from "material-ui"
+import { MenuItem, RaisedButton } from "material-ui"
+import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
 import { Link } from "react-router-dom"
 
-// this should be refactored into a separate component
+// more on menu icons here: http://www.material-ui.com/#/components/menu
+// icons for each menu here: https://material.io/icons/
+// explore adding icons later, like so:
+/* 
+	<Link to={link} key={index} className="links">
+		<MenuItem leftIcon={<RemoveRedEye />}>{item}</MenuItem>
+	</Link>
+*/
 const NavItems = (links)  =>{
 		return links.map((item, index) => {
 			let link = item === "home" ? "/" : "/" + item

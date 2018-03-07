@@ -6,6 +6,16 @@ nav.navbar {
 	margin-bottom: $space-xlrg;
 	.appbar{
 	    background-color: $primary !important;
+	    button {
+		    position: absolute !important;
+		}
+	    .logo {
+		    float: none;
+		    margin: auto;
+		    display: block;
+		    padding-top: 12px;
+		    max-width: 200px;
+		}
 	}
 	h1 {
 		text-align: center;
@@ -16,9 +26,29 @@ nav.navbar {
 				top: auto !important;
 			}
 			&:nth-child(2) {
-				margin-top: 64px;
+				background-color: $primary !important;
+			}
+
+		}
+		// for this app, all material-ui styles will be overwritten with !important
+		// this allows for consistent sass utilization to avoid inline styles
+		a span{
+				color: $white !important;
+				text-align: center;
+		}
+		.navbar-top {
+		    height: 64px;
+		    padding-top: $space-med;
+			svg {
+			    margin: auto;
+			    display: block !important;
+			    width: $space-xxlrg !important;
+			    height: $space-xxlrg !important; 
+			    color: $white !important;
 			}
 		}
+
+
 	}
 	a.links {
 		text-transform: capitalize;
