@@ -3,11 +3,11 @@ import { combineReducers } from "redux"
 import questions from "./questions"
 import users from "./users"
 import selectedQuestion from "./selectedQuestion"
+import authReducer from "./authReducer"
 
-const rootReducer = combineReducers({
+export default combineReducers({
 	selectedQuestion,
+	authReducer,
 	questions,
 	users
 })
-
-export default rootReducer

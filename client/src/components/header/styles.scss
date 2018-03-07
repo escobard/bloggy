@@ -4,6 +4,9 @@
 nav.navbar {
 	padding: 0;
 	margin-bottom: $space-xlrg;
+	.appbar{
+	    background-color: $primary !important;
+	}
 	h1 {
 		text-align: center;
 	}
@@ -13,7 +16,7 @@ nav.navbar {
 				top: auto !important;
 			}
 			&:nth-child(2) {
-				margin-top: 4rem;
+				margin-top: 64px;
 			}
 		}
 	}
