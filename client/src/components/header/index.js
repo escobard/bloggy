@@ -3,6 +3,7 @@ import { FlatButton, AppBar, Drawer, RaisedButton } from "material-ui"
 import DashIcon from 'material-ui/svg-icons/action/dashboard';
 
 import styles from "./styles.scss"
+
 import NavItems from "./NavItems"
 
 export default class Header extends Component {

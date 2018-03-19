@@ -12,7 +12,7 @@
     "test": "cd server && npm test",
     "test:dev:server": "cd server && npm run test dev",
     "client": "cd client && yarn start",
-    "test:client": "cd client && npm test"
+    "tclient": "cd client && npm test"
   },
   "repository": {
     "type": "git",

@@ -46,7 +46,7 @@
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "build": "react-scripts build",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test": "jest --watch",
     "test:cra": "react-scripts test --env=jsdom",
     "test:watch": "npm run test -- --watch",
     "jest": "jest",
