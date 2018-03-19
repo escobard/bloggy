@@ -5,26 +5,25 @@ const { googleAuth, googleAuthCallback, authenticatedUser, logout } = require('.
 module.exports = function(app) {
 	app.get(
 		googleAuth,
-		passport.authenticate(
-			"google", {
-				scope: ["profile", "email"]
-			}
-		)
+		passport.authenticate("google", {
+			scope: ["profile", "email"]
+		})
 	)
 
 	app.get(googleAuthCallback, passport.authenticate("google"))
 
-	app.get(logout, 
-		(req, res) => {
-			req.logout()
-			res.send(req.user)
-		})
+	// logs out the user
+	app.get(logout, (req, res) => {
+		// this is a passport method .logout() which destroys the user's cookie
+		req.logout()
+		res.send(req.user)
+	})
 
+	// returns our user after cookie has been deserialized
 	app.get(authenticatedUser, (req, res) => {
 		console.log("USERDATA", req.user)
 		res.send(req.user)
 	})
-
 }
 
 /* 
