@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header - with mock state +++ render the Header component 1`] = `
+exports[`Header snapshot +++ render the Header component 1`] = `
 <nav
   className="navbar navbar-light"
 >
