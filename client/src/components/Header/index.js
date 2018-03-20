@@ -3,6 +3,8 @@ import { FlatButton, AppBar, Drawer, RaisedButton } from "material-ui";
 import DashIcon from "material-ui/svg-icons/action/dashboard";
 
 import { server } from "../../constants/config";
+
+import logo from "../../static/logo.jpg"
 import styles from "./styles.scss";
 
 import NavItems from "./NavItems";
@@ -31,7 +33,7 @@ export default class Header extends Component {
 						<a href="/">
 							<img
 								className="logo"
-								src="/src/static/logo.jpg"
+								src={logo}
 								alt="EngBook Logo"
 							/>
 						</a>
