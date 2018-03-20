@@ -12,8 +12,7 @@
 		"test:dev:server": "cd server && npm run test dev",
 		"client": "cd client && yarn start",
 		"test:client": "cd client && npm test",
-		"initiate":
-			"concurrently \"cd server && yarn install\" \"cd client && yarn install\""
+		"initiate": "concurrently \"cd server && yarn install\" \"cd client && yarn install\""
 	},
 	"repository": {
 		"type": "git",

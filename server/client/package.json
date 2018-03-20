@@ -51,7 +51,7 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --watch",
     "test:cra": "react-scripts test --env=jsdom",

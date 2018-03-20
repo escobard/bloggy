@@ -23,7 +23,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("public/style.css", {
+    new ExtractTextPlugin("/public/style.css", {
       allChunks: true
     })
   ],

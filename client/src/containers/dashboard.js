@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { addUser } from "../actions";
 import ListItem from "../components/leaderboardItem";
 import { dashboardRoutes } from "../constants";
 
@@ -25,4 +24,4 @@ function mapStateToProps({ questions, users }) {
 	return { questions, users };
 }
 
-export default connect(mapStateToProps, { addUser })(Dashboard);
+export default connect(mapStateToProps)(Dashboard);
