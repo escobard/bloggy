@@ -21,7 +21,6 @@ export default class Header extends Component {
 	};
 
 	render() {
-		console.log("SERVER", server);
 		let { navItems, open } = this.state;
 
 		return (
@@ -29,13 +28,15 @@ export default class Header extends Component {
 				<AppBar
 					className="appbar"
 					title={
-						<img
-							className="logo"
-							src="/src/static/logo.jpg"
-							alt="EngBook Logo"
-						/>
+						<a href="/">
+							<img
+								className="logo"
+								src="/src/static/logo.jpg"
+								alt="EngBook Logo"
+							/>
+						</a>
 					}
-					onClick={this.handleToggle}
+					onLeftIconButtonClick={this.handleToggle}
 					iconElementRight={
 						<a href={`${server}/auth/google`}>
 							<FlatButton className="login" label="Sign in with Google" />
