@@ -13,7 +13,7 @@ describe("Action snapshots", () => {
 		expect(actions.fetchUser()).toEqual(expected);
 	});
 });
-*/
+
 
 // base tester for async actions, need to work on this later
 
@@ -30,4 +30,9 @@ describe("Actions ", () => {
 		expect(test).toEqual(m.data);
 		done();
 	});
+});
+*/
+
+describe("running sample test file", () => {
+	it("runs", () => {});
 });
