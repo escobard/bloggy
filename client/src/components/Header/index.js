@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FlatButton, AppBar, Drawer, RaisedButton } from "material-ui";
 import DashIcon from "material-ui/svg-icons/action/dashboard";
 
@@ -46,9 +46,9 @@ class Header extends Component {
 				<AppBar
 					className="appbar"
 					title={
-						<a href="/">
+						<Link to="/">
 							<img className="logo" src={logo} alt="EngBook Logo" />
-						</a>
+						</Link>
 					}
 					onLeftIconButtonClick={this.handleToggle}
 					iconElementRight={this.renderLogin()}
