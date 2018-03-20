@@ -1,31 +1,32 @@
-const passport = require("passport")
+const passport = require("passport");
 
-const { googleAuth, googleAuthCallback, authenticatedUser, logout } = require('../constants/routes')
+const {
+	googleAuth,
+	googleAuthCallback,
+	authenticatedUser,
+	logout
+} = require("../constants/routes");
 
 module.exports = function(app) {
 	app.get(
 		googleAuth,
-		passport.authenticate(
-			"google", {
-				scope: ["profile", "email"]
-			}
-		)
-	)
-
-	app.get(googleAuthCallback, passport.authenticate("google"))
-
-	app.get(logout, 
-		(req, res) => {
-			req.logout()
-			res.send(req.user)
+		passport.authenticate("google", {
+			scope: ["profile", "email"]
 		})
+	);
+
+	app.get(googleAuthCallback, passport.authenticate("google"));
+
+	app.get(logout, (req, res) => {
+		req.logout();
+		res.send(req.user);
+	});
 
 	app.get(authenticatedUser, (req, res) => {
-		console.log("USERDATA", req.user)
-		res.send(req.user)
-	})
-
-}
+		console.log("USERDATA", req.user);
+		res.send(req.user);
+	});
+};
 
 /* 
 const passport = require('passport');

@@ -7,13 +7,13 @@ import Footer from "./Footer";
 import Dashboard from "../containers/dashboard";
 import Home from "../containers/home";
 import AddQuestion from "../containers/addQuestion";
-import Question from "../containers/question"
-import Account from "../containers/account"
-import Profile from "../containers/profile"
-import Survey from "../containers/survey"
-import Blog from "../containers/blog"
+import Question from "../containers/question";
+import Account from "../containers/account";
+import Profile from "../containers/profile";
+import Survey from "../containers/survey";
+import Blog from "../containers/blog";
 
-import styles from "../styles/global.scss"
+import styles from "../styles/global.scss";
 
 export default class App extends Component {
     render() {
@@ -23,12 +23,20 @@ export default class App extends Component {
                 <div className="container">
                     <Route exact path="/" component={Home} />
                     <Route exact path="/dashboard" component={Dashboard} />
-                        <Route path="/dashboard/account" component={Account} />
-                        <Route path="/dashboard/profile" component={Profile} />
-                        <Route path="/dashboard/survey" component={Survey} />
-                        <Route path="/dashboard/blog" component={Blog} />
+                    <Route
+                        exact
+                        path="/dashboard/account"
+                        component={Account}
+                    />
+                    <Route
+                        exact
+                        path="/dashboard/profile"
+                        component={Profile}
+                    />
+                    <Route exact path="/dashboard/survey" component={Survey} />
+                    <Route exact path="/dashboard/blog" component={Blog} />
                     <Route exact path="/addquestion" component={AddQuestion} />
-                    <Route exact path="/questions/:id" component={Question}/>
+                    <Route exact path="/questions/:id" component={Question} />
                 </div>
                 <Footer />
             </div>

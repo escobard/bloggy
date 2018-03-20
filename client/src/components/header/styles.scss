@@ -4,17 +4,23 @@
 nav.navbar {
 	padding: 0;
 	margin-bottom: $space-xlrg;
-	.appbar{
-	    background-color: $primary !important;
-	    button {
-		    position: absolute !important;
+	.appbar {
+		background-color: $primary !important;
+		button {
+			position: absolute !important;
+			&.login {
+				position: relative !important;
+				margin-left: -50px !important;
+				color: $white !important;
+				margin-top: 4px !important;
+			}
 		}
-	    .logo {
-		    float: none;
-		    margin: auto;
-		    display: block;
-		    padding-top: 12px;
-		    max-width: 200px;
+		.logo {
+			float: none;
+			margin: auto;
+			display: block;
+			padding-top: 12px;
+			max-width: 200px;
 		}
 	}
 	h1 {
@@ -28,30 +34,27 @@ nav.navbar {
 			&:nth-child(2) {
 				background-color: $primary !important;
 			}
-
 		}
 		// for this app, all material-ui styles will be overwritten with !important
 		// this allows for consistent sass utilization to avoid inline styles
-		a span{
-				color: $white !important;
-				text-align: center;
+		a span {
+			color: $white !important;
+			text-align: center;
 		}
 		.navbar-top {
-		    height: 64px;
-		    padding-top: $space-med;
+			height: 64px;
+			padding-top: $space-med;
 			svg {
-			    margin: auto;
-			    display: block !important;
-			    width: $space-xxlrg !important;
-			    height: $space-xxlrg !important; 
-			    color: $white !important;
+				margin: auto;
+				display: block !important;
+				width: $space-xxlrg !important;
+				height: $space-xxlrg !important;
+				color: $white !important;
 			}
 		}
-
-
 	}
 	a.links {
 		text-transform: capitalize;
-		@include nav-links()
+		@include nav-links();
 	}
 }

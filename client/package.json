@@ -2,11 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/auth/google": {
-      "target": "http://localhost:5000"
-    }
-  },
   "devDependencies": {
     "babel-core": "^6.2.1",
     "babel-jest": "^22.4.1",
@@ -55,12 +50,8 @@
     "eject": "react-scripts eject"
   },
   "jest": {
-    "setupFiles": [
-      "./test/jest_setup.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
+    "setupFiles": ["./test/jest_setup.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "moduleNameMapper": {
       "^.+\\.(css|scss)$": "identity-obj-proxy"
     }
