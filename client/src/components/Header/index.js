@@ -1,15 +1,14 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { FlatButton, AppBar, Drawer, RaisedButton } from "material-ui";
 import DashIcon from "material-ui/svg-icons/action/dashboard";
 
-import { server } from "../../constants/config";
-
-import logo from "../../static/logo.jpg"
+import logo from "../../static/logo.jpg";
 import styles from "./styles.scss";
 
 import NavItems from "./NavItems";
 
-export default class Header extends Component {
+class Header extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -17,7 +16,16 @@ export default class Header extends Component {
 			open: false
 		};
 	}
-
+	renderLogin = () => {
+		let { auth } = this.props;
+		let text = auth ? "Log Out" : "Log In";
+		let url = auth ? "logouturl" : "auth/google";
+		return (
+			<a href={url}>
+				<FlatButton className="login" label={text} />
+			</a>
+		);
+	};
 	handleToggle = () => {
 		this.setState({ open: !this.state.open });
 	};
@@ -31,19 +39,11 @@ export default class Header extends Component {
 					className="appbar"
 					title={
 						<a href="/">
-							<img
-								className="logo"
-								src={logo}
-								alt="EngBook Logo"
-							/>
+							<img className="logo" src={logo} alt="EngBook Logo" />
 						</a>
 					}
 					onLeftIconButtonClick={this.handleToggle}
-					iconElementRight={
-						<a href={`${server}/auth/google`}>
-							<FlatButton className="login" label="Sign in with Google" />
-						</a>
-					}
+					iconElementRight={this.renderLogin()}
 				/>
 				<Drawer
 					open={open}
@@ -60,3 +60,9 @@ export default class Header extends Component {
 		);
 	}
 }
+
+function mapStateToProps({ auth }) {
+	return { auth };
+}
+
+export default connect(mapStateToProps)(Header);
