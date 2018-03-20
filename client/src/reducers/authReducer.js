@@ -1,4 +1,4 @@
-import { FETCH_USER } from "../actions/types";
+import { FETCH_USER, LOGOUT_USER } from "../actions/types";
 
 export default function(state = null, action) {
 	let { type, payload } = action;
@@ -11,6 +11,9 @@ export default function(state = null, action) {
 			// this allows us to test for cases when the user is not authenticated in, by checking the
 			// value of payload
 			return payload || false;
+		case LOGOUT_USER:
+			console.log("ACTIVATED");
+			return payload;
 		default:
 			return state;
 	}

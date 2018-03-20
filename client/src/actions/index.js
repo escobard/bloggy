@@ -1,7 +1,6 @@
 import axios from "axios";
 
-import { server } from "../constants/config";
-import { FETCH_USER } from "./types";
+import { FETCH_USER, LOGOUT_USER } from "./types";
 
 export const fetchUser = () =>
 	// this fetches our user data, which is only present in the API if the user has been authenticated
@@ -26,3 +25,8 @@ export const fetchUser = () =>
 		// then returns the data via an action creator object
 		dispatch({ type: FETCH_USER, payload: res.data });
 	};
+
+export const logoutUser = () => async dispatch => {
+	const res = await axios.get("/api/logout");
+	dispatch({ type: LOGOUT_USER, payload: "" });
+};
