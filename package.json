@@ -1,35 +1,35 @@
 {
-  "name": "engbook",
-  "version": "0.3.0",
-  "description": "blog application using react, redux, express, mongodb",
-  "main": "index.js",
-  "scripts": {
-    "start": "cd server && npm start",
-    "dev": "concurrently \"npm run client \" \"npm run server\"",
-    "server": "cd server && npm run dev",
-    "server:dev": "cd server && npm run dev",
-    "test": "cd server && npm test",
-    "test:dev:server": "cd server && npm run test dev",
-    "client": "cd client && yarn start",
-    "test:client": "cd client && npm test",
-    "initiate":
-      "concurrently \"cd server && npm install\" \"cd client && yarn install\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/escobard/engbook.git"
-  },
-  "author": "Daniel Escobar",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/escobard/engbook/issues"
-  },
-  "homepage": "https://github.com/escobard/engbook#readme",
-  "dependencies": {
-    "concurrently": "^3.5.1"
-  },
-  "engines": {
-    "node": "8.1.1",
-    "npm": "5.0.3"
-  }
+	"name": "engbook",
+	"version": "0.3.0",
+	"description": "blog application using react, redux, express, mongodb",
+	"main": "index.js",
+	"scripts": {
+		"start": "cd server && npm start",
+		"dev": "concurrently \"npm run client \" \"npm run server\"",
+		"server": "cd server && npm run dev",
+		"server:dev": "cd server && npm run dev",
+		"test": "cd server && npm test",
+		"test:dev:server": "cd server && npm run test dev",
+		"client": "cd client && yarn start",
+		"test:client": "cd client && npm test",
+		"initiate":
+			"concurrently \"cd server && yarn install\" \"cd client && yarn install\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/escobard/engbook.git"
+	},
+	"author": "Daniel Escobar",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/escobard/engbook/issues"
+	},
+	"homepage": "https://github.com/escobard/engbook#readme",
+	"dependencies": {
+		"concurrently": "^3.5.1"
+	},
+	"engines": {
+		"node": "8.1.1",
+		"npm": "5.0.3"
+	}
 }

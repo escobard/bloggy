@@ -1,0 +1,18 @@
+.options {
+	width: 100% !important;
+}
+
+.submit-button {
+	margin-top: 2rem;
+}
+
+.question {
+	text-align: center;
+	.answer {
+		margin: 1rem 0;
+	}
+	img.author-image {
+		width: 60px;
+		border-radius: 60px;
+	}
+}

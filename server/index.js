@@ -1,10 +1,9 @@
 const express = require("express");
+
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const helmet = require("helmet");
-const bodyParser = require("body-parser");
-const morgan = require("morgan");
-const cors = require("cors");
+
 const routes = require("./routes");
 const portRoute = require("./constants/routes").port;
 const cookieKey = require("./constants/config").cookieKey;
@@ -24,7 +23,7 @@ app.use(passport.session());
 
 routes(app);
 
-const server = app.listen(portRoute, () => {
+let server = app.listen(portRoute, () => {
 	console.log("server listening at port %s", portRoute);
 });
 
