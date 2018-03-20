@@ -43,6 +43,7 @@
     "dependencies": {
         "autoprefixer": "7.1.6",
         "axios": "^0.18.0",
+        "axios-mock-adapter": "^1.14.1",
         "babel-core": "6.26.0",
         "babel-eslint": "7.2.3",
         "babel-jest": "20.0.3",
@@ -68,6 +69,7 @@
         "html-webpack-plugin": "2.29.0",
         "jest": "20.0.4",
         "material-ui": "^0.20.0",
+        "moxios": "^0.4.0",
         "node-sass": "^4.7.2",
         "object-assign": "4.1.1",
         "postcss-flexbugs-fixes": "3.2.0",
