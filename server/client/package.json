@@ -61,16 +61,5 @@
     "jest:watch": "jest --watch",
     "jest:coverage": "jest --coverage",
     "eject": "react-scripts eject"
-  },
-  "jest": {
-    "setupFiles": [
-      "./test/jest_setup.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "moduleNameMapper": {
-      "^.+\\.(css|scss)$": "identity-obj-proxy"
-    }
   }
 }
