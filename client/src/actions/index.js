@@ -1,59 +1,19 @@
-import {
-	ADD_QUESTION,
-	UPDATE_QUESTION,
-	ADD_USER,
-	UPDATE_USER,
-	SELECT_QUESTION,
-	FETCH_QUESTIONS
-} from "./types"
+import axios from "axios";
 
-export function createQuestion(question) {
-	return {
-		type: ADD_QUESTION,
-		payload: question
-	}
-}
+import { server } from "../constants/config";
+import { FETCH_USER } from "./types";
 
-export function updateQuestion(question, option) {
-	return {
-		type: UPDATE_QUESTION,
-		payload: {
-			question,
-			option
-		}
-	}
-}
+export const fetchUser = () => {
+	// this fetches our user data, which is only present in the API if the user has been authenticated
+	// with google, handled by the passport google strategy
 
-export function addUser(questions, users) {
-	return {
-		type: ADD_USER,
-		payload: {
-			questions,
-			users
-		}
-	}
-}
+	// as a refreshed with redux thunk, the middleware looks for any returned FUNCTIONS
+	// within an action creator, handling these first
+	return function(dispatch) {
+		axios
+			.get("/api/current_user")
 
-export function updateUser(qid, option) {
-	return {
-		type: UPDATE_USER,
-		payload: { qid, option }
-	}
-}
-
-export function selectQuestion(question) {
-	return {
-		type: SELECT_QUESTION,
-		payload: question
-	}
-}
-
-export function fetchQuestion(path, questions) {
-	return {
-		type: FETCH_QUESTIONS,
-		payload: {
-			path,
-			questions
-		}
-	}
-}
+			// then returns the data via an action creator object
+			.then(res => dispatch({ type: FETCH_USER, payload: res }));
+	};
+};

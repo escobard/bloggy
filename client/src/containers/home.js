@@ -1,31 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { selectQuestion } from "../actions";
-
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      slideIndex: 0
-    };
-  }
-
-  handleChange = value => {
-    this.setState({
-      slideIndex: value
-    });
-  };
-
+export default class Home extends Component {
   render() {
-    let {
-      state: { slideIndex },
-      props: { questions, selectQuestion },
-      handleChange
-    } = this;
-
-    let qArray = Object.values(questions);
-
     return (
       <div>
         <h1 className="title">A social media for Software Engineers</h1>
@@ -34,9 +11,3 @@ class Home extends Component {
     );
   }
 }
-
-function mapStateToProps({ questions }) {
-  return { questions };
-}
-
-export default connect(mapStateToProps, { selectQuestion })(Home);

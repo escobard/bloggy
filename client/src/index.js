@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
-import App from "./components/app";
+import App from "./app";
 import reducers from "./reducers";
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
