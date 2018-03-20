@@ -4,6 +4,8 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import reduxThunk from "redux-thunk";
 import { BrowserRouter } from "react-router-dom";
+// required to work with async / await
+import "babel-polyfill";
 
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 

@@ -1,40 +1,38 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: [
-    './src/index.js'
-  ],
+  entry: ["./src/index.js"],
   output: {
     path: __dirname,
-    publicPath: '/',
-    filename: 'bundle.js'
+    publicPath: "/",
+    filename: "bundle.js"
   },
   module: {
     loaders: [
       {
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: "babel",
         query: {
-          presets: ['react', 'es2015', 'stage-1']
+          presets: ["react", "es2015", "stage-1"]
         }
-      }, 
+      },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css!sass')
-      }      
+        loader: ExtractTextPlugin.extract("css!sass")
+      }
     ]
   },
   plugins: [
-        new ExtractTextPlugin('public/style.css', {
-            allChunks: true
-        })
+    new ExtractTextPlugin("public/style.css", {
+      allChunks: true
+    })
   ],
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ["", ".js", ".jsx"]
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './',
+    contentBase: "./",
     inline: true,
     port: 3000
   }
