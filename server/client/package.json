@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "concurrently": "^3.5.1",
     "material-ui": "^0.20.0",
     "node-sass": "^4.7.2",
     "react": "^16.2.0",
@@ -51,7 +52,7 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js\"",
     "build": "react-scripts build",
     "test": "jest --watch",
     "test:cra": "react-scripts test --env=jsdom",
