@@ -28,18 +28,10 @@ class App extends Component {
                 <div className="container">
                     <Route exact path="/" component={Home} />
                     <Route exact path="/dashboard" component={Dashboard} />
-                    <Route
-                        exact
-                        path="/dashboard/account"
-                        component={Account}
-                    />
-                    <Route
-                        exact
-                        path="/dashboard/profile"
-                        component={Profile}
-                    />
-                    <Route exact path="/dashboard/survey" component={Survey} />
-                    <Route exact path="/dashboard/blog" component={Blog} />
+                    <Route path="/dashboard/account" component={Account} />
+                    <Route path="/dashboard/profile" component={Profile} />
+                    <Route path="/dashboard/survey" component={Survey} />
+                    <Route path="/dashboard/blog" component={Blog} />
                 </div>
                 <Footer />
             </div>

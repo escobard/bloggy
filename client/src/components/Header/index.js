@@ -18,7 +18,7 @@ class Header extends Component {
 	}
 	renderLogin = () => {
 		let { auth } = this.props;
-		let text = auth ? "Log Out" : "Log In";
+		let text = auth ? "Log Out" : auth === "" ? "Loading..." : "Log in";
 		let url = auth ? "logouturl" : "auth/google";
 		return (
 			<a href={url}>

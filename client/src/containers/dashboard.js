@@ -5,10 +5,6 @@ import ListItem from "../components/leaderboardItem";
 import { dashboardRoutes } from "../constants";
 
 export default class Dashboard extends Component {
-	componentWillMount() {
-		let { questions, addUser } = this.props;
-		addUser(questions);
-	}
 	renderListItem(routes) {
 		return routes.map((route, index) => {
 			return <ListItem key={index} route={route} />;
