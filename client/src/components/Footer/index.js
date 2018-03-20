@@ -1,6 +1,6 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
-import styles from "./styles.scss"
+import styles from "./styles.scss";
 
 export default class Footer extends Component {
 	render() {
@@ -9,11 +9,9 @@ export default class Footer extends Component {
 				<span>
 					{" "}
 					&copy; Copyright 2018 -{" "}
-					<a href="https://github.com/escobard">
-						escobard@github.com
-					</a>
+					<a href="https://github.com/escobard">escobard@github.com</a>
 				</span>
 			</footer>
-		)
+		);
 	}
 }

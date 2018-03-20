@@ -6,14 +6,40 @@ exports[`Header snapshot +++ render the Header component 1`] = `
 >
   <AppBar
     className="appbar"
-    onClick={[Function]}
+    iconElementRight={
+      <a
+        href="auth/google"
+      >
+        <FlatButton
+          className="login"
+          disabled={false}
+          fullWidth={false}
+          label="Log in"
+          labelPosition="after"
+          labelStyle={Object {}}
+          onKeyboardFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onTouchStart={[Function]}
+          primary={false}
+          secondary={false}
+        />
+      </a>
+    }
+    onLeftIconButtonClick={[Function]}
+    onRightIconButtonClick={[Function]}
     showMenuIconButton={true}
     title={
-      <img
-        alt="EngBook Logo"
-        className="logo"
-        src="/src/static/logo.jpg"
-      />
+      <Link
+        replace={false}
+        to="/"
+      >
+        <img
+          alt="EngBook Logo"
+          className="logo"
+          src="logo.jpg"
+        />
+      </Link>
     }
     zDepth={1}
   />

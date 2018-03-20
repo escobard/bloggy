@@ -32,7 +32,7 @@
         "jquery": "^2.2.1",
         "jsdom": "^8.1.0",
         "mocha": "^2.4.5",
-        "react-addons-test-utils": "^0.14.7",
+        "react-addons-test-utils": "^15.6.2",
         "react-test-renderer": "^16.2.0",
         "redux-mock-store": "^1.5.1",
         "sass-loader": "^6.0.7",
@@ -101,14 +101,30 @@
         "jest:coverage": "jest --coverage"
     },
     "jest": {
-        "setupFiles": ["./test/jest_setup.js"],
-        "snapshotSerializers": ["enzyme-to-json/serializer"],
+        "setupFiles": [
+            "./test/jest_setup.js"
+        ],
+        "snapshotSerializers": [
+            "enzyme-to-json/serializer"
+        ],
+        "transform": {
+            "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+            "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+            "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+        },
+        "transformIgnorePatterns": [
+            "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+        ],
         "moduleNameMapper": {
             "^.+\\.(css|scss)$": "identity-obj-proxy"
         }
     },
     "babel": {
-        "presets": ["react-app"]
+        "presets": [
+            "react",
+            "es2015",
+            "stage-1"
+        ]
     },
     "eslintConfig": {
         "extends": "react-app"

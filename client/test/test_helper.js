@@ -1,4 +1,3 @@
-
 // for more on testing and how this helper was set up,
 // go to https://github.com/escobard/udemy-advanced-react-and-redux/tree/master/testing
 // the helper works very well with redux specific actions such as actions / reducers
