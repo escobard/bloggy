@@ -20,10 +20,21 @@ Possible future technologies include:
 
 ## Project Criteria
 
-The main purpose of this application is to provide the following features: - A blog social network, including: + User to user profiles and a basic chat system. + User dashboard, with metrics.
-_ Admin / premium content dashboard features.
-= leaderboards and activity trackers for: - github activity - linkedin - crypto currencies - stocks
-_ Currency system, and payment gateway + User email system to invite users to join the blog (fremium - first 5 free)
+The main purpose of this application is to provide the following features:
+    
+    - A blog social network, including:
+        + User to user profiles and a basic chat system.
+        + User dashboard, with metrics.
+            * Admin / premium content dashboard features.
+                = leaderboards and activity trackers for:
+                    - github activity
+                    - linkedin
+                    - crypto currencies
+                    - stocks 
+            * Currency system, and payment gateway
+        + User email system to invite users to join the blog (fremium - first 5 free)
+
+(Expand upon criteria in a later version)
 
 (Expand upon criteria in a later version)
 
@@ -31,21 +42,64 @@ _ Currency system, and payment gateway + User email system to invite users to jo
 
 Phase 1 - v0.05-v1.0
 
-* Base features: + user login / creation with: - google+ - manual user creation + user profile - personal stats + to be expanded with premium addons - blog posts (forum may be added on phase 1 if not on phase 2) + user activity board + home page with widgets: + trending topics
-  = based on industry
-  _ at least 3 industries on phase 1, more on phase 2
-  _ users can comment on trending topics + most popular posts + user with mosts posts + user with most contributions + user premium service - paid for: - mass email to email list - github / portfolio area creation ( may move to phase 2)
+- Base features:
+    + user login / creation with:
+        - google+
+        - manual user creation
+    + user profile
+        - personal stats
+            + to be expanded with premium addons
+        - blog posts (forum may be added on phase 1 if not on phase 2)
+    + user activity board
+    + home page with widgets:
+        + trending topics
+            = based on industry
+                * at least 3 industries on phase 1, more on phase 2
+                * users can comment on trending topics
+        + most popular posts
+        + user with mosts posts
+        + user with most contributions
+    + user premium service - paid for:
+        - mass email to email list
+        - github / portfolio area creation ( may move to phase 2)
 
-* Prod & Dev: - Dev features: - cont. development with nodemon on server - cont. development with browsersync on client - Prod features: - deployment to heroku - continous dev with heroku (may move to phase 2) - gulp pipeline: - minimization of code - sass compression
+- Prod & Dev:
+    - Dev features:
+        - cont. development with nodemon on server
+        - cont. development with browsersync on client
+    - Prod features:
+        - deployment to heroku
+            - continous dev with heroku (may move to phase 2)
+        - gulp pipeline:
+            - minimization of code
+            - sass compression
 
-* Testing: - client: - jest for react components - enzyme for react reducers / actions - sever: - enzyme / superset for express - data: - (not sure how to test mongo yet)
+- Testing:
+    - client:
+        - jest for react components
+        - enzyme for react reducers / actions
+    - sever:
+        - enzyme / superset for express 
+    - data:
+        - (not sure how to test mongo yet)
+
 
 Phase 2 - v1.0-v2.0
 
-* Each version will add an additional feature to the application, including: - twitter authentication, twitter feed, twitter widgets - linkedin authentication, feed, and widget - facebook authentication, feed, and widget - other authentications, feeds and widgets - trade charts, calculators, trackers - user to user chat - blog updated to forum if not in phase 1: - limited base user features - premium user features + services
+- Each version will add an additional feature to the application, including:
+    - twitter authentication, twitter feed, twitter widgets
+    - linkedin authentication, feed, and widget
+    - facebook authentication, feed, and widget
+    - other authentications, feeds and widgets
+    - trade charts, calculators, trackers
+    - user to user chat
+    - blog updated to forum if not in phase 1:
+        - limited base user features
+        - premium user features + services
 
-* Each version will expand on prod, dev, and testing pipelines.
-* And much more...
+- Each version will expand on prod, dev, and testing pipelines.
+- And much more...
+
 
 ## Demo
 

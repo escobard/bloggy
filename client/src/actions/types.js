@@ -1,6 +1,2 @@
-export const ADD_QUESTION = "ADD_QUESTION"
-export const ADD_USER = "ADD_USER"
-export const UPDATE_USER = "UPDATE_USER"
-export const SELECT_QUESTION = "SELECT_QUESTION"
-export const FETCH_QUESTIONS = "FETCH_QUESTIONS"
-export const UPDATE_QUESTION = "UPDATE_QUESTION"
+export const FETCH_USER = "FETCH_USER";
+export const LOGOUT_USER = "LOGOUT_USER";

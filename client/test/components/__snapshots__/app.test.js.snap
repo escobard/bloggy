@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`App - with actual state +++ render the connected(SMART) component 1`] = `undefined`;
-
-exports[`Header - with actual state +++ render the connected(SMART) component 1`] = `undefined`;
-
-exports[`Header - with material ui +++capturing Snapshot of Header 1`] = `undefined`;
