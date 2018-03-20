@@ -6,8 +6,6 @@ import Footer from "./Footer";
 
 import Dashboard from "../containers/dashboard";
 import Home from "../containers/home";
-import AddQuestion from "../containers/addQuestion";
-import Question from "../containers/question";
 import Account from "../containers/account";
 import Profile from "../containers/profile";
 import Survey from "../containers/survey";
@@ -35,8 +33,6 @@ export default class App extends Component {
                     />
                     <Route exact path="/dashboard/survey" component={Survey} />
                     <Route exact path="/dashboard/blog" component={Blog} />
-                    <Route exact path="/addquestion" component={AddQuestion} />
-                    <Route exact path="/questions/:id" component={Question} />
                 </div>
                 <Footer />
             </div>

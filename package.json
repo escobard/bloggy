@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/escobard/engbook#readme",
   "dependencies": {
-    "concurrently": "^3.5.1"
+    "concurrently": "^3.5.1",
+    "redux-thunk": "^2.2.0"
   },
   "engines": {
     "node": "8.1.1",

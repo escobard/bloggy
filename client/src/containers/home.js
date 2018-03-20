@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { selectQuestion } from "../actions";
-import filterQuestions from "../components/filterQuestions";
 
 class Home extends Component {
   constructor(props) {
