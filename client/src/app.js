@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
-
+import { withRouter } from "react-router-dom";
 import { fetchUser } from "./actions";
 
 import Header from "./components/Header";
@@ -39,4 +39,4 @@ class App extends Component {
     }
 }
 
-export default connect(null, { fetchUser })(App);
+export default withRouter(connect(null, { fetchUser })(App));

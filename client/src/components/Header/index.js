@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { FlatButton, AppBar, Drawer, RaisedButton } from "material-ui";
 import DashIcon from "material-ui/svg-icons/action/dashboard";
 
