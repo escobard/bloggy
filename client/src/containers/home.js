@@ -11,6 +11,10 @@ export default class Home extends Component {
 				<h1 className="title">A social media for Software Engineers</h1>
 				<Sidebar />
 				<Post />
+				<Post />
+				<Post />
+				<Post />
+				<Post />
 			</div>
 		);
 	}

@@ -25,14 +25,14 @@ class App extends Component {
         return (
             <div>
                 <Header />
-                <div className="container">
+                <main className="container">
                     <Route exact path="/" component={Home} />
                     <Route exact path="/dashboard" component={Dashboard} />
                     <Route path="/dashboard/account" component={Account} />
                     <Route path="/dashboard/profile" component={Profile} />
                     <Route path="/dashboard/survey" component={Survey} />
                     <Route path="/dashboard/blog" component={Blog} />
-                </div>
+                </main>
                 <Footer />
             </div>
         );
