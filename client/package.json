@@ -96,38 +96,28 @@
     "scripts": {
         "start": "node scripts/start.js",
         "build": "node scripts/build.js",
-        "test": "jest --watch",
-        "test:cra": "node scripts/test.js --env=jsdom",
-        "test:watch": "npm run test -- --watch",
+        "test": "npm run jest",
         "jest": "jest",
         "jest:watch": "jest --watch",
-        "jest:coverage": "jest --coverage"
+        "jest:coverage": "jest --coverage",
+        "jest:clean": "jest -- -u"
     },
     "jest": {
-        "setupFiles": [
-            "./test/jest_setup.js"
-        ],
-        "snapshotSerializers": [
-            "enzyme-to-json/serializer"
-        ],
+        "setupFiles": ["./test/jest_setup.js"],
+        "snapshotSerializers": ["enzyme-to-json/serializer"],
         "transform": {
             "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
             "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-            "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+            "^(?!.*\\.(js|jsx|css|json)$)":
+                "<rootDir>/config/jest/fileTransform.js"
         },
-        "transformIgnorePatterns": [
-            "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-        ],
+        "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
         "moduleNameMapper": {
             "^.+\\.(css|scss)$": "identity-obj-proxy"
         }
     },
     "babel": {
-        "presets": [
-            "react",
-            "es2015",
-            "stage-1"
-        ]
+        "presets": ["react", "es2015", "stage-1"]
     },
     "eslintConfig": {
         "extends": "react-app"

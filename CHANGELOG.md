@@ -39,6 +39,11 @@
 
 ## v0.45-stripe-setup
 
+    COMPLETED:
+        - Update documentation including:
+            - Installation.
+            - Usage.
+            - Third party APIs.
     TODO:
         - Set up stripe payments
 

@@ -1,7 +1,9 @@
 // color palette to come from: https://material.io/color/#!/?view.left=0&view.right=0&primary.color=303F9F
+@import "./variables";
 
-.application{
-	.title{
+.application {
+	.title {
 		text-align: center;
+		margin: $space-xxxlrg 0;
 	}
 }
