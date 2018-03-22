@@ -1,7 +1,8 @@
 {
-	"name": "bloggy",
-	"version": "0.0.5",
-	"description": "blog application using react, redux, express, mongodb",
+	"name": "EngBook",
+	"version": "0.4.5",
+	"description":
+		"blog and proffesional social media application using react, redux, express, mongodb",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",

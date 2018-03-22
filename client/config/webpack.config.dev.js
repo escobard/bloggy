@@ -83,7 +83,7 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     // `web` extension prefixes have been added for better support
     // for React Native Web.
-    extensions: ["", ".web.js", ".mjs", ".js", ".json", ".web.jsx", ".jsx"],
+    extensions: [".web.js", ".mjs", ".js", ".json", ".web.jsx", ".jsx"],
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
@@ -107,13 +107,6 @@ module.exports = {
 
       // First, run the linter.
       // It's important to do this before Babel processes the JS.
-      {
-        exclude: /node_modules/,
-        loader: "babel",
-        query: {
-          presets: ["react", "es2015", "stage-1"]
-        }
-      },
       {
         test: /\.(js|jsx|mjs)$/,
         enforce: "pre",
