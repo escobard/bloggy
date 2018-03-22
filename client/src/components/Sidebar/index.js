@@ -84,7 +84,7 @@ const style = {
 		justifyContent: "space-around"
 	},
 	gridList: {
-		width: 250,
+		width: 310,
 		height: 200,
 		overflowY: "auto",
 		marginBottom: ""
@@ -119,7 +119,7 @@ const GridListExampleSimple = () => (
 
 const Sidebar = () => (
 	<aside>
-		<Card className="sidebar col-md-3">
+		<Card className="sidebar col-md-4 col-sm-12">
 			<List>
 				<Subheader>Recent Chats</Subheader>
 				<ListItem

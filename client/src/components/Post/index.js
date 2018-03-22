@@ -41,7 +41,7 @@ export default class CardExampleControlled extends React.Component {
 
   render() {
     return (
-      <article className="post-container col-md-9">
+      <article className="post-container col-md-8 col-sm-12">
         <Card
           expanded={this.state.expanded}
           onExpandChange={this.handleExpandChange}
