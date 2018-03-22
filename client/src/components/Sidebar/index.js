@@ -10,12 +10,13 @@ import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
 import IconMenu from "material-ui/IconMenu";
 import MenuItem from "material-ui/MenuItem";
 import StarBorder from "material-ui/svg-icons/toggle/star-border";
+import { GridList, GridTile } from "material-ui/GridList";
+
 import chatPlaceholder from "../../static/guy.jpg";
 import postPlaceholder from "../../static/post-placeholder.jpg";
 import styles from "./styles.scss";
-import { GridList, GridTile } from "material-ui/GridList";
 
-// a TON more samples on lists here:
+// a TON more samples on lists here:http://www.material-ui.com/#/components/card
 const iconButtonElement = (
 	<IconButton touch={true} tooltip="more" tooltipPosition="bottom-left">
 		<MoreVertIcon color={grey400} />
@@ -95,7 +96,7 @@ const GridListExampleSimple = () => (
 		<GridList cellHeight={180} style={style.gridList} cols={1}>
 			{tilesData.map(tile => (
 				<GridTile
-					key={tile.img}
+					key={tile.title}
 					title={tile.title}
 					subtitle={
 						<span>
