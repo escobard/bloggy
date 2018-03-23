@@ -27,10 +27,10 @@ class Header extends Component {
 		}
 		return (
 			<div className="authenticated-container">
-				<a href={url}>
+				<a href={url} onClick={() => this.handleLoggout()}>
 					<FlatButton className="login" label={text} />
 				</a>
-				<Payments />
+				{auth ? <Payments /> : null}
 			</div>
 		);
 	};
@@ -56,7 +56,6 @@ class Header extends Component {
 					}
 					onLeftIconButtonClick={this.handleToggle}
 					iconElementRight={this.renderLogin()}
-					onRightIconButtonClick={() => this.handleLoggout()}
 				/>
 				<Drawer
 					open={open}
