@@ -6,11 +6,17 @@ nav.navbar {
 	margin-bottom: $space-xlrg;
 	.appbar {
 		background-color: $primary !important;
+		.authenticated-container {
+			position: absolute;
+			right: 0;
+			margin-right: $space-lrg;
+			.stripe-payment {
+				float: right;
+				margin: 8px;
+			}
+		}
 		button {
-			position: absolute !important;
 			&.login {
-				position: relative !important;
-				margin-left: -50px !important;
 				color: $white !important;
 				margin-top: 4px !important;
 			}

@@ -9,12 +9,13 @@ import styles from "./styles.scss";
 
 import { logoutUser } from "../../actions";
 import NavItems from "./NavItems";
+import Payments from "../Payments";
 
 class Header extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			navItems: ["home", "dashboard", "addquestion"],
+			navItems: ["home", "dashboard", "payments"],
 			open: false
 		};
 	}
@@ -25,9 +26,12 @@ class Header extends Component {
 		if (auth) {
 		}
 		return (
-			<a href={url}>
-				<FlatButton className="login" label={text} />
-			</a>
+			<div className="authenticated-container">
+				<a href={url}>
+					<FlatButton className="login" label={text} />
+				</a>
+				<Payments />
+			</div>
 		);
 	};
 	handleLoggout = () => {
@@ -46,7 +50,7 @@ class Header extends Component {
 				<AppBar
 					className="appbar"
 					title={
-						<Link to="/">
+						<Link to="/" className="navbar-image">
 							<img className="logo" src={logo} alt="EngBook Logo" />
 						</Link>
 					}

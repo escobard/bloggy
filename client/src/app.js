@@ -17,26 +17,26 @@ import Blog from "./containers/blog";
 import styles from "./styles/global.scss";
 
 class App extends Component {
-    componentDidMount() {
-        // fetches our user data from the backend
-        this.props.fetchUser();
-    }
-    render() {
-        return (
-            <div>
-                <Header />
-                <main className="container">
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/dashboard" component={Dashboard} />
-                    <Route path="/dashboard/account" component={Account} />
-                    <Route path="/dashboard/profile" component={Profile} />
-                    <Route path="/dashboard/survey" component={Survey} />
-                    <Route path="/dashboard/blog" component={Blog} />
-                </main>
-                <Footer />
-            </div>
-        );
-    }
+  componentDidMount() {
+    // fetches our user data from the backend
+    this.props.fetchUser();
+  }
+  render() {
+    return (
+      <div>
+        <Header />
+        <main className="container">
+          <Route exact path="/" component={Home} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route path="/dashboard/account" component={Account} />
+          <Route path="/dashboard/profile" component={Profile} />
+          <Route path="/dashboard/survey" component={Survey} />
+          <Route path="/dashboard/blog" component={Blog} />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default withRouter(connect(null, { fetchUser })(App));
