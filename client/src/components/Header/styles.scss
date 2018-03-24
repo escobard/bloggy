@@ -9,10 +9,10 @@ nav.navbar {
 		.authenticated-container {
 			position: absolute;
 			right: 0;
-			margin-right: 2.5px $space-med;
+			margin-right: $space-med;
 			.stripe-payment {
 				float: left;
-				margin: $space-med;
+				margin: 4.3px $space-med;
 				span {
 					color: $white;
 				}

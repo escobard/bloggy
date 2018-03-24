@@ -56,11 +56,14 @@ class Payments extends Component {
 	render() {
 		// will stop this statement to test it
 		// debugger;
+
+		let { handleToken } = this.props;
+
 		return (
 			<div className="stripe-payment">
 				<StripeCheckout
 					amount={500}
-					token={token => console.log(token)}
+					token={token => handleToken(token)}
 					stripeKey={process.env.REACT_APP_STRIPE_KEY}
 					name="EngBook"
 					description="$5.00 for 5 Job Post credits."

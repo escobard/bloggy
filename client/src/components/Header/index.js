@@ -7,10 +7,12 @@ import DashIcon from "material-ui/svg-icons/action/dashboard";
 import logo from "../../static/logo.jpg";
 import styles from "./styles.scss";
 
-import { logoutUser } from "../../actions/user";
+import * as actions from "../../actions/user";
 import NavItems from "./NavItems";
 import Payments from "../Payments";
 
+// usually all redux state would be handled within a container, but since
+// the header component has no container this will be an exception
 class Header extends Component {
 	constructor(props) {
 		super(props);
@@ -30,7 +32,7 @@ class Header extends Component {
 				<a href={url} onClick={() => this.handleLoggout()}>
 					<FlatButton className="login" label={text} />
 				</a>
-				{auth ? <Payments /> : null}
+				{auth ? <Payments handleToken={this.props.handleToken} /> : null}
 			</div>
 		);
 	};
@@ -77,4 +79,4 @@ function mapStateToProps({ auth }) {
 	return { auth };
 }
 
-export default connect(mapStateToProps, { logoutUser })(Header);
+export default connect(mapStateToProps, actions)(Header);
