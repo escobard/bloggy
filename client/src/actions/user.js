@@ -27,6 +27,18 @@ export const fetchUser = () =>
 	};
 
 export const logoutUser = () => async dispatch => {
+	// triggers the logout function within the API with the a get request to the logout route
 	const res = await axios.get("/api/logout");
 	dispatch({ type: LOGOUT_USER, payload: "" });
+};
+
+// to handle our stripe payment token
+export const handleToken = token => async dispatch => {
+	// passes the token to our route, assuming we have a route in the API
+	// route will be created shortly
+	const res = await axios.post("/api/stripe", token);
+
+	// since we are effectively just updating the user data, we can use the same action type
+	// as FETCH_USER - this is most likely not best practice and is a simple shortcut in this scenario
+	dispatch({ type: FETCH_USER, payload: res.data });
 };
