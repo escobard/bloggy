@@ -9,10 +9,13 @@ nav.navbar {
 		.authenticated-container {
 			position: absolute;
 			right: 0;
-			margin-right: $space-lrg;
+			margin-right: 2.5px $space-med;
 			.stripe-payment {
-				float: right;
-				margin: 8px;
+				float: left;
+				margin: $space-med;
+				span {
+					color: $white;
+				}
 			}
 		}
 		button {

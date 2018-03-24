@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import { fetchUser } from "./actions";
+
+import { fetchUser } from "./actions/user";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";

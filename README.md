@@ -21,18 +21,11 @@ Possible future technologies include:
 ## Project Criteria
 
 The main purpose of this application is to provide the following features:
-    
-    - A blog social network, including:
-        + User to user profiles and a basic chat system.
-        + User dashboard, with metrics.
-            * Admin / premium content dashboard features.
-                = leaderboards and activity trackers for:
-                    - github activity
-                    - linkedin
-                    - crypto currencies
-                    - stocks 
-            * Currency system, and payment gateway
-        + User email system to invite users to join the blog (fremium - first 5 free)
+
+ - A proffesional social media network for enginners. + User to user profiles and a basic chat system. + User dashboard, with metrics.
+_ Admin / premium content dashboard features.
+= leaderboards and activity trackers for: - github activity - linkedin - crypto currencies - stocks
+_ Currency system, and payment gateway + A job post feature, where the post is shared globally and emailed to specific users. + contains an interest survey, which the recipients fill out to apply for the position. + contains a single job post page, where users can apply for the job: - Via email initially, a more complex application system to be introduced later.
 
 (Expand upon criteria in a later version)
 
@@ -42,64 +35,65 @@ The main purpose of this application is to provide the following features:
 
 Phase 1 - v0.05-v1.0
 
-- Base features:
-    + user login / creation with:
-        - google+
-        - manual user creation
-    + user profile
-        - personal stats
-            + to be expanded with premium addons
-        - blog posts (forum may be added on phase 1 if not on phase 2)
-    + user activity board
-    + home page with widgets:
-        + trending topics
+*   Base features:
+
+    *   user login / creation with:
+        *   google+
+        *   manual user creation
+    *   user profile
+        *   personal stats
+            *   to be expanded with premium addons
+        *   blog posts (forum may be added on phase 1 if not on phase 2)
+    *   user activity board
+    *   home page with widgets:
+        *   trending topics
             = based on industry
-                * at least 3 industries on phase 1, more on phase 2
-                * users can comment on trending topics
-        + most popular posts
-        + user with mosts posts
-        + user with most contributions
-    + user premium service - paid for:
-        - mass email to email list
-        - github / portfolio area creation ( may move to phase 2)
+            _ at least 3 industries on phase 1, more on phase 2
+            _ users can comment on trending topics
+        *   most popular posts
+        *   user with mosts posts
+        *   user with most contributions
+    *   user premium service - paid for:
+        *   mass job post emails, and job post single post view
+        *   github / portfolio area creation ( may move to phase 2)
 
-- Prod & Dev:
-    - Dev features:
-        - cont. development with nodemon on server
-        - cont. development with browsersync on client
-    - Prod features:
-        - deployment to heroku
-            - continous dev with heroku (may move to phase 2)
-        - gulp pipeline:
-            - minimization of code
-            - sass compression
+*   Prod & Dev:
 
-- Testing:
-    - client:
-        - jest for react components
-        - enzyme for react reducers / actions
-    - sever:
-        - enzyme / superset for express 
-    - data:
-        - (not sure how to test mongo yet)
+    *   Dev features:
+        *   cont. development with nodemon on server
+        *   cont. development with browsersync on client
+    *   Prod features:
+        *   deployment to heroku
+            *   continous dev with heroku (may move to phase 2)
+        *   gulp pipeline:
+            *   minimization of code
+            *   sass compression
+        *   authentication with a cookie
 
+*   Testing:
+    *   client:
+        *   jest for react components, reducers, and actions
+    *   sever:
+        *   enzyme / superset for express
+    *   data:
+        *   mocha for mongoDB / mongoose
 
 Phase 2 - v1.0-v2.0
 
-- Each version will add an additional feature to the application, including:
-    - twitter authentication, twitter feed, twitter widgets
-    - linkedin authentication, feed, and widget
-    - facebook authentication, feed, and widget
-    - other authentications, feeds and widgets
-    - trade charts, calculators, trackers
-    - user to user chat
-    - blog updated to forum if not in phase 1:
-        - limited base user features
-        - premium user features + services
+*   Each version will add an additional feature to the application, including:
 
-- Each version will expand on prod, dev, and testing pipelines.
-- And much more...
+    *   twitter authentication, twitter feed, twitter widgets
+    *   linkedin authentication, feed, and widget
+    *   facebook authentication, feed, and widget
+    *   other authentications, feeds and widgets
+    *   trade charts, calculators, trackers
+    *   user to user chat
+    *   blog updated to forum if not in phase 1:
+        *   limited base user features
+        *   premium user features + services
 
+*   Each version will expand on prod, dev, and testing pipelines.
+*   And much more...
 
 ## Demo
 
@@ -115,12 +109,12 @@ To download and install, please follow the instructions below.
 
 Since this application utilizes several different technologies, the documentation has been split up into different wiki articles to avoid cluttering the main README.md file.
 
-* [Directory](https://github.com/escobard/engbook/wiki)
-* [Installation](https://github.com/escobard/engbook/wiki/Installation)
-* [Usage](https://github.com/escobard/engbook/wiki/Usage)
-* [Changelog](https://github.com/escobard/engbook/wiki/Changelog)
-* [Known bugs](https://github.com/escobard/engbook/wiki/Known-Bugs)
-* [Libraries, Frameworks, APIs](https://github.com/escobard/engbook/wiki/Libraries,-Frameworks,-APIs)
+*   [Directory](https://github.com/escobard/engbook/wiki)
+*   [Installation](https://github.com/escobard/engbook/wiki/Installation)
+*   [Usage](https://github.com/escobard/engbook/wiki/Usage)
+*   [Changelog](https://github.com/escobard/engbook/wiki/Changelog)
+*   [Known bugs](https://github.com/escobard/engbook/wiki/Known-Bugs)
+*   [Libraries, Frameworks, APIs](https://github.com/escobard/engbook/wiki/Libraries,-Frameworks,-APIs)
 
 ## Contribution
 

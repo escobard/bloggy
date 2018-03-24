@@ -7,7 +7,7 @@ import DashIcon from "material-ui/svg-icons/action/dashboard";
 import logo from "../../static/logo.jpg";
 import styles from "./styles.scss";
 
-import { logoutUser } from "../../actions";
+import { logoutUser } from "../../actions/user";
 import NavItems from "./NavItems";
 import Payments from "../Payments";
 
@@ -22,7 +22,7 @@ class Header extends Component {
 	renderLogin = () => {
 		let { auth } = this.props;
 		let text = auth ? "Log Out" : auth === "" ? "Loading..." : "Log in";
-		let url = auth ? "/" : "auth/google";
+		let url = auth ? "# " : "auth/google";
 		if (auth) {
 		}
 		return (
