@@ -4,7 +4,8 @@ const routes = {
 	googleAuth: "/auth/google",
 	googleAuthCallback: "/auth/google/callback",
 	authenticatedUser: "/api/current_user",
-	logout: "/api/logout"
-}
+	logout: "/api/logout",
+	stripe: "/api/stripe"
+};
 
-module.exports = routes
+module.exports = routes;
