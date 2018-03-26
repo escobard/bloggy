@@ -11,16 +11,18 @@ const { stripeSecret } = require("../constants/config-dev");
 const stripe = require("stripe")(stripeSecret);
 
 module.exports = function(app) {
-
-	// since we are using the bodyParser library, we can call parse objects for the 
+	// since we are using the bodyParser library, we can call parse objects for the
 	// POST request into req.body - this isn't a default function of express
 	// in other words, this turns the REQUEST object from the client, into a JSON object that the server
 	// can then utilize
 	app.post(stripeRoute, async (req, res) => {
-
+		// sends an error back to the user if the user has not been authenticated by passport
+		if (!req.user) {
+			return res.status(401).send({ error: "You must log in!" });
+		}
 		// this should return the stripe API payment token, which contains all the necessary client data
 		// if the request came as a POST request from the client side
-		console.log(req.body)
+		console.log(req.body);
 
 		/* more on how charges with stripe work here: https://stripe.com/docs/api/node#create_charge 
 		*/
@@ -32,13 +34,13 @@ module.exports = function(app) {
 			// before sending off to the stripe authentication API
 			amount: 500,
 
-			// default currency is again USD, but can be set to pretty much anything else 
-			currency: 'usd',
-			description: '$5 for 5 credits',
+			// default currency is again USD, but can be set to pretty much anything else
+			currency: "usd",
+			description: "$5 for 5 credits",
 
 			// this is the TOKEN that we received from the client side request to the stripe API
 			source: req.body.id
-		})
+		});
 
 		// returns the charge response from the API
 		// console.log(charge)
@@ -51,12 +53,11 @@ module.exports = function(app) {
 		// with that continuity in mind, we can simply add more credits to the user model instance, like so:
 		req.user.credits += 5;
 
-		// this uses the .save() method of the user MODEL to save our instance with the new credit data, 
+		// this uses the .save() method of the user MODEL to save our instance with the new credit data,
 		// and saves the response to the a local user constant
-		const user = await req.user.save()
+		const user = await req.user.save();
 
 		// returns a response back to the client side with the updated user model instance
-		res.send(user)
+		res.send(user);
 	});
 };
-
