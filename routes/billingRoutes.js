@@ -14,14 +14,17 @@ module.exports = function(app) {
 
 	// since we are using the bodyParser library, we can call parse objects for the 
 	// POST request into req.body - this isn't a default function of express
-	app.post(stripeRoute, (req, res) => {
+	// in other words, this turns the REQUEST object from the client, into a JSON object that the server
+	// can then utilize
+	app.post(stripeRoute, async (req, res) => {
 
 		// this should return the stripe API payment token, which contains all the necessary client data
+		// if the request came as a POST request from the client side
 		console.log(req.body)
 
 		/* more on how charges with stripe work here: https://stripe.com/docs/api/node#create_charge 
 		*/
-		stripe.charges.create({
+		const charge = await stripe.charges.create({
 			// amount - the amount of money in cents that the transaction
 			// is expected to charge the user in CENTS
 
@@ -36,6 +39,24 @@ module.exports = function(app) {
 			// this is the TOKEN that we received from the client side request to the stripe API
 			source: req.body.id
 		})
+
+		// returns the charge response from the API
+		// console.log(charge)
+
+		// since we already set up passport, if our USER is authenticated within the API, the user object
+		// containing our user's data is attached to the req.user object for all routes
+		// this attaches the user MODEL, so the mongoose object with all its child properties
+		// more on how this is set up with passport on ./services/passport.notes.js
+
+		// with that continuity in mind, we can simply add more credits to the user model instance, like so:
+		req.user.credits += 5;
+
+		// this uses the .save() method of the user MODEL to save our instance with the new credit data, 
+		// and saves the response to the a local user constant
+		const user = await req.user.save()
+
+		// returns a response back to the client side with the updated user model instance
+		res.send(user)
 	});
 };
 
