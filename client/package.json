@@ -14,8 +14,7 @@
         },
         "/api/stripe": {
             "target": "http://localhost:5000"
-        },
-
+        }
     },
     "devDependencies": {
         "babel-core": "^6.26.0",
