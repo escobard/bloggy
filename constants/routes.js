@@ -5,7 +5,7 @@ const routes = {
 	googleAuthCallback: "/auth/google/callback",
 	authenticatedUser: "/api/current_user",
 	logout: "/api/logout",
-	stripe: "/api/stripe"
+	stripeRoute: "/api/stripe"
 };
 
 module.exports = routes;

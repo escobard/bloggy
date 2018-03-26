@@ -1,8 +1,7 @@
 {
 	"name": "EngBook",
 	"version": "0.4.5",
-	"description":
-		"blog and proffesional social media application using react, redux, express, mongodb",
+	"description": "blog and proffesional social media application using react, redux, express, mongodb",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
@@ -24,16 +23,19 @@
 	},
 	"homepage": "https://github.com/escobard/bloggy#readme",
 	"dependencies": {
+		"body-parser": "^1.18.2",
 		"concurrently": "^3.5.1",
 		"cookie-session": "^2.0.0-beta.3",
 		"cors": "^2.8.4",
 		"express": "^4.16.2",
 		"helmet": "^3.11.0",
+		"iconv-lite": "^0.4.19",
 		"mocha": "^5.0.0",
 		"mongoose": "^5.0.4",
 		"nodemon": "^1.14.12",
 		"passport": "^0.4.0",
 		"passport-google-oauth20": "^1.0.0",
+		"stripe": "^5.6.1",
 		"supertest": "^3.0.0"
 	},
 	"devDependencies": {
