@@ -26,7 +26,7 @@
             - May need a middleware to handle authentication on App.js
                 - Route users that go to any of the authenticated URL's to a login page.
 
-## v0.5-frontend-setup-3
+## v0.??-frontend-setup-3
 
     TODO:
         - Set up router and component animations
@@ -37,6 +37,11 @@
             - Front end Testing.
             - Commands - make a new wiki.
 
+## v0.5-heroku-fullstack
+
+    TODO:
+        -
+
 ## v0.45-stripe-setup
 
     COMPLETED:
@@ -44,8 +49,11 @@
             - Installation.
             - Usage.
             - Third party APIs.
-    TODO:
         - Set up stripe payments
+            - stripe charge handling with the express API
+            - credit card input with the react frontend
+            - credit display on the header of the frontend
+            - create auth middleware to check if the user has been authenticated by passport.
 
 ## v0.4-frontend-setup-2
 

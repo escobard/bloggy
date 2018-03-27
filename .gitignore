@@ -3,6 +3,7 @@ constants/config-dev.js
 client/node_modules
 client/.env.development
 client/.env.production
+client/build
 tests/config.js
 bundle.js
 npm-debug.log
