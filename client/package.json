@@ -100,7 +100,7 @@
         "whatwg-fetch": "2.0.3"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "node scripts/start.js",
         "build": "react-scripts build",
         "test": "npm run jest",
         "jest": "jest",
