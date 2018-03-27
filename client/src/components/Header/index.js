@@ -25,13 +25,15 @@ class Header extends Component {
 		let { auth } = this.props;
 		let text = auth ? "Log Out" : auth === "" ? "Loading..." : "Log in";
 		let url = auth ? "# " : "auth/google";
-		if (auth) {
-		}
+		console.log(auth);
 		return (
 			<div className="authenticated-container">
 				<a href={url} onClick={() => this.handleLoggout()}>
 					<FlatButton className="login" label={text} />
 				</a>
+				{auth ? (
+					<FlatButton className="credits" label={`Credits: ${auth.credits}`} />
+				) : null}
 				{auth ? <Payments handleToken={this.props.handleToken} /> : null}
 			</div>
 		);

@@ -2,6 +2,7 @@ const passport = require("passport");
 
 const { stripeRoute } = require("../constants/routes");
 const { stripeSecret } = require("../constants/config-dev");
+const requireLogin = require("../middlewares/requireLogin");
 
 // this package handles stripe usage with node.js
 // HUGE amount of helpful documentation (thank gawd) for developers
@@ -15,11 +16,10 @@ module.exports = function(app) {
 	// POST request into req.body - this isn't a default function of express
 	// in other words, this turns the REQUEST object from the client, into a JSON object that the server
 	// can then utilize
-	app.post(stripeRoute, async (req, res) => {
-		// sends an error back to the user if the user has not been authenticated by passport
-		if (!req.user) {
-			return res.status(401).send({ error: "You must log in!" });
-		}
+
+	// the second argument here, requireLogin, is our middleware checking the routes
+	// this is how you apply middlewares to express routes
+	app.post(stripeRoute, requireLogin, async (req, res) => {
 		// this should return the stripe API payment token, which contains all the necessary client data
 		// if the request came as a POST request from the client side
 		console.log(req.body);

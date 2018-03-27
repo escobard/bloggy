@@ -12,18 +12,17 @@ nav.navbar {
 			margin-right: $space-med;
 			.stripe-payment {
 				float: left;
-				margin: 4.3px $space-med;
-				span {
-					color: $white;
+			}
+			button {
+				color: $white !important;
+				margin-top: 4px !important;
+				&.credits {
+					margin-top: 4px !important;
+					float: left;
 				}
 			}
 		}
-		button {
-			&.login {
-				color: $white !important;
-				margin-top: 4px !important;
-			}
-		}
+
 		.logo {
 			float: none;
 			margin: auto;
