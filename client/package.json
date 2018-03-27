@@ -101,7 +101,7 @@
     },
     "scripts": {
         "start": "node scripts/start.js",
-        "build": "react-scripts build",
+        "build": "node scripts/build",
         "test": "npm run jest",
         "jest": "jest",
         "jest:watch": "jest --watch",
