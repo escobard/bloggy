@@ -39,8 +39,13 @@
 
 ## v0.5-heroku-fullstack
 
-    TODO:
-        -
+    COMPLETED:
+        - deployed application to heroku, working live!
+        - created handlers for routes in production vs dev
+        - cleaned up package.json file.
+        - need to find a way to build the SASS stylesheet into a bundle for react-scripts build
+            - this is done via scripts/build.js - need to find a way to bundle and add sass styles to production deploy.
+            - can test this locally
 
 ## v0.45-stripe-setup
 
