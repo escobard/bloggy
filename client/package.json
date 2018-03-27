@@ -98,8 +98,8 @@
         "whatwg-fetch": "2.0.3"
     },
     "scripts": {
-        "start": "node scripts/start.js",
-        "build": "node scripts/build.js",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
         "test": "npm run jest",
         "jest": "jest",
         "jest:watch": "jest --watch",
