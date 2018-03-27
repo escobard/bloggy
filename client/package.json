@@ -11,6 +11,9 @@
         },
         "/api/logout": {
             "target": "http://localhost:5000"
+        },
+        "/api/stripe": {
+            "target": "http://localhost:5000"
         }
     },
     "devDependencies": {
@@ -44,6 +47,7 @@
         "autoprefixer": "7.1.6",
         "axios": "^0.18.0",
         "axios-mock-adapter": "^1.14.1",
+        "babel": "^6.23.0",
         "babel-core": "6.26.0",
         "babel-eslint": "7.2.3",
         "babel-jest": "20.0.3",
@@ -81,6 +85,7 @@
         "react-dom": "^16.2.0",
         "react-redux": "^5.0.7",
         "react-router-dom": "^4.2.2",
+        "react-stripe-checkout": "^2.6.3",
         "react-swipeable-views": "^0.12.12",
         "redux": "^3.7.2",
         "redux-thunk": "^2.2.0",
@@ -95,12 +100,11 @@
     "scripts": {
         "start": "node scripts/start.js",
         "build": "node scripts/build.js",
-        "test": "jest --watch",
-        "test:cra": "node scripts/test.js --env=jsdom",
-        "test:watch": "npm run test -- --watch",
+        "test": "npm run jest",
         "jest": "jest",
         "jest:watch": "jest --watch",
-        "jest:coverage": "jest --coverage"
+        "jest:coverage": "jest --coverage",
+        "jest:clean": "jest -- -u"
     },
     "jest": {
         "setupFiles": [

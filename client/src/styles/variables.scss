@@ -12,16 +12,15 @@ $grey-black: #000000;
 $grey-darker-highlight: #2e3d49;
 $grey-dark-highlight: #313336;
 $grey-dark: #3b3f43;
-$grey-border: #DBE2E8;
+$grey-border: #dbe2e8;
 $grey-medium-darker: #525c65;
 $grey-medium-dark: #757c81;
-$grey-medium-darkity: #7D97AD;
-$grey-medium-darkish: #8A9094;
+$grey-medium-darkity: #7d97ad;
+$grey-medium-darkish: #8a9094;
 $grey-medium: #979fa7;
-$grey-very-medium: #91A7BA;
+$grey-very-medium: #91a7ba;
 $grey-medium-light: #b9c0c4;
 $grey-light: #efefef;
-$grey-white: #ffffff;
 $white: #ffffff;
 
 $green: #02ccba;
@@ -39,8 +38,10 @@ $primary-light: #4c66c0;
 $primary-dark: #001861;
 $primary: #003c8f;
 
+$primary-gray: #b9c0c4;
+
 // SHADOWS
-$button-hover-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2);
+$button-hover-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2);
 
 // SPACING
 $space-small: 5px;
@@ -48,7 +49,7 @@ $space-med: 10px;
 $space-lrg: 20px;
 $space-xlrg: 30px;
 $space-xxlrg: 40px;
-
+$space-xxxlrg: 60px;
 // FONTS
 $font-family-default: Roboto, sans-serif;
 $font-weight-light: 200;
@@ -62,7 +63,7 @@ $font-size-small: 1.2rem;
 $font-size-normal: 1.4rem;
 $font-size-large: 1.6rem;
 $font-size-xl: 1.8rem;
-$font-size-xxl: 2.0rem;
+$font-size-xxl: 2rem;
 $font-size-nl: 2.8rem;
 $font-size-xxlm: 3rem;
 $font-size-xxxl: 3.4rem;

@@ -7,27 +7,35 @@ import DashIcon from "material-ui/svg-icons/action/dashboard";
 import logo from "../../static/logo.jpg";
 import styles from "./styles.scss";
 
-import { logoutUser } from "../../actions";
+import * as actions from "../../actions/user";
 import NavItems from "./NavItems";
+import Payments from "../Payments";
 
+// usually all redux state would be handled within a container, but since
+// the header component has no container this will be an exception
 class Header extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			navItems: ["home", "dashboard", "addquestion"],
+			navItems: ["home", "dashboard", "payments"],
 			open: false
 		};
 	}
 	renderLogin = () => {
 		let { auth } = this.props;
 		let text = auth ? "Log Out" : auth === "" ? "Loading..." : "Log in";
-		let url = auth ? "/" : "auth/google";
-		if (auth) {
-		}
+		let url = auth ? "# " : "auth/google";
+		console.log(auth);
 		return (
-			<a href={url}>
-				<FlatButton className="login" label={text} />
-			</a>
+			<div className="authenticated-container">
+				<a href={url} onClick={() => this.handleLoggout()}>
+					<FlatButton className="login" label={text} />
+				</a>
+				{auth ? (
+					<FlatButton className="credits" label={`Credits: ${auth.credits}`} />
+				) : null}
+				{auth ? <Payments handleToken={this.props.handleToken} /> : null}
+			</div>
 		);
 	};
 	handleLoggout = () => {
@@ -46,13 +54,12 @@ class Header extends Component {
 				<AppBar
 					className="appbar"
 					title={
-						<Link to="/">
+						<Link to="/" className="navbar-image">
 							<img className="logo" src={logo} alt="EngBook Logo" />
 						</Link>
 					}
 					onLeftIconButtonClick={this.handleToggle}
 					iconElementRight={this.renderLogin()}
-					onRightIconButtonClick={() => this.handleLoggout()}
 				/>
 				<Drawer
 					open={open}
@@ -74,4 +81,4 @@ function mapStateToProps({ auth }) {
 	return { auth };
 }
 
-export default connect(mapStateToProps, { logoutUser })(Header);
+export default connect(mapStateToProps, actions)(Header);

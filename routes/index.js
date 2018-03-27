@@ -1,4 +1,5 @@
-const authRoutes = require('./authRoutes')
+const authRoutes = require("./authRoutes");
+const billingRoutes = require("./billingRoutes");
 
 module.exports = function(app) {
 	app.get("/", (req, res) => {
@@ -7,6 +8,6 @@ module.exports = function(app) {
 		res.send({ hi: "there" });
 	});
 
-	// handles authentication routes, will need to fragment in the future
-	authRoutes(app)
+	authRoutes(app);
+	billingRoutes(app);
 };

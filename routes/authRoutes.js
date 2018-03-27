@@ -31,7 +31,6 @@ module.exports = function(app) {
 
 	app.get(logout, (req, res) => {
 		req.logout();
-		res.send(req.user);
 	});
 
 	app.get(authenticatedUser, (req, res) => {

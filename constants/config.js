@@ -1,3 +1,5 @@
+// its important to note that this syntax will only work with vanilla js, not ES2015
+
 // this file will now control the environment logic
 if (process.env.NODE_ENV === "production") {
 	// we are in production, return prod set of keys
