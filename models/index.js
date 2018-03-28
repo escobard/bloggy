@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 
 require("./Users")
+require("./Jobs")
 
 const mongoURI = require("../constants/config").mongoURI
 
