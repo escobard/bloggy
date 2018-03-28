@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 
 const { Schema } = mongoose
+const RecipientSchema = require('./Recipient')
 
 const jobsSchema = new Schema({
 		title: String,
@@ -15,7 +16,17 @@ const jobsSchema = new Schema({
 			description: String,
 			applyWithProfile: { type: Boolean, default:  false},
 		},
-		recipients: [String]
+		// this expects an array of strings to be passed into this piece of schema
+		// recipients: [String]
+		// when there is a collection of data instances within any specific model instance, 
+		// this is called a subdocument collection - used to store incremental data
+		// that is UNIQUE to the model instance, and will not be utilized elsewhere
+		// otherwise, we create a new model class instead of a subdocument collection
+		// if we want other model instances to interact with the data
+		recipients: [
+			// this essentially creates an ARRAY that contains instances of the RecipientSchema object
+			RecipientSchema
+		]
 
 })
 
