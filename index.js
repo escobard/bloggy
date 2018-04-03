@@ -35,6 +35,8 @@ app.use(passport.session());
 */
 require("./routes")(app);
 
+// this block of code routes all routes that are NOT defined within the server to render client side 
+// assets
 if (process.env.NODE_ENV === "production") {
 	// Express will serve up production assets
 	// like our main.js file, or main.css file!

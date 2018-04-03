@@ -1,7 +1,5 @@
-const authRoutes = require("./authRoutes");
-const billingRoutes = require("./billingRoutes");
-
 module.exports = function(app) {
-	authRoutes(app);
-	billingRoutes(app);
+	require("./authRoutes")(app)
+	require("./billingRoutes")(app)
+	require("./jobRoutes")(app)
 };
