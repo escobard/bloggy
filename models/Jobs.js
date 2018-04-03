@@ -26,7 +26,22 @@ const jobsSchema = new Schema({
 		recipients: [
 			// this essentially creates an ARRAY that contains instances of the RecipientSchema object
 			RecipientSchema
-		]
+		],
+
+		// although optional, the underscore is utilized as a prefix to RELATIONAL DATA
+		// this is the property that grabs our user.id
+		_user: { 
+			
+			// this looks for the ObjectID property, which is automatically assigned to user.id
+			// when the user schema is created
+			type: Schema.Types.ObjectId, 
+			ref: 'User' },
+
+		// this is recording the date that it was sent
+		dateSent: Date,
+
+		// this records the latest time someone responded to the survey
+		lastResponded: Date
 
 })
 
