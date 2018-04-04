@@ -18,7 +18,31 @@ module.exports = app => {
 		const job = new Job({
 			title,
 			subject,
-			body
+			body,
+
+			// unecessarily complicated to handle this within the BE
+			// we could easily have each recipient passed as an OBJECT within an ARRAY
+			// within the front end instead of parsing the data as strings in the API
+			// for the purposes of learning though we will go with the instructors solution
+			recipients:
+				// creates an array of strings from the front end data
+				recipients
+					.split(",")
+
+					// maps through the array
+					// un-abbreviated = .map(email =>{
+					// returns each string within the array as an object containing a string, satisfying the
+					// user schema data types for the RecipientSchema
+					//return {email: email}})
+					.map(email => ({ email })),
+
+			// grabs the user id from the request, and adds it to the schema
+			// this will always exsist because of our middlewares which verify authentication + credits before
+			// running the route handler
+			_user: req.user.id,
+
+			// creates our date for when the job request was received
+			dateSent: Date.now()
 		});
 	});
 };
