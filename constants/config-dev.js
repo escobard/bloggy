@@ -6,5 +6,6 @@ module.exports = {
 		"mongodb://engbook-dev:engbook-dev@ds231228.mlab.com:31228/engbook-dev",
 	cookieKey: "sadufhasiufhsdauifhasdiuh",
 	stripePublic: "pk_test_DHnKfQSTqotlHbLH5wKMjxIH",
-	stripeSecret: "sk_test_0GrIJOLTeo3cpbj3EExQTgf7"
+	stripeSecret: "sk_test_0GrIJOLTeo3cpbj3EExQTgf7",
+	sendGrid: "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"
 }

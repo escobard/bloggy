@@ -33,8 +33,10 @@ module.exports = app => {
 					// un-abbreviated = .map(email =>{
 					// returns each string within the array as an object containing a string, satisfying the
 					// user schema data types for the RecipientSchema
-					//return {email: email}})
-					.map(email => ({ email })),
+					//return {email:
+					// removes any trailing spaces
+					// email.trim()}})
+					.map(email => ({ email: email.trim() })),
 
 			// grabs the user id from the request, and adds it to the schema
 			// this will always exsist because of our middlewares which verify authentication + credits before
