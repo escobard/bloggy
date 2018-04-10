@@ -1,5 +1,5 @@
 const sendgrid = require("sendgrid"),
-	sendGrid = require("../../constants/config"),
+	{sendGrid} = require("../../constants/config"),
 	// creates a helper from the sendgrid lib
 	helper = sendgrid.mail;
 
@@ -11,6 +11,9 @@ class Mailer extends helper.Mail {
 		content
 	) {
 		super();
+
+		// sets up the connection to the API with our private key
+		this.sgApi = sendgrid(sendGrid)
 
 		// sets the from field, helper function of sendgrid
 		this.from_email = new helper.Email("no-reply@engbook.ca");
@@ -62,6 +65,19 @@ class Mailer extends helper.Mail {
 
 		// ads the new array of recipients to our mailer class, via the sendgrid.mail.addPersonalization() function
 		this.addPersonalization(personalize)
+	}
+
+	async send(){
+
+		// this sends the data to sendgrid
+		const request = this.sgApi.emptyRequest({
+			method: 'POST',
+			path: '/v3/mail/send',
+			body: this.toJSON()
+		})
+
+		const response = this.sgApi.API(request);
+		return response;
 	}
 }
 
