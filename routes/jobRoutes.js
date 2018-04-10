@@ -3,8 +3,8 @@
 const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/requireLogin");
 const requireCredits = require("../middlewares/requireCredits");
-const Mailer = require("../services/Mailer")
-const jobTemplate = require("../services/Mailer/emailTemplates/jobTemplate")
+const Mailer = require("../services/Mailer");
+const jobTemplate = require("../services/Mailer/emailTemplates/jobTemplate");
 
 const Job = mongoose.model("jobs");
 
@@ -55,8 +55,7 @@ module.exports = app => {
 			job,
 
 			// passes the HTML of the body
-			jobTemplate(job),
-			)
-
+			jobTemplate(job)
+		);
 	});
 };
