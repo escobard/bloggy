@@ -28,7 +28,9 @@ class Mailer extends helper.Mail {
 		this.addContent(this.body)
 
 		this.addClickTracking()
-		this.addRecipients()
+
+		// adds the array of emails created by formatAddresses to the sengrid.mail.addRecipients
+		this.addRecipients(recipients)
 	}
 
 	formatAddresses(recipients) {
@@ -47,6 +49,19 @@ class Mailer extends helper.Mail {
 
 		trackingSettings.setClickTracking(clickTracking)
 		this.addTrackingSettings(trackingSettings)
+	}
+
+	addRecipients(recipients){
+		// defines the personalize helper 
+		const personalize = new helper.Personalization()
+
+		// maps through each email in the array
+		this.recipients.forEach(recipient =>{
+			personalize.addTo(recipient)
+		})
+
+		// ads the new array of recipients to our mailer class, via the sendgrid.mail.addPersonalization() function
+		this.addPersonalization(personalize)
 	}
 }
 
