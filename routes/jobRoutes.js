@@ -3,6 +3,8 @@
 const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/requireLogin");
 const requireCredits = require("../middlewares/requireCredits");
+const Mailer = require("../services/Mailer")
+const jobTemplate = require("../services/Mailer/emailTemplates/jobTemplate")
 
 const Job = mongoose.model("jobs");
 
@@ -46,5 +48,15 @@ module.exports = app => {
 			// creates our date for when the job request was received
 			dateSent: Date.now()
 		});
+
+		//we will set up our mailer class to send to sendGrid here
+		const mailer = new Mailer(
+			// passes our new job mongoose schema to the mailer class
+			job,
+
+			// passes the HTML of the body
+			jobTemplate(job),
+			)
+
 	});
 };

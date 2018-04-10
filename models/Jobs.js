@@ -1,9 +1,8 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose"),
+{ Schema } = mongoose,
+RecipientSchema = require('./Recipient'),
 
-const { Schema } = mongoose
-const RecipientSchema = require('./Recipient')
-
-const jobsSchema = new Schema({
+jobsSchema = new Schema({
 		title: String,
 		subject: String,
 		body: String,
