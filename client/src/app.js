@@ -22,6 +22,10 @@ class App extends Component {
     // fetches our user data from the backend
     this.props.fetchUser();
   }
+  componentDidUpdate() {
+    // ensuring any updates asynchrnously update our credits
+    this.props.fetchUser();
+  }
   render() {
     return (
       <div>

@@ -9,14 +9,14 @@ jobTemplate = require("../services/Mailer/emailTemplates/jobTemplate"),
 Job = mongoose.model("jobs")
 
 module.exports = app => {
-	// we can add as many middlewares as we want to a route handler
+	// we can add as many middlewares as we want to a route handl er
 	// the only gotcha is that the middlewares MUST be added in the order
 	// we want the middlewares to run
-	app.post(jobs, requireLogin, requireCredits, (req, res) => {
+	app.post(jobs, requireLogin, requireCredits, async (req, res) => {
 		// grabs the properties we need to store within mongo from the request
 		const { title, subject, body, recipients } = req.body;
 
-		// sets the properties of our new survey instance
+		// sets the properties of our new job instance
 		const job = new Job({
 			title,
 			subject,
@@ -58,6 +58,29 @@ module.exports = app => {
 			jobTemplate(job)
 		);
 
-		mailer.send()
+		// creates error handling for our requests to sendgrid / mongodb
+		try{
+
+			// sends the email off to sendGrid which sends the email to the user and sets up our custom links
+			await mailer.send()
+
+			// saves the job instance to our mongoDB 
+			await job.save()
+
+			// removes a credit from the user once the job post has been sent
+			req.user.credits -= 1;
+
+			// saves the new user instance to our DB
+			const user = await req.user.save()
+
+
+			// sends back the user data to the front end, updating the new credit score
+			res.send(user);
+		}
+
+		catch(err){
+			res.status(422).send(err)
+		}
+
 	});
 };

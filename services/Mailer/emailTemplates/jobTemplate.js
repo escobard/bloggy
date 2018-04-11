@@ -17,6 +17,9 @@ module.exports = job => {
 					<a href="http://localhost:3000">
 						Yes
 					</a>
+					<a href="http://localhost:3000">
+						No
+					</a>
 				</div>
 			</div>
 		</body>
