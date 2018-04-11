@@ -37,6 +37,20 @@
             - Front end Testing.
             - Commands - make a new wiki.
 
+## v0.6
+    COMPLETED:
+        - set up front end job post components
+        - set up front end job handling with react / redux
+        - clean up front end
+
+## v0.55
+    COMPLETED:
+        - set up job post creation
+        - set up job post emails w/ link tracking
+        - set up job model, and job recipient model
+        - set up job post route and request handling
+        - set up sendgrid API and email template
+
 ## v0.5-heroku-fullstack
 
     COMPLETED:

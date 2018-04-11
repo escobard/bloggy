@@ -23,12 +23,20 @@ Possible future technologies include:
 
 The main purpose of this application is to provide the following features:
 
-*   A proffesional social media network for enginners. + User to user profiles and a basic chat system. + User dashboard, with metrics.
-    _ Admin / premium content dashboard features.
-    = leaderboards and activity trackers for: - github activity - linkedin - crypto currencies - stocks
-    _ Currency system, and payment gateway + A job post feature, where the post is shared globally and emailed to specific users. + contains an interest survey, which the recipients fill out to apply for the position. + contains a single job post page, where users can apply for the job: - Via email initially, a more complex application system to be introduced later.
-
-(Expand upon criteria in a later version)
+*   A proffesional social media network for enginners. 
+    + User to user profiles and a basic chat system (phase 2). 
+    + User dashboard, with metrics.
+        - Admin / premium content dashboard features.
+            + leaderboards and activity trackers for: 
+                - github activity 
+                - linkedin 
+                - crypto currencies 
+                - stocks
+        - Currency system, and payment gateway 
+            + A job post feature, where the post is shared globally and emailed to specific users. 
+            + contains an job post, which the recipients fill out to apply for the position.
+            + contains a single job post page, where users can apply for the job: 
+                - Via email initially, a more complex application system to be introduced later.
 
 (Expand upon criteria in a later version)
 
