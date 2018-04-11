@@ -1,7 +1,7 @@
 // not sure how necessary this import is - sometimes testing frameworks give routes issues if you import
 // models multiple times so we are loading the jobs scheme prior to the route callback
 const mongoose = require("mongoose"),
-{ jobs } = require("../constants/routes"),
+{ jobs, jobsThanks } = require("../constants/routes"),
 requireLogin = require("../middlewares/requireLogin"),
 requireCredits = require("../middlewares/requireCredits"),
 Mailer = require("../services/Mailer"),
@@ -9,6 +9,12 @@ jobTemplate = require("../services/Mailer/emailTemplates/jobTemplate"),
 Job = mongoose.model("jobs")
 
 module.exports = app => {
+
+	// sets up our route to return some data to the user after they have clicked on a job link
+	app.get(jobsThanks, (req, res) =>{
+		res.send('Thanks for voting!')
+	})
+
 	// we can add as many middlewares as we want to a route handl er
 	// the only gotcha is that the middlewares MUST be added in the order
 	// we want the middlewares to run

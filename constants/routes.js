@@ -8,7 +8,8 @@ const routes = {
 	authenticatedUser: "/api/current_user",
 	logout: "/api/logout",
 	stripeRoute: "/api/stripe",
-	jobs: "/api/jobs"
+	jobs: "/api/jobs",
+	jobsThanks: "/api/jobs/thanks"
 };
 
 module.exports = routes;
