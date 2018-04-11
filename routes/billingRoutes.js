@@ -11,7 +11,7 @@ const requireLogin = require("../middlewares/requireLogin");
 // requires the secretKey to call stripe
 const stripe = require("stripe")(stripeSecret);
 
-module.exports = function(app) {
+module.exports = app => {
 	// since we are using the bodyParser library, we can call parse objects for the
 	// POST request into req.body - this isn't a default function of express
 	// in other words, this turns the REQUEST object from the client, into a JSON object that the server

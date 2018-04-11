@@ -7,7 +7,7 @@ const {
 	logout
 } = require("../constants/routes");
 
-module.exports = function(app) {
+module.exports = app => {
 	app.get(
 		googleAuth,
 		passport.authenticate("google", {

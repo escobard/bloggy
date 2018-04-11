@@ -12,6 +12,10 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import App from "./app";
 import reducers from "./reducers";
 
+// just using this to check async. requests
+import axios from "axios"
+window.axios = axios;
+
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(

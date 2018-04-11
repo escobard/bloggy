@@ -7,6 +7,7 @@ This repository contains all the files for an application built to showcase an a
     - Currency transactions handled with the Stripe API
     - Testing of server, data, and client applications with Mocha / Enzyme / Jest
     - Manage user Authentication with oAuth / Passport
+    - Email and email metrics with SendGrid
     - Offline caching with Service Workers / IndexDB / LocalStorage
     - Client interface built with React / Redux
     - Progressive web application using responsive practices
@@ -22,10 +23,10 @@ Possible future technologies include:
 
 The main purpose of this application is to provide the following features:
 
- - A proffesional social media network for enginners. + User to user profiles and a basic chat system. + User dashboard, with metrics.
-_ Admin / premium content dashboard features.
-= leaderboards and activity trackers for: - github activity - linkedin - crypto currencies - stocks
-_ Currency system, and payment gateway + A job post feature, where the post is shared globally and emailed to specific users. + contains an interest survey, which the recipients fill out to apply for the position. + contains a single job post page, where users can apply for the job: - Via email initially, a more complex application system to be introduced later.
+*   A proffesional social media network for enginners. + User to user profiles and a basic chat system. + User dashboard, with metrics.
+    _ Admin / premium content dashboard features.
+    = leaderboards and activity trackers for: - github activity - linkedin - crypto currencies - stocks
+    _ Currency system, and payment gateway + A job post feature, where the post is shared globally and emailed to specific users. + contains an interest survey, which the recipients fill out to apply for the position. + contains a single job post page, where users can apply for the job: - Via email initially, a more complex application system to be introduced later.
 
 (Expand upon criteria in a later version)
 

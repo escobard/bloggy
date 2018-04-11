@@ -3,7 +3,7 @@ const express = require("express");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const helmet = require("helmet");
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser");
 
 const { port } = require("./constants/routes");
 const { cookieKey } = require("./constants/config");
@@ -21,7 +21,7 @@ app.use(helmet());
 
 // this essentially parses the post.body with the json data, allowing us to call post request data
 // via req.body within route handlers
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 app.use(cookieSession({ maxAge: 30 * 24 * 60 * 60 * 1000, keys: [cookieKey] }));
 
@@ -35,6 +35,20 @@ app.use(passport.session());
 */
 require("./routes")(app);
 
+// this block of code routes all routes that are NOT defined within the server to render client side 
+// assets
+if (process.env.NODE_ENV === "production") {
+	// Express will serve up production assets
+	// like our main.js file, or main.css file!
+	app.use(express.static("client/build"));
+
+	// Express will serve up the index.html file
+	// if it doesn't recognize the route
+	const path = require("path");
+	app.get("*", (req, res) => {
+		res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+	});
+}
 let server = app.listen(port, () => {
 	console.log("server listening at port %s", port);
 });

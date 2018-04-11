@@ -1,3 +1,5 @@
+const express = require("express");
+
 const routes = {
 	port: process.env.PORT || 5000,
 	root: "/",
@@ -5,7 +7,9 @@ const routes = {
 	googleAuthCallback: "/auth/google/callback",
 	authenticatedUser: "/api/current_user",
 	logout: "/api/logout",
-	stripeRoute: "/api/stripe"
+	stripeRoute: "/api/stripe",
+	jobs: "/api/jobs",
+	jobsThanks: "/api/jobs/thanks"
 };
 
 module.exports = routes;
