@@ -114,6 +114,11 @@ Phase 2 - v1.0-v2.0
 
 To download and install, please follow the instructions below.
 
+## Bugs & errors / warnings 
+
+- compile warnings on unused variables need to be cleaned up (client side)
+- devDependencies and depency duplications in package.json file
+
 ## Expanded Documentation
 
 Since this application utilizes several different technologies, the documentation has been split up into different wiki articles to avoid cluttering the main README.md file.
