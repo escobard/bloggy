@@ -4,9 +4,11 @@ import PropTypes from "prop-types";
 import FloatingActionButton from "material-ui/FloatingActionButton";
 import ContentAdd from "material-ui/svg-icons/content/add";
 
+import styles from "./styles.scss"
+
 export const AddButton = ({ route }) => (
-	<Link to={route} className="navbar-image">
-		<FloatingActionButton className="add-job">
+	<Link to={route} className="add-job">
+		<FloatingActionButton>
 			<ContentAdd />
 		</FloatingActionButton>
 	</Link>
