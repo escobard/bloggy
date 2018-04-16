@@ -38,7 +38,7 @@
             - Commands - make a new wiki.
 
 ## v0.6
-    COMPLETED:
+    TODO:
         - set up front end job post components
         - set up front end job handling with react / redux
         - clean up front end
