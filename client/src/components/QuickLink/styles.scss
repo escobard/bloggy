@@ -1,6 +1,21 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.leaderboard-item {
-	margin: 1rem 0;
+.dashboard-cta {
+	.card {
+		min-height: $space-xxmega;
+		background-color: $primary-dark !important;
+		color: $white !important;
+		border-radius: $space-small !important;
+		h4 {
+			text-align: center;
+			text-transform: capitalize;
+			margin-top: $space-lrg;
+		}
+		img {
+			width: 100%;
+			float: none;
+			margin: auto;
+		}
+	}
 }
