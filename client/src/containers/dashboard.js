@@ -12,6 +12,6 @@ export default class Dashboard extends Component {
 	}
 
 	render() {
-		return <div>{this.renderQuickLink(dashboardRoutes)}</div>;
+		return <div className="dashboard">{this.renderQuickLink(dashboardRoutes)}</div>;
 	}
 }

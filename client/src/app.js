@@ -12,7 +12,7 @@ import Dashboard from "./containers/dashboard";
 import Home from "./containers/home";
 import Account from "./containers/account";
 import Profile from "./containers/profile";
-import Survey from "./containers/survey";
+import Jobs from "./containers/jobs";
 import Blog from "./containers/blog";
 
 import styles from "./styles/global.scss";
@@ -33,10 +33,10 @@ class App extends Component {
         <main className="container">
           <Route exact path="/" component={Home} />
           <Route exact path="/dashboard" component={Dashboard} />
-          <Route path="/dashboard/account" component={Account} />
-          <Route path="/dashboard/profile" component={Profile} />
-          <Route path="/dashboard/survey" component={Survey} />
-          <Route path="/dashboard/blog" component={Blog} />
+            <Route path="/dashboard/account" component={Account} />
+            <Route path="/dashboard/profile" component={Profile} />
+            <Route path="/dashboard/jobs" component={Jobs} />
+            <Route path="/dashboard/blog" component={Blog} />
         </main>
         <Footer />
       </div>
