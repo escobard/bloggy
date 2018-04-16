@@ -10,7 +10,7 @@
 		"testmin": "nodemon --exec \"mocha -R min ./tests\"",
 		"client": "npm run start --prefix client",
 		"jest": "npm run jest --prefix client",
-		"jest:clean": "npm run jest -- -u --prefix client",
+		"clean": "cd client && npm run clean --prefix client",
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
 		"init": "concurrently \"npm install\" \"yarn install --prefix client\"",
 		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"

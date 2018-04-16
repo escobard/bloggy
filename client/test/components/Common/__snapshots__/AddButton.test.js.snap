@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddButton snapshot +++ render the AddButton components 1`] = `
+<Link
+  className="add-job"
+  replace={false}
+  to="/"
+>
+  <FloatingActionButton
+    disabled={false}
+    mini={false}
+    secondary={false}
+    zDepth={2}
+  >
+    <ContentAdd />
+  </FloatingActionButton>
+</Link>
+`;

@@ -7,30 +7,35 @@ exports[`Header snapshot +++ render the Header component 1`] = `
   <AppBar
     className="appbar"
     iconElementRight={
-      <a
-        href="auth/google"
+      <div
+        className="authenticated-container"
       >
-        <FlatButton
-          className="login"
-          disabled={false}
-          fullWidth={false}
-          label="Log in"
-          labelPosition="after"
-          labelStyle={Object {}}
-          onKeyboardFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          onTouchStart={[Function]}
-          primary={false}
-          secondary={false}
-        />
-      </a>
+        <a
+          href="auth/google"
+          onClick={[Function]}
+        >
+          <FlatButton
+            className="login"
+            disabled={false}
+            fullWidth={false}
+            label="Log in"
+            labelPosition="after"
+            labelStyle={Object {}}
+            onKeyboardFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onTouchStart={[Function]}
+            primary={false}
+            secondary={false}
+          />
+        </a>
+      </div>
     }
     onLeftIconButtonClick={[Function]}
-    onRightIconButtonClick={[Function]}
     showMenuIconButton={true}
     title={
       <Link
+        className="navbar-image"
         replace={false}
         to="/"
       >
@@ -119,7 +124,7 @@ exports[`Header snapshot +++ render the Header component 1`] = `
       className="links"
       key="2"
       replace={false}
-      to="/addquestion"
+      to="/payments"
     >
       <MenuItem
         anchorOrigin={
@@ -140,7 +145,7 @@ exports[`Header snapshot +++ render the Header component 1`] = `
           }
         }
       >
-        addquestion
+        payments
       </MenuItem>
     </Link>
   </Drawer>

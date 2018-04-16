@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuickLink snapshot +++ render the QuickLink component 1`] = `
+<div
+  className="dashboard-cta col-md-3"
+>
+  <Link
+    replace={false}
+    to="/dashboard/test"
+  >
+    <Card
+      className="card"
+      expandable={false}
+      expanded={null}
+      initiallyExpanded={false}
+    >
+      <img
+        alt="test icon"
+        src=""
+      />
+      <h4>
+        test
+      </h4>
+    </Card>
+  </Link>
+</div>
+`;

@@ -108,7 +108,7 @@
         "jest": "jest",
         "jest:watch": "jest --watch",
         "jest:coverage": "jest --coverage",
-        "jest:clean": "jest -- -u"
+        "clean": "jest -- -u"
     },
     "jest": {
         "setupFiles": [
