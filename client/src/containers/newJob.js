@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 
 import JobForm from "../components/Forms/JobForm"
 
+// this entire container may look better with a dialog from material-ui
+// more on dialogs here:  http://www.material-ui.com/#/components/dialog
 class NewJob extends Component {
 	render() {
 		return (
