@@ -13,6 +13,7 @@ import Home from "./containers/home";
 import Account from "./containers/account";
 import Profile from "./containers/profile";
 import Jobs from "./containers/jobs";
+import NewJob from "./containers/newJob";
 import Blog from "./containers/blog";
 
 import styles from "./styles/global.scss";
@@ -23,7 +24,7 @@ class App extends Component {
     this.props.fetchUser();
   }
   componentDidUpdate() {
-    // ensuring any updates asynchrnously update our credits
+    // ensuring any updates asynchronously update our credits
     this.props.fetchUser();
   }
   render() {
@@ -35,7 +36,8 @@ class App extends Component {
           <Route exact path="/dashboard" component={Dashboard} />
             <Route path="/dashboard/account" component={Account} />
             <Route path="/dashboard/profile" component={Profile} />
-            <Route path="/dashboard/jobs" component={Jobs} />
+            <Route exact path="/dashboard/jobs" component={Jobs} />
+              <Route path="/dashboard/jobs/new" component={NewJob} />
             <Route path="/dashboard/blog" component={Blog} />
         </main>
         <Footer />
