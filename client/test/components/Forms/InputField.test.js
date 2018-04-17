@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
-import Fields from '../../src/components/Forms/Fields';
+import InputField from '../../src/components/Forms/Fields/InputField';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store'
 
-describe('Fields snapshot', () => {
+describe('InputField snapshot', () => {
     const initialState = {output:100}
     const mockStore = configureStore()
     let store,container
 
     beforeEach(()=>{
         store = mockStore(initialState)
-        container = shallow(<Fields /> )  
+        container = shallow(<InputField /> )  
     })
 
-    it('+++ render the Fields component', () => {
+    it('+++ render the InputField component', () => {
        expect(toJson(container)).toMatchSnapshot()
     });
 

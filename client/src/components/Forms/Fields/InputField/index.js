@@ -27,7 +27,8 @@ InputField.defaultProps = {
 
 InputField.propTypes = {
 	hint: PropTypes.string,
-	label: PropTypes.string
+	label: PropTypes.string,
+	name: PropTypes.string
 };
 
 export default InputField;
