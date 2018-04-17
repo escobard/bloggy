@@ -12,8 +12,8 @@ class NewJob extends Component {
 	}
 }
 
-function mapStateToProps({ questions }) {
-	return { questions };
+function mapStateToProps({ form }) {
+	return { form };
 }
 
 export default connect(mapStateToProps)(NewJob);
