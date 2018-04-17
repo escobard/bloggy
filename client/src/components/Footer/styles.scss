@@ -10,10 +10,10 @@ footer {
   font-family: $font-family-default;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.12);
   border-radius: 0px;
-  z-index: 1100;
   width: 100%;
   display: flex;
   padding: $space-lrg;
+  text-align: center;
   position: fixed;
   span {
     width: 100%;
