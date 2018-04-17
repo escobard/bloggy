@@ -15,9 +15,9 @@ nav.navbar {
 			}
 			button {
 				color: $white !important;
-				margin-top: 4px !important;
+				margin-top: $space-small !important;
 				&.credits {
-					margin-top: 4px !important;
+					margin-top: $space-small !important;
 					float: left;
 				}
 			}
