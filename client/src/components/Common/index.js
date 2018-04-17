@@ -6,9 +6,9 @@ import ContentAdd from "material-ui/svg-icons/content/add";
 
 import styles from "./styles.scss"
 
-export const AddButton = ({ route }) => (
-	<Link to={route} className="add-job">
-		<FloatingActionButton>
+export const AddButton = ({ route, open }) => (
+	<Link to={route} className="add-job" onClick={open}>
+		<FloatingActionButton >
 			<ContentAdd />
 		</FloatingActionButton>
 	</Link>

@@ -54,11 +54,7 @@ nav.navbar {
 			height: 64px;
 			padding-top: $space-med;
 			svg {
-				margin: auto;
-				display: block !important;
-				width: $space-xxlrg !important;
-				height: $space-xxlrg !important;
-				color: $white !important;
+			@include svg-icon();
 			}
 		}
 	}

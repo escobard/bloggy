@@ -7,6 +7,7 @@ import DashIcon from "material-ui/svg-icons/action/dashboard";
 import styles from "./styles.scss";
 
 // add images and finish layout of 2x2 for each cta
+// <img src="" alt={`${route} icon`} /> --- code for image when icon is replaced
 export default class QuickLink extends Component {
 	render() {
 		let { img, route } = this.props.route;
@@ -14,7 +15,7 @@ export default class QuickLink extends Component {
 			<div className="dashboard-cta col-md-3">
 				<Link to={`/dashboard/${route}`}>
 					<Card className="card">
-						<img src="" alt={`${route} icon`} />
+						<DashIcon />
 						<h4>{route}</h4>
 					</Card>
 				</Link>
