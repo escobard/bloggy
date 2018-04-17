@@ -25,7 +25,7 @@ class Header extends Component {
 		let { auth } = this.props;
 		let text = auth ? "Log Out" : auth === "" ? "Loading..." : "Log in";
 		let url = auth ? "# " : "auth/google";
-		console.log(auth);
+		console.log('user data: ', auth);
 		return (
 			<div className="authenticated-container">
 				<a href={url} onClick={() => this.handleLoggout()}>
@@ -39,7 +39,6 @@ class Header extends Component {
 		);
 	};
 	handleLoggout = () => {
-		console.log("CLICKED");
 		this.props.logoutUser();
 	};
 	handleToggle = () => {

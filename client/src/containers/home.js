@@ -7,7 +7,7 @@ import Post from "../components/Post";
 export default class Home extends Component {
 	render() {
 		return (
-			<div>
+			<div className="home">
 				<h1 className="title">A social media for Software Engineers</h1>
 				<Sidebar />
 				<Post />

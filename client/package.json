@@ -92,6 +92,7 @@
 
         "react-swipeable-views": "^0.12.12",
         "redux": "^3.7.2",
+        "redux-form": "^7.3.0",
         "redux-thunk": "^2.2.0",
         "stripe": "^5.6.1",
         "style-loader": "0.19.0",
@@ -109,7 +110,7 @@
         "jest": "jest",
         "jest:watch": "jest --watch",
         "jest:coverage": "jest --coverage",
-        "jest:clean": "jest -- -u"
+        "clean": "jest -- -u"
     },
     "jest": {
         "setupFiles": [

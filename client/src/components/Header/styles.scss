@@ -15,9 +15,9 @@ nav.navbar {
 			}
 			button {
 				color: $white !important;
-				margin-top: 4px !important;
+				margin-top: $space-small !important;
 				&.credits {
-					margin-top: 4px !important;
+					margin-top: $space-small !important;
 					float: left;
 				}
 			}
@@ -35,6 +35,7 @@ nav.navbar {
 		text-align: center;
 	}
 	.drawer {
+		// this should be cleaned up by setting classes to the material-ui components
 		div {
 			&:nth-child(3) {
 				top: auto !important;
@@ -53,11 +54,7 @@ nav.navbar {
 			height: 64px;
 			padding-top: $space-med;
 			svg {
-				margin: auto;
-				display: block !important;
-				width: $space-xxlrg !important;
-				height: $space-xxlrg !important;
-				color: $white !important;
+			@include svg-icon();
 			}
 		}
 	}

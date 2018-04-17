@@ -2,69 +2,18 @@
 
 // sample mixins - remove the outline-button mixin later, use as sample
 
-@mixin nav-links(){
-    div {
-      &:nth-child(2) {
-        margin-top: 0;
-      }
+@mixin nav-links() {
+  div {
+    &:nth-child(2) {
+      margin-top: 0;
     }
+  }
 }
 
-@mixin outline-button($width: 100%, $pricing-highlighted-cta: false, $inverted-cta: false) {
-  @if $width != 'no-width' {
-    width: $width;
-  }
-  transition: all 0.2s;
-  background-color: $grey-white;
-  border: 1px solid $red-blitz;
-  border-radius: 4px;
-  vertical-align: middle;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: $red-blitz;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 1.2rem 3.2rem;
-  cursor: pointer;
-  letter-spacing: 2px;
-
-  &__disabled, &:disabled {
-    color: $grey-medium-dark;
-    border-color: $grey-medium-dark;
-    cursor: not-allowed;
-  }
-
-  &:hover:enabled, &:focus:enabled {
-    border-color: $red-hover;
-    color: $red-hover;
-    box-shadow: 0 8px 6px -6px darken($grey-light, 3%);
-  }
-  @if $pricing-highlighted-cta == true {
-    letter-spacing: 1px;
-    height: 40px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    background: none;
-    margin-bottom: 8px;
-    padding: 0;
-    background-color: $red-blitz;
-    color: $white;
-    &:hover:enabled, &:focus:enabled{
-      color: $white;
-      background-color: $red-hover;
-      box-shadow: $button-hover-shadow;
-    }
-  }
-  @if $inverted-cta == true {
-    color: $white;
-    letter-spacing: 1px;
-    border-color: $white;
-    background: none;
-    &:hover:enabled, &:focus:enabled{
-      color: $white;
-      border-color: $white;
-      box-shadow: $button-hover-shadow;
-    }
-  }
+@mixin svg-icon($width: $space-xxlrg, $height: $space-xxlrg, $color: $white) {
+  margin: auto;
+  display: block !important;
+  width: $width !important;
+  height: $height !important;
+  color: $color !important;
 }

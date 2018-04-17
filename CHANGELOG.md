@@ -37,11 +37,23 @@
             - Front end Testing.
             - Commands - make a new wiki.
 
+## v0.65
+    TODO:
+        - further cleanup of the front end
+        - finish setting up the job post form
+
 ## v0.6
     COMPLETED:
-        - set up front end job post components
-        - set up front end job handling with react / redux
-        - clean up front end
+        - set up front end job post base components:
+            + set up routing for new job / jobs form
+            + created common components:
+                - add button
+                - text input w/ material-ui redux-form
+        - clean up front end including:
+            - jest tests
+            - mixins
+            - scss variables
+            - component structure
 
 ## v0.55
     COMPLETED:
