@@ -8,6 +8,10 @@
 		color: $white !important;
 		border-radius: $space-small !important;
 		margin: 0 !important;
+		padding: $space-xlrg 0;
+		svg{
+			@include svg-icon();
+		}
 		h4 {
 			text-align: center;
 			text-transform: capitalize;
