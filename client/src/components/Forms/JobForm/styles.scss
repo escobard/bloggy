@@ -1,0 +1,14 @@
+@import "../../../styles/variables";
+.job-form{
+}
+	.cancel button, .submit button{
+    background-color: $primary-dark !important;
+    margin: 24px;
+}
+.cancel {
+    float: left;
+    margin: 16px;
+}
+.submit {
+	margin: 16px;
+}

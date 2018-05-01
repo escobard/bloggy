@@ -11,11 +11,13 @@ import InputField from "../Fields/InputField";
 
 import { jobFormFields } from "../../../constants";
 
+import styles from "./styles.scss"
+
 class JobForm extends Component {
 	renderInputs = () => {
 		return jobFormFields.map((field, index) => {
 			let { hint, label, name } = field;
-			return <InputField index={index} hint={hint} label={label} name={name} />;
+			return <InputField key={index} hint={hint} label={label} name={name} />;
 		});
 	};
 
@@ -25,7 +27,6 @@ class JobForm extends Component {
 			<div className="job-form">
 				<form onSubmit={this.props.handleSubmit(values => console.log(values))}>
 					{this.renderInputs()}
-					<RaisedButton type="submit" label="Submit" />
 				</form>
 			</div>
 		);
