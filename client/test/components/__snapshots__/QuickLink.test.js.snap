@@ -14,10 +14,7 @@ exports[`QuickLink snapshot +++ render the QuickLink component 1`] = `
       expanded={null}
       initiallyExpanded={false}
     >
-      <img
-        alt="test icon"
-        src=""
-      />
+      <ActionDashboard />
       <h4>
         test
       </h4>

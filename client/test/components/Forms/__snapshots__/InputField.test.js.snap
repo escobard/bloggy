@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputField snapshot +++ render the InputField component 1`] = `
+<div
+  className="input-field"
+>
+  <TextField
+    className="input-container"
+    disabled={false}
+    floatingLabelFixed={false}
+    floatingLabelText="test label"
+    fullWidth={false}
+    hintText="test hint"
+    multiLine={false}
+    rows={1}
+    type="text"
+    underlineShow={true}
+  >
+    <Field
+      component="input"
+      name="test name"
+      type="text"
+    />
+  </TextField>
+</div>
+`;

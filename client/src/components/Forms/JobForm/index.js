@@ -41,7 +41,22 @@ JobForm.propTypes = {
 	test: PropTypes.string
 };
 
+// validates the form
+const validate = (values) =>{
+	const errors = {}
+
+	
+
+	// redux form will assume that the form is valid if the
+	// errors object is empty
+	return errors;
+}
+
 export default reduxForm({
+	// ES6 deconstruct, grabs the validate function
+	// and passes it to the reduxForm HOC
+	validate,
+	
 	// these options customize how we want the form to behave
 	form: "jobForm"
 })(JobForm);
