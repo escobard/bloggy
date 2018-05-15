@@ -23,13 +23,21 @@ const InputField = ({hint, label, name, meta: { error, touched }, ...custom}) =>
 InputField.defaultProps = {
 	hint: "test hint",
 	label: "test label",
-	name: "test name"
+	name: "test name",
+	meta: {
+		error: 'test error',
+		touched: true
+	}
 };
 
 InputField.propTypes = {
 	hint: PropTypes.string,
 	label: PropTypes.string,
-	name: PropTypes.string
+	name: PropTypes.string,
+	meta: PropTypes.shape({
+		error: PropTypes.string,
+		touch: PropTypes.boolean
+	})
 };
 
 export default InputField;
