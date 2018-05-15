@@ -24,7 +24,6 @@ class NewJob extends Component {
 	};
 
 	render() {
-		console.log(this.props)
 		const actions = [
 			<RaisedButton label="Cancel" primary={true} onClick={this.handleClose} className="cancel"/>,
 			<RaisedButton

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
 // this is similar to connect from react-redux
-import { reduxForm } from "redux-form";
+import { reduxForm, Field } from "redux-form";
 
 import InputField from "../Fields/InputField";
 // more on this on redux-form.com
@@ -17,12 +17,11 @@ class JobForm extends Component {
 	renderInputs = () => {
 		return jobFormFields.map((field, index) => {
 			let { hint, label, name } = field;
-			return <InputField key={index} hint={hint} label={label} name={name} />;
+			return <Field key={index} hint={hint} label={label} name={name} component={InputField}/>;
 		});
 	};
 
 	render() {
-		console.log(jobFormFields);
 		return (
 			<div className="job-form">
 				<form onSubmit={this.props.handleSubmit(values => console.log(values))}>
@@ -42,7 +41,7 @@ JobForm.propTypes = {
 };
 
 // validates the form
-const validate = values => {
+function validate(values) {
 	const errors = {};
 
 	// redux form will assume that the form is valid if the
@@ -52,6 +51,7 @@ const validate = values => {
 	if (!values.title) {
 
 		// adds an error to our errors object
+		// this is automatically added to the redux form field that has the title property
 		errors.title = "You must provide a title"
 	}
 
