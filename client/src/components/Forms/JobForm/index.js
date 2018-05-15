@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
-// this is similar to connect from react-redux
-import { reduxForm, Field } from "redux-form";
 
-import InputField from "../Fields/InputField";
+// this is similar to connect from react-redux
 // more on this on redux-form.com
 // shows a ton of examples that we can use for validation and quick validation helpers
 // look at https://redux-form.com/7.3.0/examples/fieldlevelvalidation/ for login user creation val
+import { reduxForm, Field } from "redux-form";
+
+import InputField from "../Fields/InputField";
+
+import validateEmails from "./utils";
 
 import { jobFormFields } from "../../../constants";
 
@@ -17,7 +20,15 @@ class JobForm extends Component {
 	renderInputs = () => {
 		return jobFormFields.map((field, index) => {
 			let { hint, label, name } = field;
-			return <Field key={index} hint={hint} label={label} name={name} component={InputField}/>;
+			return (
+				<Field
+					key={index}
+					hint={hint}
+					label={label}
+					name={name}
+					component={InputField}
+				/>
+			);
 		});
 	};
 
@@ -42,7 +53,7 @@ JobForm.propTypes = {
 };
 
 // validates the form
-// must be a vanilla function 
+// must be a vanilla function
 function validate(values) {
 	const errors = {};
 
@@ -61,18 +72,24 @@ function validate(values) {
 	// loops through each of the values of the fields object ensuring
 	// that none of the inputs are empty
 
+	// checks the large recipient string vs email regex
+	// then grabs the invalid emails and shows to user
+	// passes an OR statement to avoid initial validation undefined string
+	errors.recipients = validateEmails(values.recipients || "");
+
 	// deconstructs to only grab the field.name property of each object
 	// can create custom error messages by using a property of the passed object
-	jobFormFields.forEach(({name}) => {
-
+	jobFormFields.forEach(({ name }) => {
 		// essentially the same thing as the validation above to test if input is empty
 		if (!values[name]) {
-			errors[name] = `You must provide a ${name === 'recipients' ? 'recipient' : name}`
+			errors[name] = `You must provide a ${
+				name === "recipients" ? "recipient" : name
+			}`;
 		}
-	})
+	});
 
 	return errors;
-};
+}
 
 export default reduxForm({
 	// ES6 deconstruct, grabs the validate function
