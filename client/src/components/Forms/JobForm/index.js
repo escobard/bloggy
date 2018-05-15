@@ -26,6 +26,7 @@ class JobForm extends Component {
 			<div className="job-form">
 				<form onSubmit={this.props.handleSubmit(values => console.log(values))}>
 					{this.renderInputs()}
+					<button>Submit</button>
 				</form>
 			</div>
 		);
@@ -41,6 +42,7 @@ JobForm.propTypes = {
 };
 
 // validates the form
+// must be a vanilla function 
 function validate(values) {
 	const errors = {};
 
@@ -48,12 +50,26 @@ function validate(values) {
 	// errors object is empty
 
 	// this is a basic validation rule
+	/* scrapped for a more scalable solution
 	if (!values.title) {
 
 		// adds an error to our errors object
 		// this is automatically added to the redux form field that has the title property
 		errors.title = "You must provide a title"
-	}
+	}*/
+
+	// loops through each of the values of the fields object ensuring
+	// that none of the inputs are empty
+
+	// deconstructs to only grab the field.name property of each object
+	// can create custom error messages by using a property of the passed object
+	jobFormFields.forEach(({name}) => {
+
+		// essentially the same thing as the validation above to test if input is empty
+		if (!values[name]) {
+			errors[name] = `You must provide a ${name === 'recipients' ? 'recipient' : name}`
+		}
+	})
 
 	return errors;
 };

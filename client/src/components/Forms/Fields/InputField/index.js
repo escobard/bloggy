@@ -3,15 +3,16 @@ import PropTypes from "prop-types";
 import TextField from "material-ui/TextField";
 import styles from "./styles.scss"
 
-const InputField = ({hint, label, name, meta, ...custom}) => {
-	console.log('meta', meta)
+// more on redux-form and material-ui here: https://redux-form.com/7.2.3/examples/material-ui/
+const InputField = ({hint, label, name, meta: { error, touched }, ...custom}) => {
+
 	return (
 		<div className="input-field">
 			<TextField
 				hintText={hint}
 				floatingLabelText={label}
 				className="input-container"
-				errorText={meta.touched && meta.error}
+				errorText={touched && error}
 				{...name}
 				{...custom}
 			/>
