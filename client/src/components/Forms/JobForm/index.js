@@ -11,7 +11,7 @@ import InputField from "../Fields/InputField";
 
 import { jobFormFields } from "../../../constants";
 
-import styles from "./styles.scss"
+import styles from "./styles.scss";
 
 class JobForm extends Component {
 	renderInputs = () => {
@@ -42,21 +42,27 @@ JobForm.propTypes = {
 };
 
 // validates the form
-const validate = (values) =>{
-	const errors = {}
-
-	
+const validate = values => {
+	const errors = {};
 
 	// redux form will assume that the form is valid if the
 	// errors object is empty
+
+	// this is a basic validation rule
+	if (!values.title) {
+
+		// adds an error to our errors object
+		errors.title = "You must provide a title"
+	}
+
 	return errors;
-}
+};
 
 export default reduxForm({
 	// ES6 deconstruct, grabs the validate function
 	// and passes it to the reduxForm HOC
 	validate,
-	
+
 	// these options customize how we want the form to behave
 	form: "jobForm"
 })(JobForm);
