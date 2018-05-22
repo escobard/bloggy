@@ -8,6 +8,7 @@ import FlatButton from "material-ui/FlatButton";
 import ExpandTransition from "material-ui/internal/ExpandTransition";
 import TextField from "material-ui/TextField";
 
+import JobReview from "../components/Confirmations";
 import JobForm from "../components/Forms/JobForm";
 import { AddButton } from "../components/Common";
 
@@ -56,30 +57,9 @@ class NewJob extends Component {
 	getStepContent(stepIndex) {
 		switch (stepIndex) {
 			case 0:
-				return (
-					<p>
-						Select campaign settings. Campaign settings can include your budget,
-						network, bidding options and adjustments, location targeting,
-						campaign end date, and other settings that affect an entire
-						campaign.
-					</p>
-				);
+				return <JobForm />;
 			case 1:
-				return (
-					<div>
-						<TextField
-							style={{ marginTop: 0 }}
-							floatingLabelText="Ad group name"
-						/>
-						<p>
-							Ad group status is different than the statuses for campaigns, ads,
-							and keywords, though the statuses can affect each other. Ad groups
-							are contained within a campaign, and each campaign can have one or
-							more ad groups. Within each ad group are ads, keywords, and bids.
-						</p>
-						<p>Something something whatever cool</p>
-					</div>
-				);
+				return <JobReview />;
 			case 2:
 				return (
 					<p>
@@ -94,46 +74,48 @@ class NewJob extends Component {
 		}
 	}
 	renderContent() {
-    const {finished, stepIndex} = this.state;
-    const contentStyle = {margin: '0 16px', overflow: 'hidden'};
+		const { finished, stepIndex } = this.state;
+		const contentStyle = { margin: "0 16px", overflow: "hidden" };
 
-    if (finished) {
-      return (
-        <div style={contentStyle}>
-          <p>
-            <a
-              href="#"
-              onClick={(event) => {
-                event.preventDefault();
-                this.setState({stepIndex: 0, finished: false});
-              }}
-            >
-              Click here
-            </a> to reset the example.
-          </p>
-        </div>
-      );
-    }
+		if (finished) {
+			return (
+				<div style={contentStyle}>
+					<p>
+						<a
+							href="#"
+							onClick={event => {
+								event.preventDefault();
+								this.setState({ stepIndex: 0, finished: false });
+							}}
+						>
+							Click here
+						</a>{" "}
+						to reset the example.
+					</p>
+				</div>
+			);
+		}
 
-    return (
-      <div style={contentStyle}>
-        <div>{this.getStepContent(stepIndex)}</div>
-        <div style={{marginTop: 24, marginBottom: 12}}>
-          <FlatButton
-            label="Back"
-            disabled={stepIndex === 0}
-            onClick={this.handlePrev}
-            style={{marginRight: 12}}
-          />
-          <RaisedButton
-            label={stepIndex === 2 ? 'Finish' : 'Next'}
-            primary={true}
-            onClick={this.handleNext}
-          />
-        </div>
-      </div>
-    );
-  }
+		return (
+			<div style={contentStyle}>
+				<div>{this.getStepContent(stepIndex)}</div>
+				<div style={{ marginTop: 24, marginBottom: 12 }}>
+					<FlatButton
+						label="Back"
+						disabled={stepIndex === 0}
+						onClick={this.handlePrev}
+						style={{ marginRight: 12 }}
+					/>
+					<RaisedButton
+						label={stepIndex === 2 ? "Finish" : "Next"}
+						primary={true}
+						className="submit"
+						onClick={this.handleNext}
+					/>
+				</div>
+			</div>
+		);
+	}
 	handleOpen = () => {
 		this.setState({ open: true });
 	};
@@ -144,49 +126,32 @@ class NewJob extends Component {
 	};
 
 	render() {
-		const actions = [
-			<RaisedButton
-				label="Cancel"
-				primary={true}
-				onClick={this.handleClose}
-				className="cancel"
-			/>,
-			<RaisedButton
-				label="Submit"
-				primary={true}
-				onClick={this.handleClose}
-				className="submit"
-			/>
-		];
-		const {loading, stepIndex} = this.state;
+		const { loading, stepIndex } = this.state;
 		return (
 			<div className="new-job">
-
 				<h1 className="title">Add a New Job</h1>
 				<AddButton route={"/dashboard/jobs/new"} open={this.handleOpen} />
 				<Dialog
-					actions={actions}
 					modal={false}
 					open={this.state.open}
 					onRequestClose={this.handleClose}
 				>
-				      <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
-        <Stepper activeStep={stepIndex}>
-          <Step>
-            <StepLabel>Select campaign settings</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Create an ad group</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Create an ad</StepLabel>
-          </Step>
-        </Stepper>
-        <ExpandTransition loading={loading} open={true}>
-          {this.renderContent()}
-        </ExpandTransition>
-      </div>
-					<JobForm />
+					<div style={{ width: "100%", maxWidth: 700, margin: "auto" }}>
+						<Stepper activeStep={stepIndex}>
+							<Step>
+								<StepLabel>Select campaign settings</StepLabel>
+							</Step>
+							<Step>
+								<StepLabel>Create an ad group</StepLabel>
+							</Step>
+							<Step>
+								<StepLabel>Create an ad</StepLabel>
+							</Step>
+						</Stepper>
+						<ExpandTransition loading={loading} open={true}>
+							{this.renderContent()}
+						</ExpandTransition>
+					</div>
 				</Dialog>
 			</div>
 		);

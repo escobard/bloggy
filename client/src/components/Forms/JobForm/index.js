@@ -37,7 +37,6 @@ class JobForm extends Component {
 			<div className="job-form">
 				<form onSubmit={this.props.handleSubmit(values => console.log(values))}>
 					{this.renderInputs()}
-					<button>Submit</button>
 				</form>
 			</div>
 		);
