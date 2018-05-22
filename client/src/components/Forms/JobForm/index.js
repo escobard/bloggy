@@ -81,6 +81,7 @@ function validate(values) {
 	// can create custom error messages by using a property of the passed object
 	jobFormFields.forEach(({ name }) => {
 		// essentially the same thing as the validation above to test if input is empty
+		// with scalability
 		if (!values[name]) {
 			errors[name] = `You must provide a ${
 				name === "recipients" ? "recipient" : name
