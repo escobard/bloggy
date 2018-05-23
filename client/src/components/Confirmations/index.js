@@ -1,21 +1,38 @@
-import React from 'react'
+import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
 
-const JobReview = ({reviewData}) =>{
-  console.log(reviewData)
-  return(
-    <div>
-      <h2>Review Job</h2>
-    </div>
-  )   
+import styles from "./styles.scss";
+
+export class ReviewForm extends Component {
+	renderData = reviewData => {
+		let reviewKeys = Object.keys(reviewData)
+		let reviewValues = Object.values(reviewData)
+
+		return reviewValues.map((data, index) => {
+			let label = reviewKeys[index];
+			return (
+				<Fragment key={index}>
+					<h3>{label}</h3>
+					<p>{data}</p>
+				</Fragment>
+			);
+		});
+
+	};
+	render() {
+		console.log(this.props.reviewData);
+		return (
+			<div>
+				{this.renderData(this.props.reviewData)}
+			</div>
+		);
+	}
 }
 
-JobReview.defaultProps = {
-  reviewData: "reviewData"
+ReviewForm.defaultProps = {
+	reviewData: "reviewData"
 };
 
-JobReview.propTypes = {
-  reviewData: PropTypes.object
+ReviewForm.propTypes = {
+	reviewData: PropTypes.object
 };
-
-export default JobReview 

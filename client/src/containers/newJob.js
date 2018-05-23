@@ -8,7 +8,7 @@ import FlatButton from "material-ui/FlatButton";
 import ExpandTransition from "material-ui/internal/ExpandTransition";
 import TextField from "material-ui/TextField";
 
-import JobReview from "../components/Confirmations";
+import {ReviewForm} from "../components/Confirmations";
 import JobForm from "../components/Forms/JobForm";
 import { AddButton } from "../components/Common";
 
@@ -62,7 +62,7 @@ class NewJob extends Component {
 			case 0:
 				return <JobForm />;
 			case 1:
-				return <JobReview reviewData={this.props.form.jobForm.values}/>;
+				return <ReviewForm reviewData={this.props.form.jobForm.values}/>;
 			case 2:
 				return (
 					<p>
@@ -159,13 +159,13 @@ class NewJob extends Component {
 					<div style={{ width: "100%", maxWidth: 700, margin: "auto" }}>
 						<Stepper activeStep={stepIndex}>
 							<Step>
-								<StepLabel>Select campaign settings</StepLabel>
+								<StepLabel>Add job information</StepLabel>
 							</Step>
 							<Step>
-								<StepLabel>Create an ad group</StepLabel>
+								<StepLabel>Review your job post</StepLabel>
 							</Step>
 							<Step>
-								<StepLabel>Create an ad</StepLabel>
+								<StepLabel>Create the job post</StepLabel>
 							</Step>
 						</Stepper>
 						<ExpandTransition loading={loading} open={true}>

@@ -81,7 +81,7 @@ Payments.defaultProps = {
 };
 
 Payments.propTypes = {
-	handleToken: PropTypes.object
+	handleToken: PropTypes.func
 };
 
 export default Payments;
