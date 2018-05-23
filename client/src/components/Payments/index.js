@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { FlatButton, AppBar, Drawer, RaisedButton } from "material-ui";
 import StripeCheckout from "react-stripe-checkout";
 /* this utilizes the child library of stripe, checkout.js, to create a react component
@@ -47,14 +48,14 @@ import StripeCheckout from "react-stripe-checkout";
 		*/
 // more options here: https://github.com/azmenak/react-stripe-checkout
 
-// the number we are using for the test credit card is:
+// the number we are using for the handleToken credit card is:
 // # 4242 4242 4242 4242
 // expiration: any future date
 // cvc: any 3 digits
 
 class Payments extends Component {
 	render() {
-		// will stop this statement to test it
+		// will stop this statement to handleToken it
 		// debugger;
 
 		let { handleToken } = this.props;
@@ -74,5 +75,13 @@ class Payments extends Component {
 		);
 	}
 }
+
+Payments.defaultProps = {
+	handleToken: "handleToken"
+};
+
+Payments.propTypes = {
+	handleToken: PropTypes.object
+};
 
 export default Payments;

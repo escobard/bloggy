@@ -1,22 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./styles.scss"
+import React, { Component } from 'react'
+import Payments from '../../src/components/Payments';
+import toJson from 'enzyme-to-json';
+import configureStore from 'redux-mock-store'
 
-const JobReview = ({reviewData}) => {
-	console.log('REVIEW DATA', reviewData)
-	return (
-		<div>
-			<h5>Survey form review</h5>
-		</div>
-	);
-};
+describe('Payments snapshot', () => {
+	const initialState = {output:100}
+	const mockStore = configureStore()
+	let store,container
 
-JobReview.defaultProps = {
-	reviewData: {}
-};
+    beforeEach(()=>{
+        store = mockStore(initialState)
+        container = shallow(<Payments /> )  
+    })
 
-JobReview.propTypes = {
-	reviewData: PropTypes.object
-};
+    it('+++ render the Payments component', () => {
+       expect(toJson(container)).toMatchSnapshot()
+    });
 
-export default JobReview;
+});
