@@ -7,6 +7,7 @@ exports[`InputField snapshot +++ render the InputField component 1`] = `
   <TextField
     className="input-container"
     disabled={false}
+    errorText="test error"
     floatingLabelFixed={false}
     floatingLabelText="test label"
     fullWidth={false}
@@ -15,12 +16,6 @@ exports[`InputField snapshot +++ render the InputField component 1`] = `
     rows={1}
     type="text"
     underlineShow={true}
-  >
-    <Field
-      component="input"
-      name="test name"
-      type="text"
-    />
-  </TextField>
+  />
 </div>
 `;

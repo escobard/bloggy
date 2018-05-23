@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import JobReview from '../../src/components/Confirmations';
+import JobReview from '../../../src/components/Confirmations';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store'
 

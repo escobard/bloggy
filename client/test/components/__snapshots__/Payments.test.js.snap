@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Payments snapshot +++ render the Payments component 1`] = `
+<div
+  className="stripe-payment"
+>
+  <ReactStripeCheckout
+    ComponentClass="span"
+    amount={500}
+    className="StripeCheckout"
+    description="$5.00 for 5 Job Post credits."
+    label="Pay With Card"
+    locale="auto"
+    name="EngBook"
+    reconfigureOnUpdate={false}
+    token={[Function]}
+    triggerEvent="onClick"
+  >
+    <FlatButton
+      className="add-credits"
+      disabled={false}
+      fullWidth={false}
+      label="Add Credits"
+      labelPosition="after"
+      labelStyle={Object {}}
+      onKeyboardFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onTouchStart={[Function]}
+      primary={false}
+      secondary={false}
+    />
+  </ReactStripeCheckout>
+</div>
+`;

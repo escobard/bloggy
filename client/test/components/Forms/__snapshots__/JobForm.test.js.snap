@@ -2,7 +2,7 @@
 
 exports[`JobForm snapshot +++ render the JobForm component 1`] = `
 <Connect(Form(JobForm))
-  destroyOnUnmount={true}
+  destroyOnUnmount={false}
   enableReinitialize={false}
   forceUnregisterOnUnmount={false}
   form="jobForm"
