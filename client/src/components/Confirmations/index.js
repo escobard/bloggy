@@ -5,24 +5,23 @@ import styles from "./styles.scss";
 
 export class ReviewForm extends Component {
 	renderData = reviewData => {
-		let reviewKeys = Object.keys(reviewData)
-		let reviewValues = Object.values(reviewData)
+		let reviewKeys = Object.keys(reviewData);
+		let reviewValues = Object.values(reviewData);
 
 		return reviewValues.map((data, index) => {
 			let label = reviewKeys[index];
 			return (
-				<Fragment key={index}>
-					<h3>{label}</h3>
+				<div key={index} className="job-field">
+					<p className="first">{label}</p>
 					<p>{data}</p>
-				</Fragment>
+				</div>
 			);
 		});
-
 	};
 	render() {
 		console.log(this.props.reviewData);
 		return (
-			<div>
+			<div className="review-job">
 				{this.renderData(this.props.reviewData)}
 			</div>
 		);

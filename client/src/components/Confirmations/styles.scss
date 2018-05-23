@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.review-job {
+	display: inline-block;
+	width: 100%;
+	.job-field {
+		border-bottom: solid 1px;
+		width: 100%;
+		display: inline-block;
+		float: left;
+		p {
+			float: left;
+			width: 61%;
+			padding-top: 1rem;
+			color: $black;
+			padding-left: $space-xlrg;
+			&:nth-of-type(1) {
+				text-transform: capitalize;
+			}
+			&.first {
+				font-weight: bold;
+				width: 39%;
+			}
+		}
+	}
+}
