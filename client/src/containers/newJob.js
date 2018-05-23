@@ -21,8 +21,10 @@ class NewJob extends Component {
 		open: true,
 		loading: false,
 		finished: false,
-		stepIndex: 0
+		stepIndex: 0,
+		jobValidated: false
 	};
+
 	dummyAsync = cb => {
 		this.setState({ loading: true }, () => {
 			this.asyncTimer = setTimeout(cb, 500);
@@ -54,10 +56,12 @@ class NewJob extends Component {
 		}
 	};
 
-	getStepContent(stepIndex) {
+	getStepContent = stepIndex => {
 		switch (stepIndex) {
 			case 0:
-				return <JobForm />;
+				return (
+					<JobForm />
+				);
 			case 1:
 				return <JobReview />;
 			case 2:
@@ -72,9 +76,24 @@ class NewJob extends Component {
 			default:
 				return "You're a long way from home sonny jim!";
 		}
-	}
-	renderContent() {
-		const { finished, stepIndex } = this.state;
+	};
+	renderContent = () => {
+		const { finished, stepIndex, jobValidated } = this.state;
+		const { jobForm } = this.props.form;
+
+		// could be refactored into a helper component
+		const validate = () => {
+			if (jobForm) {
+				let {anyTouched, syncErrors} = jobForm
+				if (anyTouched && syncErrors.recipients === undefined) {
+					return false;
+				}
+				else{
+					return true
+				}
+			}
+		};
+
 		const contentStyle = { margin: "0 16px", overflow: "hidden" };
 
 		if (finished) {
@@ -100,7 +119,7 @@ class NewJob extends Component {
 			<div style={contentStyle}>
 				<div>{this.getStepContent(stepIndex)}</div>
 				<div style={{ marginTop: 24, marginBottom: 12 }}>
-					<FlatButton
+					<RaisedButton
 						label="Back"
 						disabled={stepIndex === 0}
 						onClick={this.handlePrev}
@@ -108,14 +127,14 @@ class NewJob extends Component {
 					/>
 					<RaisedButton
 						label={stepIndex === 2 ? "Finish" : "Next"}
+						disabled={validate()}
 						primary={true}
-						className="submit"
 						onClick={this.handleNext}
 					/>
 				</div>
 			</div>
 		);
-	}
+	};
 	handleOpen = () => {
 		this.setState({ open: true });
 	};
@@ -126,7 +145,8 @@ class NewJob extends Component {
 	};
 
 	render() {
-		const { loading, stepIndex } = this.state;
+		const { loading, stepIndex, jobValidated } = this.state;
+		console.log("FORM", this.props.form);
 		return (
 			<div className="new-job">
 				<h1 className="title">Add a New Job</h1>

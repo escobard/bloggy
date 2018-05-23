@@ -17,6 +17,7 @@ import { jobFormFields } from "../../../constants";
 import styles from "./styles.scss";
 
 class JobForm extends Component {
+
 	renderInputs = () => {
 		return jobFormFields.map((field, index) => {
 			let { hint, label, name } = field;
