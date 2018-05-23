@@ -4,6 +4,7 @@
 .review-job {
 	display: inline-block;
 	width: 100%;
+	margin-bottom: $space-xlrg;
 	.job-field {
 		border-bottom: solid 1px;
 		width: 100%;
@@ -21,7 +22,24 @@
 			&.first {
 				font-weight: bold;
 				width: 39%;
+				color: $primary-lighter;
 			}
 		}
+	}
+}
+.form-dialog {
+	padding-top: 22vh !important;
+	.job-form {
+		padding-bottom: $space-xxlrg;
+	}
+	.button-container {
+		.button {
+			&:nth-of-type(2) {
+				float: right;
+			}
+		}
+	}
+	span {
+		font-size: 15px !important;
 	}
 }

@@ -115,20 +115,22 @@ class NewJob extends Component {
 		}
 
 		return (
-			<div style={contentStyle}>
+			<div style={contentStyle} >
 				<div>{this.getStepContent(stepIndex)}</div>
-				<div style={{ marginTop: 24, marginBottom: 12 }}>
+				<div style={{ marginTop: 24, marginBottom: 12 }} className="button-container">
 					<RaisedButton
 						label="Back"
 						disabled={stepIndex === 0}
 						onClick={this.handlePrev}
 						style={{ marginRight: 12 }}
+						className="button"
 					/>
 					<RaisedButton
 						label={stepIndex === 2 ? "Finish" : "Next"}
 						disabled={validate()}
 						primary={true}
 						onClick={this.handleNext}
+						className="button"
 					/>
 				</div>
 			</div>
@@ -155,6 +157,7 @@ class NewJob extends Component {
 					modal={false}
 					open={this.state.open}
 					onRequestClose={this.handleClose}
+					className="form-dialog"
 				>
 					<div style={{ width: "100%", maxWidth: 700, margin: "auto" }}>
 						<Stepper activeStep={stepIndex}>
