@@ -22,7 +22,8 @@ class NewJob extends Component {
 		loading: false,
 		finished: false,
 		stepIndex: 0,
-		jobValidated: false
+		jobValidated: false,
+		values: ''
 	};
 
 	dummyAsync = cb => {
@@ -33,6 +34,14 @@ class NewJob extends Component {
 
 	handleNext = () => {
 		const { stepIndex } = this.state;
+		const { jobForm } = this.props.form;
+		if (jobForm) {
+			let { anyTouched, syncErrors, values } = jobForm;
+			if (anyTouched && syncErrors.recipients === undefined) {
+				this.setState({values: ''})
+				this.setState({ values })
+			}
+		}
 		if (!this.state.loading) {
 			this.dummyAsync(() =>
 				this.setState({
@@ -59,11 +68,9 @@ class NewJob extends Component {
 	getStepContent = stepIndex => {
 		switch (stepIndex) {
 			case 0:
-				return (
-					<JobForm />
-				);
+				return <JobForm />;
 			case 1:
-				return <JobReview />;
+				return <JobReview surveyResults={this.state.values}/>;
 			case 2:
 				return (
 					<p>
@@ -77,6 +84,7 @@ class NewJob extends Component {
 				return "You're a long way from home sonny jim!";
 		}
 	};
+
 	renderContent = () => {
 		const { finished, stepIndex, jobValidated } = this.state;
 		const { jobForm } = this.props.form;
@@ -84,12 +92,11 @@ class NewJob extends Component {
 		// could be refactored into a helper component
 		const validate = () => {
 			if (jobForm) {
-				let {anyTouched, syncErrors} = jobForm
+				let { anyTouched, syncErrors } = jobForm;
 				if (anyTouched && syncErrors.recipients === undefined) {
 					return false;
-				}
-				else{
-					return true
+				} else {
+					return true;
 				}
 			}
 		};
@@ -146,7 +153,8 @@ class NewJob extends Component {
 
 	render() {
 		const { loading, stepIndex, jobValidated } = this.state;
-		console.log("FORM", this.props.form);
+		console.log(this.props.form)
+		console.log(this.state.values)
 		return (
 			<div className="new-job">
 				<h1 className="title">Add a New Job</h1>
