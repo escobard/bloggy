@@ -62,7 +62,7 @@ class NewJob extends Component {
 			case 0:
 				return <JobForm />;
 			case 1:
-				return <JobReview />;
+				return <JobReview reviewData={this.props.form.jobForm.values}/>;
 			case 2:
 				return (
 					<p>
