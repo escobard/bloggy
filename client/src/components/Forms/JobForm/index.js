@@ -98,5 +98,6 @@ export default reduxForm({
 	validate,
 
 	// these options customize how we want the form to behave
-	form: "jobForm"
+	form: "jobForm",
+	destroyOnUnmount: false
 })(JobForm);

@@ -22,8 +22,7 @@ class NewJob extends Component {
 		loading: false,
 		finished: false,
 		stepIndex: 0,
-		jobValidated: false,
-		values: ''
+		jobValidated: false
 	};
 
 	dummyAsync = cb => {
@@ -35,13 +34,6 @@ class NewJob extends Component {
 	handleNext = () => {
 		const { stepIndex } = this.state;
 		const { jobForm } = this.props.form;
-		if (jobForm) {
-			let { anyTouched, syncErrors, values } = jobForm;
-			if (anyTouched && syncErrors.recipients === undefined) {
-				this.setState({values: ''})
-				this.setState({ values })
-			}
-		}
 		if (!this.state.loading) {
 			this.dummyAsync(() =>
 				this.setState({
@@ -70,7 +62,7 @@ class NewJob extends Component {
 			case 0:
 				return <JobForm />;
 			case 1:
-				return <JobReview surveyResults={this.state.values}/>;
+				return <JobReview />;
 			case 2:
 				return (
 					<p>
