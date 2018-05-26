@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { reduxForm } from "redux-form";
 import Dialog from "material-ui/Dialog";
 import { Step, Stepper, StepLabel } from "material-ui/Stepper";
 import RaisedButton from "material-ui/RaisedButton";
@@ -12,7 +13,7 @@ import { ReviewConfirmation } from "../components/Confirmations";
 import JobForm from "../components/Forms/JobForm";
 import { AddButton } from "../components/Common";
 
-import { submitJob } from "../actions/jobs"
+import { submitJob } from "../actions/jobs";
 
 // this entire container may look better with a dialog from material-ui
 // more on dialogs here:  http://www.material-ui.com/#/components/dialog
@@ -64,11 +65,14 @@ class NewJob extends Component {
 			case 0:
 				return <JobForm />;
 			case 1:
-				return <ReviewConfirmation reviewData={this.props.form.jobForm.values}/>;
+				return (
+					<ReviewConfirmation reviewData={this.props.form.jobForm.values} />
+				);
 			case 2:
 				return (
 					<p>
-Job submittal message, and links to view the job itself + job dashboard goes here
+						Job submittal message, and links to view the job itself + job
+						dashboard goes here
 					</p>
 				);
 			default:
@@ -115,9 +119,12 @@ Job submittal message, and links to view the job itself + job dashboard goes her
 		}
 
 		return (
-			<div style={contentStyle} >
+			<div style={contentStyle}>
 				<div>{this.getStepContent(stepIndex)}</div>
-				<div style={{ marginTop: 24, marginBottom: 12 }} className="button-container">
+				<div
+					style={{ marginTop: 24, marginBottom: 12 }}
+					className="button-container"
+				>
 					<RaisedButton
 						label="Back"
 						disabled={stepIndex === 0}
@@ -126,10 +133,18 @@ Job submittal message, and links to view the job itself + job dashboard goes her
 						className="button"
 					/>
 					<RaisedButton
-						label={stepIndex === 2 ? "Finish" : stepIndex === 1 ? "Submit Survey" : "Next"}
+						label={
+							stepIndex === 2
+								? "Finish"
+								: stepIndex === 1 ? "Submit Survey" : "Next"
+						}
 						disabled={validate()}
 						primary={true}
-						onClick={stepIndex === 1 ? submitJob(jobForm.values) && this.handleNext : this.handleNext}
+						onClick={
+							stepIndex === 2
+								? submitJob(jobForm.values) && this.handleNext
+								: this.handleNext
+						}
 						className="button"
 					/>
 				</div>
@@ -147,8 +162,8 @@ Job submittal message, and links to view the job itself + job dashboard goes her
 
 	render() {
 		const { loading, stepIndex, jobValidated } = this.state;
-		console.log(this.props.form)
-		console.log(this.state.values)
+		console.log(this.props.form);
+		console.log(this.state.values);
 		return (
 			<div className="new-job">
 				<h1 className="title">Add a New Job</h1>
