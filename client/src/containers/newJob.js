@@ -12,6 +12,8 @@ import {ReviewForm} from "../components/Confirmations";
 import JobForm from "../components/Forms/JobForm";
 import { AddButton } from "../components/Common";
 
+import { submitJob } from "../actions/jobs"
+
 // this entire container may look better with a dialog from material-ui
 // more on dialogs here:  http://www.material-ui.com/#/components/dialog
 
@@ -185,4 +187,4 @@ function mapStateToProps({ form }) {
 	return { form };
 }
 
-export default connect(mapStateToProps)(NewJob);
+export default connect(mapStateToProps, { submitJob })(NewJob);
