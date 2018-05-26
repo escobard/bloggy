@@ -1,4 +1,4 @@
-import SUBMIT_JOB from './types'
+import {SUBMIT_JOB} from './types'
 
 export const submitJob = values =>{
 	return {

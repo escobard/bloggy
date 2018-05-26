@@ -8,7 +8,7 @@ import FlatButton from "material-ui/FlatButton";
 import ExpandTransition from "material-ui/internal/ExpandTransition";
 import TextField from "material-ui/TextField";
 
-import {ReviewForm} from "../components/Confirmations";
+import { ReviewConfirmation } from "../components/Confirmations";
 import JobForm from "../components/Forms/JobForm";
 import { AddButton } from "../components/Common";
 
@@ -64,14 +64,11 @@ class NewJob extends Component {
 			case 0:
 				return <JobForm />;
 			case 1:
-				return <ReviewForm reviewData={this.props.form.jobForm.values}/>;
+				return <ReviewConfirmation reviewData={this.props.form.jobForm.values}/>;
 			case 2:
 				return (
 					<p>
-						Try out different ad text to see what brings in the most customers,
-						and learn how to enhance your ads using features like ad extensions.
-						If you run into any problems with your ads, find out how to tell if
-						they're running and how to resolve approval issues.
+Job submittal message, and links to view the job itself + job dashboard goes here
 					</p>
 				);
 			default:
@@ -81,6 +78,7 @@ class NewJob extends Component {
 
 	renderContent = () => {
 		const { finished, stepIndex, jobValidated } = this.state;
+		const { submitJob } = this.props;
 		const { jobForm } = this.props.form;
 
 		// could be refactored into a helper component
@@ -128,10 +126,10 @@ class NewJob extends Component {
 						className="button"
 					/>
 					<RaisedButton
-						label={stepIndex === 2 ? "Finish" : "Next"}
+						label={stepIndex === 2 ? "Finish" : stepIndex === 1 ? "Submit Survey" : "Next"}
 						disabled={validate()}
 						primary={true}
-						onClick={this.handleNext}
+						onClick={stepIndex === 1 ? submitJob(jobForm.values) && this.handleNext : this.handleNext}
 						className="button"
 					/>
 				</div>

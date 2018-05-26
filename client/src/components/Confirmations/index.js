@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import styles from "./styles.scss";
 
-export class ReviewForm extends Component {
+export class ReviewConfirmation extends Component {
 	renderData = reviewData => {
 		let reviewKeys = Object.keys(reviewData);
 		let reviewValues = Object.values(reviewData);
@@ -28,10 +28,10 @@ export class ReviewForm extends Component {
 	}
 }
 
-ReviewForm.defaultProps = {
+ReviewConfirmation.defaultProps = {
 	reviewData: "reviewData"
 };
 
-ReviewForm.propTypes = {
+ReviewConfirmation.propTypes = {
 	reviewData: PropTypes.object
 };
