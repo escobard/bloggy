@@ -11,6 +11,8 @@ import {
 import FlatButton from "material-ui/FlatButton";
 import { Pie } from "react-chartjs-2";
 
+import styles from "./styles.scss"
+
 const data = {
   labels: ["Red", "Green", "Yellow"],
   datasets: [
@@ -28,7 +30,6 @@ export default class Chart extends Component {
       case "pie":
         return (
           <Fragment>
-            <h2>Pie Example</h2>
             <Pie data={data} />
           </Fragment>
         );
@@ -46,9 +47,10 @@ export default class Chart extends Component {
   render() {
     let { title, subtitle, description, variant, data } = this.props;
     return (
-      <Card className={`chart `}>
-        <CardTitle title={title} subtitle={subtitle} />
-        <CardText>{description}</CardText>
+      <Card className={`chart ${variant}`}>
+       { title !== '' ? <CardTitle title={title} subtitle={ subtitle ? subtitle : null} /> : null }
+       { description !== '' ? <CardText>{description}</CardText> : null } 
+        
         {this.renderCharts(variant, data)}
       </Card>
     );

@@ -18,7 +18,7 @@ export default class Dashboard extends Component {
 				{this.renderQuickLink(dashboardRoutes)}
 				<div className="charts">
 					<div className="col-md-6">
-						<Chart />
+						<Chart title={''} subtitle={''} description={''} variant={'pie'}/>
 					</div>
 					<div className="col-md-6">
 						<Chart />
