@@ -57,8 +57,6 @@ The main purpose of this application is to provide the following features:
             - user-to-user chat system.
             - linked with premium job posts, approval required for users to communicate with employers.
 
-
-
 (Expand upon criteria in a later version)
 
 ### Delivery

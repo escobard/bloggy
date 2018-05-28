@@ -43,8 +43,13 @@
             - Front end Testing.
             - Commands - make a new wiki.
 
-## v0.65
+## v0.7
     TODO:
+        - set up webhook data from email client
+        - set up route handler for profile change
+
+## v0.65
+    COMPLETED:
         - further cleanup of the front end
         - finish setting up the job post form
             - add confirmation and success form steps
@@ -58,7 +63,7 @@
         - UX cleanup:
             - updated dashboard CTA's
         - Jobs:
-            - Added charts / statistics placeholders http://reactcommunity.org/react-chartjs/index.html
+            - Added charts / statistics placeholders http://reactcommunity.org/react-chartjs-2/index.html
 
 ## v0.6
     COMPLETED:
