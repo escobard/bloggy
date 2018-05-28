@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import QuickLink from "../components/QuickLink";
+import QuickLink from "../components/Common/QuickLink";
 import { dashboardRoutes } from "../constants";
 
 export default class Dashboard extends Component {
