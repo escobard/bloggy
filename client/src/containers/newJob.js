@@ -71,8 +71,7 @@ class NewJob extends Component {
 			case 2:
 				return (
 					<p>
-						Job submittal message, and links to view the job itself + job
-						dashboard goes here
+						Your job post has been submitted!
 					</p>
 				);
 			default:
@@ -141,7 +140,9 @@ class NewJob extends Component {
 						disabled={validate()}
 						primary={true}
 						onClick={
-							stepIndex === 2
+							stepIndex === 2 
+							? this.handleClose
+							: stepIndex === 1
 								? submitJob(jobForm.values) && this.handleNext
 								: this.handleNext
 						}
@@ -163,7 +164,7 @@ class NewJob extends Component {
 	render() {
 		const { loading, stepIndex, jobValidated } = this.state;
 		console.log(this.props.form);
-		console.log(this.state.values);
+		console.log(this.state.stepIndex);
 		return (
 			<div className="new-job">
 				<h1 className="title">Add a New Job</h1>

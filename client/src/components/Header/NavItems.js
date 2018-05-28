@@ -11,13 +11,13 @@ import { Link } from "react-router-dom"
 		<MenuItem leftIcon={<RemoveRedEye />}>{item}</MenuItem>
 	</Link>
 */
-const NavItems = (links)  =>{
+const NavItems = (links, close)  =>{
 		return links.map((item, index) => {
 			let link = item === "home" ? "/" : "/" + item
 
 			return (
 				<Link to={link} key={index} className="links">
-					<MenuItem>{item}</MenuItem>
+					<MenuItem onClick={close}>{item}</MenuItem>
 				</Link>
 			)
 		})
