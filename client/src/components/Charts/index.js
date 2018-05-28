@@ -9,20 +9,9 @@ import {
   CardText
 } from "material-ui/Card";
 import FlatButton from "material-ui/FlatButton";
-import { Pie } from "react-chartjs-2";
+import { Pie, Polar, Bar, Radar } from "react-chartjs-2";
 
-import styles from "./styles.scss"
-
-const data = {
-  labels: ["Red", "Green", "Yellow"],
-  datasets: [
-    {
-      data: [300, 50, 100],
-      backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
-      hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
-    }
-  ]
-};
+import styles from "./styles.scss";
 
 export default class Chart extends Component {
   renderCharts = (variant, data) => {
@@ -34,23 +23,37 @@ export default class Chart extends Component {
           </Fragment>
         );
       case "polar":
-        return;
+        return (
+          <Fragment>
+            <Polar data={data} />
+          </Fragment>
+        );
       case "bar":
-        return;
-      case "donught":
-        return;
+        return (
+          <Fragment>
+            <Bar data={data} />
+          </Fragment>
+        );
+      case "radar":
+        return (
+          <Fragment>
+            <Radar data={data} />
+          </Fragment>
+        );
       default:
         return <p>No variant!</p>;
     }
-  }
+  };
 
   render() {
     let { title, subtitle, description, variant, data } = this.props;
     return (
       <Card className={`chart ${variant}`}>
-       { title !== '' ? <CardTitle title={title} subtitle={ subtitle ? subtitle : null} /> : null }
-       { description !== '' ? <CardText>{description}</CardText> : null } 
-        
+        {title !== "" ? (
+          <CardTitle title={title} subtitle={subtitle ? subtitle : null} />
+        ) : null}
+        {description !== "" ? <CardText>{description}</CardText> : null}
+
         {this.renderCharts(variant, data)}
       </Card>
     );
