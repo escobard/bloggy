@@ -9,7 +9,8 @@ const routes = {
 	logout: "/api/logout",
 	stripeRoute: "/api/stripe",
 	jobs: "/api/jobs",
-	jobsThanks: "/api/jobs/thanks"
+	jobsThanks: "/api/jobs/thanks",
+	editProfile: "/api/profile/edit"
 };
 
 module.exports = routes;
