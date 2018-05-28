@@ -19,6 +19,8 @@ export const fetchUser = () =>
 	*/
 	async dispatch => {
 		// grabs the user profile object from the API, attaches it to res.data
+		// could be refactored into a `routes constant` although largely unecessary
+		// until the application scales further
 		const res = await axios.get("/api/current_user");
 
 		// console.log("RES", res.data);

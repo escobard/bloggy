@@ -25,7 +25,7 @@ class Header extends Component {
 		let { auth } = this.props;
 		let text = auth ? "Log Out" : auth === "" ? "Loading..." : "Log in";
 		let url = auth ? "# " : "auth/google";
-		console.log('user data: ', auth);
+		console.log("user data: ", auth);
 		return (
 			<div className="authenticated-container">
 				<a href={url} onClick={() => this.handleLoggout()}>
@@ -44,7 +44,7 @@ class Header extends Component {
 	handleToggle = () => {
 		this.setState({ open: !this.state.open });
 	};
-
+	handleClose = () => this.setState({ open: false });
 	render() {
 		let { navItems, open } = this.state;
 
@@ -69,7 +69,7 @@ class Header extends Component {
 					<div className="navbar-top">
 						<DashIcon />
 					</div>
-					{NavItems(navItems)}
+					{NavItems(navItems, this.handleClose)}
 				</Drawer>
 			</nav>
 		);

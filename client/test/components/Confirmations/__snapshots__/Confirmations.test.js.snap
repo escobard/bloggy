@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JobReview snapshot +++ render the JobReview component 1`] = `
+<div>
+  <h2>
+    Review Job
+  </h2>
+</div>
+`;

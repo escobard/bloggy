@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import InputField from '../../src/components/Forms/Fields/InputField';
+import InputField from '../../../src/components/Forms/Fields/InputField';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store'
 

@@ -25,18 +25,39 @@ The main purpose of this application is to provide the following features:
 
 *   A proffesional social media network for enginners. 
     + User to user profiles and a basic chat system (phase 2). 
-    + User dashboard, with metrics.
-        - Admin / premium content dashboard features.
-            + leaderboards and activity trackers for: 
-                - github activity 
-                - linkedin 
-                - crypto currencies 
-                - stocks
+    + User dashboard, with metrics - add tabs for each dashboard subpage for improved ux
         - Currency system, and payment gateway 
             + A job post feature, where the post is shared globally and emailed to specific users. 
             + contains an job post, which the recipients fill out to apply for the position.
             + contains a single job post page, where users can apply for the job: 
                 - Via email initially, a more complex application system to be introduced later.
+        - Profile:
+            - Base features (phase 1) - editable:
+                - Name
+                - Email
+                - Links to linkedin, github, website
+                - resume (possible phase 2 - pdf update)
+            - premium profile features (phase 2).
+                + leaderboards and activity trackers for: 
+                    - github activity 
+                    - linkedin 
+                    - crypto currencies 
+                    - stocks
+            - other features:
+                + profile image (aws phase 2 after node.js advanced course)
+                + facebook, twitter, github feeds
+        - Musings:
+            - Allows users to create a basic post  (with HTML phase 2)
+            - Allows users to set under following categories:
+                - educational
+                - request for help
+                - external job post
+                - more categories / user created categories in phase 2
+        - Chat (p2):
+            - user-to-user chat system.
+            - linked with premium job posts, approval required for users to communicate with employers.
+
+
 
 (Expand upon criteria in a later version)
 

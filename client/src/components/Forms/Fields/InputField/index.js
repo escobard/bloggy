@@ -1,20 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import TextField from "material-ui/TextField";
-import { Field } from "redux-form";
-
 import styles from "./styles.scss"
 
-const InputField = ({hint, label, name}) => {
+// more on redux-form and material-ui here: https://redux-form.com/7.2.3/examples/material-ui/
+const InputField = ({hint, label, input, meta: { error, touched }, ...custom}) => {
+	console.log('ERRORS', error)
 	return (
 		<div className="input-field">
 			<TextField
 				hintText={hint}
 				floatingLabelText={label}
 				className="input-container"
-			>
-				<Field type="text" name={name} component="input" />
-			</TextField>
+				errorText={touched && error}
+				{...input}
+				{...custom}
+			/>
 		</div>
 	);
 };
@@ -22,13 +23,21 @@ const InputField = ({hint, label, name}) => {
 InputField.defaultProps = {
 	hint: "test hint",
 	label: "test label",
-	name: "test name"
+	input: {},
+	meta: {
+		error: 'test error',
+		touched: true
+	}
 };
 
 InputField.propTypes = {
 	hint: PropTypes.string,
 	label: PropTypes.string,
-	name: PropTypes.string
+	input: PropTypes.object,
+	meta: PropTypes.shape({
+		error: PropTypes.string,
+		touch: PropTypes.boolean
+	})
 };
 
 export default InputField;

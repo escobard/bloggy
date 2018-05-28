@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import JobForm from '../../src/components/Forms/JobForm';
+import JobForm from '../../../src/components/Forms/JobForm';
 import toJson from 'enzyme-to-json';
 import configureStore from 'redux-mock-store'
 

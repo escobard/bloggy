@@ -25,6 +25,12 @@
         - Client side middleware:
             - May need a middleware to handle authentication on App.js
                 - Route users that go to any of the authenticated URL's to a login page.
+        - UX:
+            - Dashboard:
+                - CTA layout works for now, consider adding a `coming soon` icon / graphic for prototype testing for production phase
+                - Will need to implement job listing within dashboard
+            
+                - 
 
 ## v0.??-frontend-setup-3
 
@@ -41,6 +47,18 @@
     TODO:
         - further cleanup of the front end
         - finish setting up the job post form
+            - add confirmation and success form steps
+            - integrate dialog / routing functionality based on form step
+        - chores:
+            - Update jest testing for new components
+            - Update reducer test for reduxForm
+        - navigation:
+            - update drawer close on menu item click
+            - handle state navigation within multiple step job form
+        - UX cleanup:
+            - updated dashboard CTA's
+        - Jobs:
+            - Added charts / statistics placeholders http://reactcommunity.org/react-chartjs/index.html
 
 ## v0.6
     COMPLETED:

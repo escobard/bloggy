@@ -79,7 +79,6 @@ module.exports = app => {
 			// saves the new user instance to our DB
 			const user = await req.user.save()
 
-
 			// sends back the user data to the front end, updating the new credit score
 			res.send(user);
 		}
