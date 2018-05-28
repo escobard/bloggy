@@ -35,7 +35,7 @@ class NewJob extends Component {
 	};
 
 	handleNext = () => {
-		const { stepIndex } = this.state;
+		const { stepIndex, loading } = this.state;
 		const { jobForm } = this.props.form;
 		if (!this.state.loading) {
 			this.dummyAsync(() =>
@@ -46,6 +46,10 @@ class NewJob extends Component {
 				})
 			);
 		}
+		if (stepIndex === 2) {
+			this.handleClose()
+		}
+
 	};
 
 	handlePrev = () => {
@@ -69,11 +73,9 @@ class NewJob extends Component {
 					<ReviewConfirmation reviewData={this.props.form.jobForm.values} />
 				);
 			case 2:
-				return (
-					<p>
-						Your job post has been submitted!
-					</p>
-				);
+				return <p>Your job post has been submitted!</p>;
+			case 3:
+				return this.handleClose();
 			default:
 				return "You're a long way from home sonny jim!";
 		}
@@ -140,9 +142,7 @@ class NewJob extends Component {
 						disabled={validate()}
 						primary={true}
 						onClick={
-							stepIndex === 2 
-							? this.handleClose
-							: stepIndex === 1
+							stepIndex === 2 && !this.state.loading
 								? submitJob(jobForm.values) && this.handleNext
 								: this.handleNext
 						}

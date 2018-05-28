@@ -11,7 +11,7 @@ import { Link } from "react-router-dom"
 		<MenuItem leftIcon={<RemoveRedEye />}>{item}</MenuItem>
 	</Link>
 */
-const NavItems = (links, close)  =>{
+const NavItems = (links, close)  => {
 		return links.map((item, index) => {
 			let link = item === "home" ? "/" : "/" + item
 
