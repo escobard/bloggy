@@ -27,6 +27,7 @@
 	"homepage": "https://github.com/escobard/bloggy#readme",
 	"dependencies": {
 		"body-parser": "^1.18.2",
+		"chart.js": "^2.7.2",
 		"concurrently": "^3.5.1",
 		"cookie-session": "^2.0.0-beta.3",
 		"cors": "^2.8.4",
