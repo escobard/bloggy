@@ -11,7 +11,6 @@ module.exports = app => {
 		// otherwise it may break other profile functionality
 
 		// sets new data based on client side form entry
-		user.googleId = body.googleId
 		user.email = body.email
 		user.name = body.name
 		user.jobTitle = body.jobTitle 

@@ -1,9 +1,5 @@
 export const dashboardRoutes = [
   {
-    route: "account",
-    img: ""
-  },
-  {
     route: "profile",
     img: ""
   },
@@ -11,7 +7,7 @@ export const dashboardRoutes = [
     route: "jobs",
     img: ""
   },
-  {
+    {
     route: "blog",
     img: ""
   }

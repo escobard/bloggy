@@ -15,9 +15,9 @@ This repository contains all the files for an application built to showcase an a
 
 Possible future technologies include:
 
-    - GraphQL / Apollo for better offline - first utilization
-    - Server Side Rendering for optimized performance
-    - React Native application for native devices
+    - GraphQL / Apollo
+    - Server Side Rendering
+    - React Native application
 
 ## Project Criteria
 
