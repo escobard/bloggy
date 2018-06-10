@@ -19,6 +19,9 @@ import styles from "./styles.scss";
 class JobForm extends Component {
 
 	renderInputs = () => {
+
+		// the body of the job / description needs to be changed to DESCRIPTION
+		// the body input needs to be changed to a textbox not an input component
 		return jobFormFields.map((field, index) => {
 			let { hint, label, name } = field;
 			return (

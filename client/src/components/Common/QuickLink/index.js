@@ -12,7 +12,7 @@ export default class QuickLink extends Component {
 	render() {
 		let { img, route } = this.props.route;
 		return (
-			<div className="dashboard-cta col-md-3">
+			<div className="dashboard-cta col-md-4">
 				<Link to={`/dashboard/${route}`}>
 					<Card className="card">
 						<DashIcon />

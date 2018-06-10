@@ -15,9 +15,9 @@ This repository contains all the files for an application built to showcase an a
 
 Possible future technologies include:
 
-    - GraphQL / Apollo for better offline - first utilization
-    - Server Side Rendering for optimized performance
-    - React Native application for native devices
+    - GraphQL / Apollo
+    - Server Side Rendering
+    - React Native application
 
 ## Project Criteria
 
@@ -56,8 +56,6 @@ The main purpose of this application is to provide the following features:
         - Chat (p2):
             - user-to-user chat system.
             - linked with premium job posts, approval required for users to communicate with employers.
-
-
 
 (Expand upon criteria in a later version)
 

@@ -28,9 +28,7 @@
         - UX:
             - Dashboard:
                 - CTA layout works for now, consider adding a `coming soon` icon / graphic for prototype testing for production phase
-                - Will need to implement job listing within dashboard
-            
-                - 
+                - Will need to implement job listing within dashboard 
 
 ## v0.??-frontend-setup-3
 
@@ -43,8 +41,13 @@
             - Front end Testing.
             - Commands - make a new wiki.
 
-## v0.65
+## v0.7
     TODO:
+        - set up webhook data from email client
+        - set up route handler for profile change
+
+## v0.65-frontend-job-2
+    COMPLETED:
         - further cleanup of the front end
         - finish setting up the job post form
             - add confirmation and success form steps
@@ -58,9 +61,9 @@
         - UX cleanup:
             - updated dashboard CTA's
         - Jobs:
-            - Added charts / statistics placeholders http://reactcommunity.org/react-chartjs/index.html
+            - Added charts / statistics placeholders http://reactcommunity.org/react-chartjs-2/index.html
 
-## v0.6
+## v0.6-frontend-job
     COMPLETED:
         - set up front end job post base components:
             + set up routing for new job / jobs form

@@ -16,10 +16,10 @@ module.exports = job => {
 				<p>Please answer the following question:</p>
 				<p>${job.body}</p>
 				<div>
-					<a href="${redirectDomain}/api/jobs/thanks">
+					<a href="${redirectDomain}/api/jobs/${job.id}/yes">
 						Yes
 					</a>
-					<a href="${redirectDomain}/api/jobs/thanks">
+					<a href="${redirectDomain}/api/jobs/${job.id}/no">
 						No
 					</a>
 				</div>
