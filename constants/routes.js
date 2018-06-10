@@ -9,6 +9,7 @@ const routes = {
 	logout: "/api/logout",
 	stripeRoute: "/api/stripe",
 	jobs: "/api/jobs",
+	jobsWebhook: "/api/jobs/webhooks",
 	jobsThanks: "/api/jobs/thanks",
 	editProfile: "/api/profile/edit"
 };
