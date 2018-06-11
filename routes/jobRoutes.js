@@ -25,11 +25,14 @@ module.exports = app => {
 
 		// more on the lodash map function here: https://lodash.com/docs/#map
 		// first argument is the array, second argument is the callback for each object
-		// within the array
-		const events = _.map(req.body, (event) => {
+		// within the array - this returns all to an array assigned to the events constant
+		const events = _.map(req.body, 
+
+			// the function's argument is the event passed from the webhook, with ES6 destructuring
+			({email, url}) => {
 
 			// creates a URL from the url library
-			const pathname = new URL(event.url)
+			const pathname = new URL(url)
 
 			// grabs only the pathname of the URL
 			.pathname
@@ -41,10 +44,21 @@ module.exports = app => {
 
 			// this passes the pathname URL to the Path function (assigned to const patterns)
 			// which extracts the two variables defined on line 40 into an object that looks like:
-			// {surveyId: surveyIdValue, choice: choiceValue} - if no matches are found, the object is
-			// NULL - that way we can filter out obsolete webhook events
+			// {surveyId: surveyIdValue, choice: choiceValue}
 			const match = pattern.test(pathname)
+
+			// if no matches are found, the object is NULL - that way we can
+			// filter out obsolete webhook events
+			if (match) { 
+				let {surveyId, choice} = match
+				// returns an object with all the data we want to keep, pushes it into a new array
+				// assigned to the events constant
+				return { email, surveyId, choice }
+			}
 		})
+
+		// returns the cleaned up events array
+		console.log(events)
 	})
 
 	// we can add as many middlewares as we want to a route handl er
