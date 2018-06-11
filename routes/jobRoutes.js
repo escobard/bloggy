@@ -1,6 +1,10 @@
 // not sure how necessary this import is - sometimes testing frameworks give routes issues if you import
 // models multiple times so we are loading the jobs scheme prior to the route callback
 const mongoose = require("mongoose"),
+_ = require('lodash'),
+Path = require('path-parser'),
+// this is an integrated module of the node.js platform
+{ URL } = require('url'),
 { jobs, jobsWebhook, jobsThanks } = require("../constants/routes"),
 requireLogin = require("../middlewares/requireLogin"),
 requireCredits = require("../middlewares/requireCredits"),
@@ -18,8 +22,29 @@ module.exports = app => {
 
 	// sets up the route to handle the webhook data from emails
 	app.post(jobsWebhook, (req, res) =>{
-		console.log(req.body)
-		res.send({})
+
+		// more on the lodash map function here: https://lodash.com/docs/#map
+		// first argument is the array, second argument is the callback for each object
+		// within the array
+		const events = _.map(req.body, (event) => {
+
+			// creates a URL from the url library
+			const pathname = new URL(event.url)
+
+			// grabs only the pathname of the URL
+			.pathname
+
+			// creates the pattern we want to extract from the URL
+			// both the :surveyId and :choice patterns extracts the values of the URL
+			// into variables for later use
+			const pattern = new Path('api/surveys/:surveyId/:choice')
+
+			// this passes the pathname URL to the Path function (assigned to const patterns)
+			// which extracts the two variables defined on line 40 into an object that looks like:
+			// {surveyId: surveyIdValue, choice: choiceValue} - if no matches are found, the object is
+			// NULL - that way we can filter out obsolete webhook events
+			const match = pattern.test(pathname)
+		})
 	})
 
 	// we can add as many middlewares as we want to a route handl er
