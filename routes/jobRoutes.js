@@ -31,6 +31,7 @@ module.exports = app => {
 			// the function's argument is the event passed from the webhook, with ES6 destructuring
 			({email, url}) => {
 
+
 			// creates a URL from the url library
 			const pathname = new URL(url)
 
@@ -40,7 +41,7 @@ module.exports = app => {
 			// creates the pattern we want to extract from the URL
 			// both the :surveyId and :choice patterns extracts the values of the URL
 			// into variables for later use
-			const pattern = new Path('api/surveys/:surveyId/:choice')
+			const pattern = new Path('/api/jobs/:jobId/:choice')
 
 			// this passes the pathname URL to the Path function (assigned to const patterns)
 			// which extracts the two variables defined on line 40 into an object that looks like:
@@ -50,15 +51,17 @@ module.exports = app => {
 			// if no matches are found, the object is NULL - that way we can
 			// filter out obsolete webhook events
 			if (match) { 
-				let {surveyId, choice} = match
+				let {jobId, choice} = match
 				// returns an object with all the data we want to keep, pushes it into a new array
 				// assigned to the events constant
-				return { email, surveyId, choice }
+				return { email, jobId, choice }
 			}
 		})
 
 		// returns the cleaned up events array
-		console.log(events)
+		console.log('EVENTS', events)
+
+		// 
 	})
 
 	// we can add as many middlewares as we want to a route handl er
