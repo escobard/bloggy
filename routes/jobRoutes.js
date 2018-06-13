@@ -2,7 +2,7 @@
 // models multiple times so we are loading the jobs scheme prior to the route callback
 const mongoose = require("mongoose"),
 _ = require('lodash'),
-Path = require('path-parser'),
+Path = require('path-parser').default,
 // this is an integrated module of the node.js platform
 { URL } = require('url'),
 { jobs, jobsWebhook, jobsThanks } = require("../constants/routes"),
@@ -31,7 +31,9 @@ module.exports = app => {
 			// the function's argument is the event passed from the webhook, with ES6 destructuring
 			({email, url}) => {
 
-
+			// application breaks unless we define a url undefined rule, not part of the course
+			if (!url || !email) {return}
+			
 			// creates a URL from the url library
 			const pathname = new URL(url)
 
