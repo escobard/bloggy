@@ -61,9 +61,22 @@ module.exports = app => {
 		})
 
 		// returns the cleaned up events array
-		console.log('EVENTS', events)
+		// console.log('EVENTS', events)
 
-		// 
+		// uses the compact function of lodash, more on that here: https://lodash.com/docs/#compact
+		// removes all unidentified objects
+		const compactEvents = _.compact(events);
+
+		// returns only unique objects, more on that here: https://lodash.com/docs/#uniqBy
+		// removes all objects that contain duplicate email and surveyId values
+		const uniqueEvents = _.uniqBy(compactEvents, 'email', 'surveyId')
+
+		console.log('unique', uniqueEvents);
+
+		// this tells sendGrid that the logic is working since the sendGrid API expends a response
+		// from the Node API
+
+		res.send({})
 	})
 
 	// we can add as many middlewares as we want to a route handl er
