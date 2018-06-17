@@ -26,7 +26,8 @@ jobsSchema = new Schema({
 			// this essentially creates an ARRAY that contains instances of the RecipientSchema object
 			RecipientSchema
 		],
-
+		yes: Number,
+		no: Number,
 		// although optional, the underscore is utilized as a prefix to RELATIONAL DATA
 		// this is the property that grabs our user.id
 		_user: { 

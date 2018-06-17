@@ -20,6 +20,7 @@ module.exports = app => {
 
 	// sets up the route to handle the webhook data from emails
 	app.post(jobsWebhook, (req, res) => {
+
 		/* scrapped to instead use the lodash chain function, which allows us to avoid
 		// pointless variable declarations
 		// more on the lodash map function here: https://lodash.com/docs/#map
@@ -70,11 +71,8 @@ module.exports = app => {
 		// removes all objects that contain duplicate email and surveyId values
 		const uniqueEvents = _.uniqBy(compactEvents, "email", "surveyId");
 
-		console.log("unique", uniqueEvents);
+		console.log("unique", uniqueEve nts);
 		*/
-
-		// this tells sendGrid that the logic is working since the sendGrid API expends a response
-		// from the Node API
 
 		// creates the pattern we want to extract from the URL
 		// both the :surveyId and :choice patterns extracts the values of the URL
@@ -98,14 +96,41 @@ module.exports = app => {
 					let { jobId, choice } = match;
 
 					return { email, jobId, choice };
-				}
+				} 
 			})
 			.compact()
 			.uniqBy("email", "surveyId")
 			.value();
 
 		// returns the end result of the webhook cleanup
-		console.log(events);
+		console.log('cleaned up data', events);
+
+		// starts passing the data to mongoDB Query
+		// in our case, we want to use the .updateOne query since we want to find a single job
+		// and THEN update it at the same time
+		// that contains the proper id, email, and responded = false property
+		Job.updateOne(
+
+			//the first argument finds the record we want to find
+			{
+
+				// finds the job that has the exact ID we want, 
+				id: jobId,
+
+				// then go and find the recipients that match our criteria
+				recipients:{
+					
+					//this is a mongoose helper to find a single elements that matches the specified criteria 
+					$elemMatch: { email: email, responded: false }
+				}
+			}, 
+
+			// the second argument updates the record that matches, with the provided values
+			{}
+			)
+
+		// this tells sendGrid that the logic is working since the sendGrid API expends a response
+		// from the Node API
 
 		res.send({});
 	});
@@ -122,6 +147,15 @@ module.exports = app => {
 			title,
 			subject,
 			body,
+
+			// for extended functionality, here is where we would define the apply object properties.
+			/* 
+			apply: {
+				description: req.body.description,
+				applyWithProfile: true or false
+			}
+
+			*/
 
 			// unecessarily complicated to handle this within the BE
 			// we could easily have each recipient passed as an OBJECT within an ARRAY

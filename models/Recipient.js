@@ -12,7 +12,10 @@ const { Schema } = mongoose;
 // into the Jobs model to complete the subdocument collection setup
 const recipientSchema = new Schema({
 	email: String,
-	responded: { type: Boolean, default: false }
+	responded: { type: Boolean, default: false },
+
+	// added an extra field to store the users individual answer for later use.
+	answer: String
 })
 
 module.exports = recipientSchema;
