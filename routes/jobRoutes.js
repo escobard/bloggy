@@ -1,64 +1,63 @@
 // not sure how necessary this import is - sometimes testing frameworks give routes issues if you import
 // models multiple times so we are loading the jobs scheme prior to the route callback
 const mongoose = require("mongoose"),
-_ = require('lodash'),
-Path = require('path-parser').default,
-// this is an integrated module of the node.js platform
-{ URL } = require('url'),
-{ jobs, jobsWebhook, jobsThanks } = require("../constants/routes"),
-requireLogin = require("../middlewares/requireLogin"),
-requireCredits = require("../middlewares/requireCredits"),
-Mailer = require("../services/Mailer"),
-jobTemplate = require("../services/Mailer/emailTemplates/jobTemplate"),
-Job = mongoose.model("jobs")
+	_ = require("lodash"),
+	Path = require("path-parser").default,
+	// this is an integrated module of the node.js platform
+	{ URL } = require("url"),
+	{ jobs, jobsWebhook, jobsThanks } = require("../constants/routes"),
+	requireLogin = require("../middlewares/requireLogin"),
+	requireCredits = require("../middlewares/requireCredits"),
+	Mailer = require("../services/Mailer"),
+	jobTemplate = require("../services/Mailer/emailTemplates/jobTemplate"),
+	Job = mongoose.model("jobs");
 
 module.exports = app => {
-
 	// sets up our route to return some data to the user after they have clicked on a job link
-	app.get(jobsThanks, (req, res) =>{
-		res.send('Thanks for voting!')
-	})
-
+	app.get(jobsThanks, (req, res) => {
+		res.send("Thanks for voting!");
+	});
 
 	// sets up the route to handle the webhook data from emails
-	app.post(jobsWebhook, (req, res) =>{
-
+	app.post(jobsWebhook, (req, res) => {
+		/* scrapped to instead use the lodash chain function, which allows us to avoid
+		// pointless variable declarations
 		// more on the lodash map function here: https://lodash.com/docs/#map
 		// first argument is the array, second argument is the callback for each object
 		// within the array - this returns all to an array assigned to the events constant
-		const events = _.map(req.body, 
+		const events = _.map(
+			req.body,
 
 			// the function's argument is the event passed from the webhook, with ES6 destructuring
-			({email, url}) => {
+			({ email, url }) => {
+				// application breaks unless we define a url undefined rule, not part of the course
+				if (!url || !email) {
+					return;
+				}
 
-			// application breaks unless we define a url undefined rule, not part of the course
-			if (!url || !email) {return}
-			
-			// creates a URL from the url library
-			const pathname = new URL(url)
+				// scrapped to remove unecessary variable, passed constructor into pattern argument instead
+				// creates a URL from the url library
+				/*
+				const pathname =
+					// grabs only the pathname of the URL
+					new URL(url).pathname;
+				*/
+		/*
+				// this passes the pathname URL to the Path function (assigned to const patterns)
+				// which extracts the two variables defined on line 40 into an object that looks like:
+				// {surveyId: surveyIdValue, choice: choiceValue}
+				const match = pattern.test(new URL(url).pathname);
 
-			// grabs only the pathname of the URL
-			.pathname
-
-			// creates the pattern we want to extract from the URL
-			// both the :surveyId and :choice patterns extracts the values of the URL
-			// into variables for later use
-			const pattern = new Path('/api/jobs/:jobId/:choice')
-
-			// this passes the pathname URL to the Path function (assigned to const patterns)
-			// which extracts the two variables defined on line 40 into an object that looks like:
-			// {surveyId: surveyIdValue, choice: choiceValue}
-			const match = pattern.test(pathname)
-
-			// if no matches are found, the object is NULL - that way we can
-			// filter out obsolete webhook events
-			if (match) { 
-				let {jobId, choice} = match
-				// returns an object with all the data we want to keep, pushes it into a new array
-				// assigned to the events constant
-				return { email, jobId, choice }
+				// if no matches are found, the object is NULL - that way we can
+				// filter out obsolete webhook events
+				if (match) {
+					let { jobId, choice } = match;
+					// returns an object with all the data we want to keep, pushes it into a new array
+					// assigned to the events constant
+					return { email, jobId, choice };
+				}
 			}
-		})
+		); 
 
 		// returns the cleaned up events array
 		// console.log('EVENTS', events)
@@ -69,15 +68,47 @@ module.exports = app => {
 
 		// returns only unique objects, more on that here: https://lodash.com/docs/#uniqBy
 		// removes all objects that contain duplicate email and surveyId values
-		const uniqueEvents = _.uniqBy(compactEvents, 'email', 'surveyId')
+		const uniqueEvents = _.uniqBy(compactEvents, "email", "surveyId");
 
-		console.log('unique', uniqueEvents);
+		console.log("unique", uniqueEvents);
+		*/
 
 		// this tells sendGrid that the logic is working since the sendGrid API expends a response
 		// from the Node API
 
-		res.send({})
-	})
+		// creates the pattern we want to extract from the URL
+		// both the :surveyId and :choice patterns extracts the values of the URL
+		// into variables for later use
+		// moved to outside of the loop, to avoid creating a new path helper per loop iteration
+		const pattern = new Path("/api/jobs/:jobId/:choice");
+
+		// using the chain helper of lodash to make this code cleaner, more on that here: https://lodash.com/docs/#chain
+		// refer to line 24-78 to see original functionality, and deeper code breakdown
+		const events = _.chain(req.body)
+			.map(({ email, url }) => {
+				if (!url || !email) {
+					return;
+				}
+
+				const pathname = new URL(url).pathname;
+
+				const match = pattern.test(new URL(url).pathname);
+
+				if (match) {
+					let { jobId, choice } = match;
+
+					return { email, jobId, choice };
+				}
+			})
+			.compact()
+			.uniqBy("email", "surveyId")
+			.value();
+
+		// returns the end result of the webhook cleanup
+		console.log(events);
+
+		res.send({});
+	});
 
 	// we can add as many middlewares as we want to a route handl er
 	// the only gotcha is that the middlewares MUST be added in the order
@@ -129,27 +160,23 @@ module.exports = app => {
 		);
 
 		// creates error handling for our requests to sendgrid / mongodb
-		try{
-
+		try {
 			// sends the email off to sendGrid which sends the email to the user and sets up our custom links
-			await mailer.send()
+			await mailer.send();
 
-			// saves the job instance to our mongoDB 
-			await job.save()
+			// saves the job instance to our mongoDB
+			await job.save();
 
 			// removes a credit from the user once the job post has been sent
 			req.user.credits -= 1;
 
 			// saves the new user instance to our DB
-			const user = await req.user.save()
+			const user = await req.user.save();
 
 			// sends back the user data to the front end, updating the new credit score
 			res.send(user);
+		} catch (err) {
+			res.status(422).send(err);
 		}
-
-		catch(err){
-			res.status(422).send(err)
-		}
-
 	});
 };
